@@ -1,4 +1,4 @@
-# This is a fork of [lachlan-ikeguchi/nvim-matrix-theme](https://github.com/lachlan-ikeguchi/nvim-matrix-theme) customized to my tastes.
+# This is a fork of [iruzo/nvim-matrix-theme](https://github.com/lachlan-ikeguchi/nvim-matrix-theme) customized to my tastes.
 
 ## Features
 
@@ -42,7 +42,6 @@ use 'lachlan-ikeguchi/nvim-matrix-theme'
 ```lua
 'lachlan-ikeguchi/nvim-matrix-theme',
 ```
-
 ## Usage
 
 Enable the colorscheme:

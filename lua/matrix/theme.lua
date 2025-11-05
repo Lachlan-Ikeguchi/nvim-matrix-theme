@@ -5,67 +5,71 @@ local theme = {}
 theme.loadSyntax = function()
     -- Syntax highlight groups
     local syntax = {
-        Type = { fg = matrix.matrix_turquoise_1 },                                        -- int, long, char, etc.
-        StorageClass = { fg = matrix.matrix_turquoise_1 },                                -- static, register, volatile, etc.
-        Structure = { fg = matrix.matrix_turquoise_1 },                                   -- struct, union, enum, etc.
-        Constant = { fg = matrix.matrix_green_1 },                                        -- any constant
-        Character = { fg = matrix.matrix_turquoise_4 },                                   -- any character constant: 'c', '\n'
-        Number = { fg = matrix.matrix_turquoise_5 },                                      -- a number constant: 5
-        Boolean = { fg = matrix.matrix_turquoise_1 },                                     -- a boolean constant: TRUE, false
-        Float = { fg = matrix.matrix_turquoise_5 },                                       -- a floating point constant: 2.3e10
-        Statement = { fg = matrix.matrix_turquoise_1 },                                   -- any statement
-        Label = { fg = matrix.matrix_turquoise_1 },                                       -- case, default, etc.
-        Operator = { fg = matrix.matrix_turquoise_1 },                                    -- sizeof", "+", "*", etc.
-        Exception = { fg = matrix.matrix_turquoise_1 },                                   -- try, catch, throw
-        PreProc = { fg = matrix.matrix_turquoise_1 },                                     -- generic Preprocessor
-        Include = { fg = matrix.matrix_turquoise_1 },                                     -- preprocessor #include
-        Define = { fg = matrix.matrix_turquoise_1 },                                      -- preprocessor #define
-        Macro = { fg = matrix.matrix_turquoise_1 },                                       -- same as Define
-        Typedef = { fg = matrix.matrix_turquoise_1 },                                     -- A typedef
-        PreCondit = { fg = matrix.matrix_light_2 },                                       -- preprocessor #if, #else, #endif, etc.
-        Special = { fg = matrix.matrix_green_1 },                                         -- any special symbol
-        SpecialChar = { fg = matrix.matrix_light_2 },                                     -- special character in a constant
-        Tag = { fg = matrix.matrix_green_1 },                                             -- you can use CTRL-] on this
-        Delimiter = { fg = matrix.matrix_green_3 },                                       -- character that needs attention like , or .
-        SpecialComment = { fg = matrix.matrix_green_5 },                                  -- special things inside a comment
-        Debug = { fg = matrix.matrix_turquoise_3 },                                       -- debugging statements
-        Underlined = { fg = matrix.matrix_turquoise_4, bg = matrix.none, style = "underline" }, -- text that stands out, HTML links
-        Ignore = { fg = matrix.matrix_dark_2 },                                           -- left blank, hidden
-        Error = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "bold,underline" }, -- any erroneous construct
-        Todo = { fg = matrix.matrix_light_2, bg = matrix.none, style = "bold,italic" },   -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+        -- Monochrome
+        PreCondit = { fg = matrix.matrix_light_2 },                                     -- preprocessor #if, #else, #endif, etc.
+        SpecialChar = { fg = matrix.matrix_light_2 },                                   -- special character in a constant
+        Ignore = { fg = matrix.matrix_dark_2 },                                         -- left blank, hidden
+        Todo = { fg = matrix.matrix_light_2, bg = matrix.none, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
         Conceal = { fg = matrix.none, bg = matrix.matrix_dark_1 },
 
-        htmlLink = { fg = matrix.matrix_turquoise_4, style = "underline" },
-        htmlH1 = { fg = matrix.matrix_green_5, style = "bold" },
-        htmlH2 = { fg = matrix.matrix_turquoise_3, style = "bold" },
-        htmlH3 = { fg = matrix.matrix_turquoise_4, style = "bold" },
-        htmlH4 = { fg = matrix.matrix_turquoise_5, style = "bold" },
+        -- Green, getting brighter going down the list
+        Type = { fg = matrix.matrix_green_1 },                                                  -- int, long, char, etc.
+        StorageClass = { fg = matrix.matrix_green_1 },                                          -- static, register, volatile, etc.
+        Structure = { fg = matrix.matrix_green_1 },                                             -- struct, union, enum, etc.
+        Boolean = { fg = matrix.matrix_green_1 },                                               -- a boolean constant: TRUE, false
+        Statement = { fg = matrix.matrix_green_1 },                                             -- any statement
+        Label = { fg = matrix.matrix_green_1 },                                                 -- case, default, etc.
+        Operator = { fg = matrix.matrix_green_1 },                                              -- sizeof", "+", "*", etc.
+        Exception = { fg = matrix.matrix_green_1 },                                             -- try, catch, throw
+        PreProc = { fg = matrix.matrix_green_1 },                                               -- generic Preprocessor
+        Include = { fg = matrix.matrix_green_1 },                                               -- preprocessor #include
+        Special = { fg = matrix.matrix_green_1 },                                               -- any special symbol
+        Tag = { fg = matrix.matrix_green_1 },                                                   -- you can use CTRL-] on this
+        Define = { fg = matrix.matrix_green_1 },                                                -- preprocessor #define
+        Macro = { fg = matrix.matrix_green_1 },                                                 -- same as Define
+        Typedef = { fg = matrix.matrix_green_1 },                                               -- A typedef
+        Constant = { fg = matrix.matrix_green_1 },                                              -- any constant
+        Character = { fg = matrix.matrix_green_6 },                                             -- any character constant: 'c', '\n'
+        Number = { fg = matrix.matrix_green_6 },                                                -- a number constant: 5
+        Float = { fg = matrix.matrix_green_7 },                                                 -- a floating point constant: 2.3e10
+        Delimiter = { fg = matrix.matrix_green_3 },                                             -- character that needs attention like , or .
+        SpecialComment = { fg = matrix.matrix_green_5 },                                        -- special things inside a comment
+        Debug = { fg = matrix.matrix_turquoise_3 },                                             -- debugging statements
+        Underlined = { fg = matrix.matrix_turquoise_4, bg = matrix.none, style = "underline" }, -- text that stands out, HTML links
+        Error = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "bold,underline" }, -- any erroneous construct
+
+        -- Turquoise
+        htmlLink = { fg = matrix.matrix_turquoise_5, style = "underline" },
+        htmlH1 = { fg = matrix.matrix_turquoise_5, style = "bold" },
+        htmlH2 = { fg = matrix.matrix_turquoise_4, style = "bold" },
+        htmlH3 = { fg = matrix.matrix_turquoise_3, style = "bold" },
+        htmlH4 = { fg = matrix.matrix_turquoise_2, style = "bold" },
         htmlH5 = { fg = matrix.matrix_turquoise_1, style = "bold" },
-        markdownH1 = { fg = matrix.matrix_green_5, style = "bold" },
-        markdownH2 = { fg = matrix.matrix_turquoise_3, style = "bold" },
-        markdownH3 = { fg = matrix.matrix_turquoise_4, style = "bold" },
-        markdownH1Delimiter = { fg = matrix.matrix_green_5 },
-        markdownH2Delimiter = { fg = matrix.matrix_turquoise_3 },
-        markdownH3Delimiter = { fg = matrix.matrix_turquoise_4 },
+        markdownH1 = { fg = matrix.matrix_turquoise_5, style = "bold" },
+        markdownH2 = { fg = matrix.matrix_turquoise_4, style = "bold" },
+        markdownH3 = { fg = matrix.matrix_turquoise_3, style = "bold" },
+        markdownH1Delimiter = { fg = matrix.matrix_turquoise_5 },
+        markdownH2Delimiter = { fg = matrix.matrix_turquoise_4 },
+        markdownH3Delimiter = { fg = matrix.matrix_turquoise_3 },
     }
 
     -- Italic comments
     if vim.g.matrix_italic == false then
-        syntax.Comment = { fg = matrix.matrix_gray }                                          -- normal comments
-        syntax.Conditional = { fg = matrix.matrix_turquoise_1 }                               -- normal if, then, else, endif, switch, etc.
-        syntax.Function = { fg = matrix.matrix_green_5 }                                      -- normal function names
-        syntax.Identifier = { fg = matrix.matrix_turquoise_1 }                                -- any variable name
-        syntax.Keyword = { fg = matrix.matrix_turquoise_1 }                                   -- normal for, do, while, etc.
-        syntax.Repeat = { fg = matrix.matrix_turquoise_1 }                                    -- normal any other keyword
-        syntax.String = { fg = matrix.matrix_turquoise_4 }                                    -- any string
+        syntax.Comment = { fg = matrix.matrix_gray }                                                -- normal comments
+        syntax.Conditional = { fg = matrix.matrix_turquoise_1 }                                     -- normal if, then, else, endif, switch, etc.
+        syntax.Function = { fg = matrix.matrix_green_5 }                                            -- normal function names
+        syntax.Identifier = { fg = matrix.matrix_turquoise_1 }                                      -- any variable name
+        syntax.Keyword = { fg = matrix.matrix_turquoise_1 }                                         -- normal for, do, while, etc.
+        syntax.Repeat = { fg = matrix.matrix_turquoise_1 }                                          -- normal any other keyword
+        syntax.String = { fg = matrix.matrix_turquoise_4 }                                          -- any string
     else
-        syntax.Comment = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" }      -- italic comments
+        syntax.Comment = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" }            -- italic comments
         syntax.Conditional = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
-        syntax.Function = { fg = matrix.matrix_green_5, bg = matrix.none, style = "italic" }  -- italic funtion names
-        syntax.Identifier = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" } -- any variable name
-        syntax.Keyword = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" } -- italic for, do, while, etc.
-        syntax.Repeat = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" } -- italic any other keyword
-        syntax.String = { fg = matrix.matrix_turquoise_4, bg = matrix.none, style = "italic" } -- any string
+        syntax.Function = { fg = matrix.matrix_green_5, bg = matrix.none, style = "italic" }        -- italic funtion names
+        syntax.Identifier = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" }  -- any variable name
+        syntax.Keyword = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" }     -- italic for, do, while, etc.
+        syntax.Repeat = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic" }      -- italic any other keyword
+        syntax.String = { fg = matrix.matrix_turquoise_4, bg = matrix.none, style = "italic" }      -- any string
     end
 
     return syntax
@@ -75,17 +79,17 @@ theme.loadEditor = function()
     -- Editor highlight groups
 
     local editor = {
-        NormalFloat = { fg = matrix.matrix_green_1, bg = matrix.float },                -- normal text and background color
-        FloatBorder = { fg = matrix.matrix_green_1, bg = matrix.float },                -- normal text and background color
-        ColorColumn = { fg = matrix.none, bg = matrix.matrix_dark_2 },                  --  used for the columns set with 'colorcolumn'
-        Conceal = { fg = matrix.matrix_dark_2 },                                        -- placeholder characters substituted for concealed text (see 'conceallevel')
-        Cursor = { fg = matrix.matrix_green_1, bg = matrix.none, style = "reverse" },   -- the character under the cursor
-        CursorIM = { fg = matrix.matrix_green_2, bg = matrix.none, style = "reverse" }, -- like Cursor, but used when in IME mode
-        Directory = { fg = matrix.matrix_green_4, bg = matrix.none },                   -- directory names (and other special names in listings)
-        DiffAdd = { fg = matrix.matrix_turquoise_4, bg = matrix.none, style = "reverse" }, -- diff mode: Added line
-        DiffChange = { fg = matrix.matrix_light_2, bg = matrix.none, style = "reverse" }, --  diff mode: Changed line
+        NormalFloat = { fg = matrix.matrix_green_1, bg = matrix.float },                      -- normal text and background color
+        FloatBorder = { fg = matrix.matrix_green_1, bg = matrix.float },                      -- normal text and background color
+        ColorColumn = { fg = matrix.none, bg = matrix.matrix_dark_2 },                        --  used for the columns set with 'colorcolumn'
+        Conceal = { fg = matrix.matrix_dark_2 },                                              -- placeholder characters substituted for concealed text (see 'conceallevel')
+        Cursor = { fg = matrix.matrix_green_1, bg = matrix.none, style = "reverse" },         -- the character under the cursor
+        CursorIM = { fg = matrix.matrix_green_2, bg = matrix.none, style = "reverse" },       -- like Cursor, but used when in IME mode
+        Directory = { fg = matrix.matrix_green_4, bg = matrix.none },                         -- directory names (and other special names in listings)
+        DiffAdd = { fg = matrix.matrix_turquoise_4, bg = matrix.none, style = "reverse" },    -- diff mode: Added line
+        DiffChange = { fg = matrix.matrix_light_2, bg = matrix.none, style = "reverse" },     --  diff mode: Changed line
         DiffDelete = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "reverse" }, -- diff mode: Deleted line
-        DiffText = { fg = matrix.matrix_turquoise_5, bg = matrix.none, style = "reverse" }, -- diff mode: Changed text within a changed line
+        DiffText = { fg = matrix.matrix_turquoise_5, bg = matrix.none, style = "reverse" },   -- diff mode: Changed text within a changed line
         EndOfBuffer = { fg = matrix.matrix_dark_2 },
         ErrorMsg = { fg = matrix.none },
         Folded = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" },
@@ -192,42 +196,42 @@ theme.loadTreeSitter = function()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        TSAnnotation = { fg = matrix.matrix_light_1 },                                 -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-        TSConstructor = { fg = matrix.matrix_turquoise_1 },                            -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        TSConstant = { fg = matrix.matrix_light_2 },                                   -- For constants
-        TSFloat = { fg = matrix.matrix_turquoise_5 },                                  -- For floats
-        TSNumber = { fg = matrix.matrix_turquoise_5 },                                 -- For all number
+        TSAnnotation = { fg = matrix.matrix_light_1 },                                       -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
+        TSConstructor = { fg = matrix.matrix_turquoise_1 },                                  -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        TSConstant = { fg = matrix.matrix_light_2 },                                         -- For constants
+        TSFloat = { fg = matrix.matrix_turquoise_5 },                                        -- For floats
+        TSNumber = { fg = matrix.matrix_turquoise_5 },                                       -- For all number
 
-        TSAttribute = { fg = matrix.matrix_turquoise_5 },                              -- (unstable) TODO: docs
-        TSVariable = { fg = matrix.matrix_green_1, style = "bold" },                   -- Any variable name that does not have another highlight.
+        TSAttribute = { fg = matrix.matrix_turquoise_5 },                                    -- (unstable) TODO: docs
+        TSVariable = { fg = matrix.matrix_green_1, style = "bold" },                         -- Any variable name that does not have another highlight.
         TSVariableBuiltin = { fg = matrix.matrix_green_1, style = "bold" },
-        TSBoolean = { fg = matrix.matrix_turquoise_1, style = "bold" },                -- For booleans.
-        TSConstBuiltin = { fg = matrix.matrix_green_4, style = "bold" },               -- For constant that are built in the language: `nil` in Lua.
-        TSConstMacro = { fg = matrix.matrix_green_4, style = "bold" },                 -- For constants that are defined by macros: `NULL` in C.
-        TSError = { fg = matrix.matrix_turquoise_3 },                                  -- For syntax/parser errors.
-        TSException = { fg = matrix.matrix_turquoise_5 },                              -- For exception related keywords.
-        TSFuncMacro = { fg = matrix.matrix_green_4 },                                  -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude = { fg = matrix.matrix_turquoise_1 },                                -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSLabel = { fg = matrix.matrix_turquoise_5 },                                  -- For labels: `label:` in C and `:label:` in Lua.
-        TSOperator = { fg = matrix.matrix_turquoise_1 },                               -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter = { fg = matrix.matrix_turquoise_2 },                              -- For parameters of a function.
-        TSParameterReference = { fg = matrix.matrix_turquoise_2 },                     -- For references to parameters of a function.
-        TSPunctDelimiter = { fg = matrix.matrix_green_5 },                             -- For delimiters ie: `.`
-        TSPunctBracket = { fg = matrix.matrix_green_5 },                               -- For brackets and parens.
-        TSPunctSpecial = { fg = matrix.matrix_green_5 },                               -- For special punctutation that does not fall in the catagories before.
-        TSSymbol = { fg = matrix.matrix_turquoise_5 },                                 -- For identifiers referring to symbols or atoms.
-        TSType = { fg = matrix.matrix_turquoise_1 },                                   -- For types.
-        TSTypeBuiltin = { fg = matrix.matrix_turquoise_1 },                            -- For builtin types.
-        TSTag = { fg = matrix.matrix_green_1 },                                        -- Tags like html tag names.
-        TSTagDelimiter = { fg = matrix.matrix_turquoise_5 },                           -- Tag delimiter like `<` `>` `/`
-        TSText = { fg = matrix.matrix_green_1 },                                       -- For strings considematrix11_gui text in a markup language.
-        TSTextReference = { fg = matrix.matrix_turquoise_5 },                          -- FIXME
-        TSEmphasis = { fg = matrix.matrix_turquoise_2 },                               -- For text to be represented with emphasis.
+        TSBoolean = { fg = matrix.matrix_turquoise_1, style = "bold" },                      -- For booleans.
+        TSConstBuiltin = { fg = matrix.matrix_green_4, style = "bold" },                     -- For constant that are built in the language: `nil` in Lua.
+        TSConstMacro = { fg = matrix.matrix_green_4, style = "bold" },                       -- For constants that are defined by macros: `NULL` in C.
+        TSError = { fg = matrix.matrix_turquoise_3 },                                        -- For syntax/parser errors.
+        TSException = { fg = matrix.matrix_turquoise_5 },                                    -- For exception related keywords.
+        TSFuncMacro = { fg = matrix.matrix_green_4 },                                        -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+        TSInclude = { fg = matrix.matrix_turquoise_1 },                                      -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+        TSLabel = { fg = matrix.matrix_turquoise_5 },                                        -- For labels: `label:` in C and `:label:` in Lua.
+        TSOperator = { fg = matrix.matrix_turquoise_1 },                                     -- For any operator: `+`, but also `->` and `*` in C.
+        TSParameter = { fg = matrix.matrix_turquoise_2 },                                    -- For parameters of a function.
+        TSParameterReference = { fg = matrix.matrix_turquoise_2 },                           -- For references to parameters of a function.
+        TSPunctDelimiter = { fg = matrix.matrix_green_5 },                                   -- For delimiters ie: `.`
+        TSPunctBracket = { fg = matrix.matrix_green_5 },                                     -- For brackets and parens.
+        TSPunctSpecial = { fg = matrix.matrix_green_5 },                                     -- For special punctutation that does not fall in the catagories before.
+        TSSymbol = { fg = matrix.matrix_turquoise_5 },                                       -- For identifiers referring to symbols or atoms.
+        TSType = { fg = matrix.matrix_turquoise_1 },                                         -- For types.
+        TSTypeBuiltin = { fg = matrix.matrix_turquoise_1 },                                  -- For builtin types.
+        TSTag = { fg = matrix.matrix_green_1 },                                              -- Tags like html tag names.
+        TSTagDelimiter = { fg = matrix.matrix_turquoise_5 },                                 -- Tag delimiter like `<` `>` `/`
+        TSText = { fg = matrix.matrix_green_1 },                                             -- For strings considematrix11_gui text in a markup language.
+        TSTextReference = { fg = matrix.matrix_turquoise_5 },                                -- FIXME
+        TSEmphasis = { fg = matrix.matrix_turquoise_2 },                                     -- For text to be represented with emphasis.
         TSUnderline = { fg = matrix.matrix_green_1, bg = matrix.none, style = "underline" }, -- For text to be represented with an underline.
-        TSTitle = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "bold" }, -- Text that is part of a title.
-        TSLiteral = { fg = matrix.matrix_green_1 },                                    -- Literal text.
-        TSURI = { fg = matrix.matrix_turquoise_4 },                                    -- Any URI like a link or email.
-        TSAnnotation = { fg = matrix.matrix_turquoise_3 },                             -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+        TSTitle = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "bold" },      -- Text that is part of a title.
+        TSLiteral = { fg = matrix.matrix_green_1 },                                          -- Literal text.
+        TSURI = { fg = matrix.matrix_turquoise_4 },                                          -- Any URI like a link or email.
+        TSAnnotation = { fg = matrix.matrix_turquoise_3 },                                   -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     }
 
     if vim.g.matrix_italic == false then
@@ -236,48 +240,48 @@ theme.loadTreeSitter = function()
         -- Conditionals
         treesitter.TSConditional = { fg = matrix.matrix_turquoise_1 } -- For keywords related to conditionnals.
         -- Function names
-        treesitter.TSFunction = { fg = matrix.matrix_green_5 }  -- For fuction (calls and definitions).
-        treesitter.TSMethod = { fg = matrix.matrix_green_4 }    -- For method calls and definitions.
+        treesitter.TSFunction = { fg = matrix.matrix_green_5 }        -- For fuction (calls and definitions).
+        treesitter.TSMethod = { fg = matrix.matrix_green_4 }          -- For method calls and definitions.
         treesitter.TSFuncBuiltin = { fg = matrix.matrix_green_5 }
         -- Namespaces and property accessors
-        treesitter.TSNamespace = { fg = matrix.matrix_green_1 } -- For identifiers referring to modules and namespaces.
-        treesitter.TSField = { fg = matrix.matrix_green_1 }  -- For fields in literals
+        treesitter.TSNamespace = { fg = matrix.matrix_green_1 }    -- For identifiers referring to modules and namespaces.
+        treesitter.TSField = { fg = matrix.matrix_green_1 }        -- For fields in literals
         treesitter.TSProperty = { fg = matrix.matrix_turquoise_2 } -- Same as `TSField`
         -- Language keywords
-        treesitter.TSKeyword = { fg = matrix.matrix_turquoise_1 } -- For keywords that don't fall in other categories.
+        treesitter.TSKeyword = { fg = matrix.matrix_turquoise_1 }  -- For keywords that don't fall in other categories.
         treesitter.TSKeywordFunction = { fg = matrix.matrix_green_5 }
         treesitter.TSKeywordReturn = { fg = matrix.matrix_green_5 }
         treesitter.TSKeywordOperator = { fg = matrix.matrix_green_5 }
-        treesitter.TSRepeat = { fg = matrix.matrix_turquoise_1 } -- For keywords related to loops.
+        treesitter.TSRepeat = { fg = matrix.matrix_turquoise_1 }       -- For keywords related to loops.
         -- Strings
-        treesitter.TSString = { fg = matrix.matrix_turquoise_4 } -- For strings.
-        treesitter.TSStringRegex = { fg = matrix.matrix_green_4 } -- For regexes.
+        treesitter.TSString = { fg = matrix.matrix_turquoise_4 }       -- For strings.
+        treesitter.TSStringRegex = { fg = matrix.matrix_green_4 }      -- For regexes.
         treesitter.TSStringEscape = { fg = matrix.matrix_turquoise_5 } -- For escape characters within a string.
-        treesitter.TSCharacter = { fg = matrix.matrix_turquoise_4 } -- For characters.
+        treesitter.TSCharacter = { fg = matrix.matrix_turquoise_4 }    -- For characters.
     else
         -- Comments
         treesitter.TSComment = { fg = matrix.matrix_gray, style = "italic" }
         -- Conditionals
         treesitter.TSConditional = { fg = matrix.matrix_turquoise_1, style = "italic" } -- For keywords related to conditionnals.
         -- Function names
-        treesitter.TSFunction = { fg = matrix.matrix_green_5, style = "italic" }  -- For fuction (calls and definitions).
-        treesitter.TSMethod = { fg = matrix.matrix_green_4, style = "italic" }    -- For method calls and definitions.
+        treesitter.TSFunction = { fg = matrix.matrix_green_5, style = "italic" }        -- For fuction (calls and definitions).
+        treesitter.TSMethod = { fg = matrix.matrix_green_4, style = "italic" }          -- For method calls and definitions.
         treesitter.TSFuncBuiltin = { fg = matrix.matrix_green_5, style = "italic" }
         -- Namespaces and property accessors
-        treesitter.TSNamespace = { fg = matrix.matrix_green_1, style = "italic" } -- For identifiers referring to modules and namespaces.
-        treesitter.TSField = { fg = matrix.matrix_green_1, style = "italic" }  -- For fields.
+        treesitter.TSNamespace = { fg = matrix.matrix_green_1, style = "italic" }    -- For identifiers referring to modules and namespaces.
+        treesitter.TSField = { fg = matrix.matrix_green_1, style = "italic" }        -- For fields.
         treesitter.TSProperty = { fg = matrix.matrix_turquoise_2, style = "italic" } -- Same as `TSField`, but when accessing, not declaring.
         -- Language keywords
-        treesitter.TSKeyword = { fg = matrix.matrix_turquoise_1, style = "italic" } -- For keywords that don't fall in other categories.
+        treesitter.TSKeyword = { fg = matrix.matrix_turquoise_1, style = "italic" }  -- For keywords that don't fall in other categories.
         treesitter.TSKeywordFunction = { fg = matrix.matrix_green_5, style = "italic" }
         treesitter.TSKeywordReturn = { fg = matrix.matrix_green_5, style = "italic" }
         treesitter.TSKeywordOperator = { fg = matrix.matrix_green_5, style = "italic" }
-        treesitter.TSRepeat = { fg = matrix.matrix_turquoise_1, style = "italic" } -- For keywords related to loops.
+        treesitter.TSRepeat = { fg = matrix.matrix_turquoise_1, style = "italic" }       -- For keywords related to loops.
         -- Strings
-        treesitter.TSString = { fg = matrix.matrix_turquoise_4, style = "italic" } -- For strings.
-        treesitter.TSStringRegex = { fg = matrix.matrix_green_4, style = "italic" } -- For regexes.
+        treesitter.TSString = { fg = matrix.matrix_turquoise_4, style = "italic" }       -- For strings.
+        treesitter.TSStringRegex = { fg = matrix.matrix_green_4, style = "italic" }      -- For regexes.
         treesitter.TSStringEscape = { fg = matrix.matrix_turquoise_5, style = "italic" } -- For escape characters within a string.
-        treesitter.TSCharacter = { fg = matrix.matrix_turquoise_4, style = "italic" } -- For characters.
+        treesitter.TSCharacter = { fg = matrix.matrix_turquoise_4, style = "italic" }    -- For characters.
     end
 
     return treesitter
@@ -287,29 +291,29 @@ theme.loadLSP = function()
     -- Lsp highlight groups
 
     local lsp = {
-        LspDiagnosticsDefaultError = { fg = matrix.matrix_turquoise_3 },                        -- used for "Error" diagnostic virtual text
-        LspDiagnosticsSignError = { fg = matrix.matrix_turquoise_3 },                           -- used for "Error" diagnostic signs in sign column
-        LspDiagnosticsFloatingError = { fg = matrix.matrix_turquoise_3 },                       -- used for "Error" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextError = { fg = matrix.matrix_turquoise_3 },                    -- Virtual text "Error"
-        LspDiagnosticsUnderlineError = { style = "undercurl", sp = matrix.matrix_turquoise_3 }, -- used to underline "Error" diagnostics.
-        LspDiagnosticsDefaultWarning = { fg = matrix.matrix_turquoise_5 },                      -- used for "Warning" diagnostic signs in sign column
-        LspDiagnosticsSignWarning = { fg = matrix.matrix_turquoise_5 },                         -- used for "Warning" diagnostic signs in sign column
-        LspDiagnosticsFloatingWarning = { fg = matrix.matrix_turquoise_5 },                     -- used for "Warning" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextWarning = { fg = matrix.matrix_turquoise_5 },                  -- Virtual text "Warning"
-        LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = matrix.matrix_turquoise_5 }, -- used to underline "Warning" diagnostics.
-        LspDiagnosticsDefaultInformation = { fg = matrix.matrix_turquoise_2 },                  -- used for "Information" diagnostic virtual text
-        LspDiagnosticsSignInformation = { fg = matrix.matrix_turquoise_2 },                     -- used for "Information" diagnostic signs in sign column
-        LspDiagnosticsFloatingInformation = { fg = matrix.matrix_turquoise_2 },                 -- used for "Information" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextInformation = { fg = matrix.matrix_turquoise_2 },              -- Virtual text "Information"
+        LspDiagnosticsDefaultError = { fg = matrix.matrix_turquoise_3 },                              -- used for "Error" diagnostic virtual text
+        LspDiagnosticsSignError = { fg = matrix.matrix_turquoise_3 },                                 -- used for "Error" diagnostic signs in sign column
+        LspDiagnosticsFloatingError = { fg = matrix.matrix_turquoise_3 },                             -- used for "Error" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextError = { fg = matrix.matrix_turquoise_3 },                          -- Virtual text "Error"
+        LspDiagnosticsUnderlineError = { style = "undercurl", sp = matrix.matrix_turquoise_3 },       -- used to underline "Error" diagnostics.
+        LspDiagnosticsDefaultWarning = { fg = matrix.matrix_turquoise_5 },                            -- used for "Warning" diagnostic signs in sign column
+        LspDiagnosticsSignWarning = { fg = matrix.matrix_turquoise_5 },                               -- used for "Warning" diagnostic signs in sign column
+        LspDiagnosticsFloatingWarning = { fg = matrix.matrix_turquoise_5 },                           -- used for "Warning" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextWarning = { fg = matrix.matrix_turquoise_5 },                        -- Virtual text "Warning"
+        LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = matrix.matrix_turquoise_5 },     -- used to underline "Warning" diagnostics.
+        LspDiagnosticsDefaultInformation = { fg = matrix.matrix_turquoise_2 },                        -- used for "Information" diagnostic virtual text
+        LspDiagnosticsSignInformation = { fg = matrix.matrix_turquoise_2 },                           -- used for "Information" diagnostic signs in sign column
+        LspDiagnosticsFloatingInformation = { fg = matrix.matrix_turquoise_2 },                       -- used for "Information" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextInformation = { fg = matrix.matrix_turquoise_2 },                    -- Virtual text "Information"
         LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = matrix.matrix_turquoise_2 }, -- used to underline "Information" diagnostics.
-        LspDiagnosticsDefaultHint = { fg = matrix.matrix_turquoise_1 },                         -- used for "Hint" diagnostic virtual text
-        LspDiagnosticsSignHint = { fg = matrix.matrix_turquoise_1 },                            -- used for "Hint" diagnostic signs in sign column
-        LspDiagnosticsFloatingHint = { fg = matrix.matrix_turquoise_1 },                        -- used for "Hint" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextHint = { fg = matrix.matrix_turquoise_1 },                     -- Virtual text "Hint"
-        LspDiagnosticsUnderlineHint = { style = "undercurl", sp = matrix.matrix_turquoise_2 },  -- used to underline "Hint" diagnostics.
-        LspReferenceText = { fg = matrix.matrix_green_1, bg = matrix.matrix_dark_2 },           -- used for highlighting "text" references
-        LspReferenceRead = { fg = matrix.matrix_green_1, bg = matrix.matrix_dark_2 },           -- used for highlighting "read" references
-        LspReferenceWrite = { fg = matrix.matrix_green_1, bg = matrix.matrix_dark_2 },          -- used for highlighting "write" references
+        LspDiagnosticsDefaultHint = { fg = matrix.matrix_turquoise_1 },                               -- used for "Hint" diagnostic virtual text
+        LspDiagnosticsSignHint = { fg = matrix.matrix_turquoise_1 },                                  -- used for "Hint" diagnostic signs in sign column
+        LspDiagnosticsFloatingHint = { fg = matrix.matrix_turquoise_1 },                              -- used for "Hint" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextHint = { fg = matrix.matrix_turquoise_1 },                           -- Virtual text "Hint"
+        LspDiagnosticsUnderlineHint = { style = "undercurl", sp = matrix.matrix_turquoise_2 },        -- used to underline "Hint" diagnostics.
+        LspReferenceText = { fg = matrix.matrix_green_1, bg = matrix.matrix_dark_2 },                 -- used for highlighting "text" references
+        LspReferenceRead = { fg = matrix.matrix_green_1, bg = matrix.matrix_dark_2 },                 -- used for highlighting "read" references
+        LspReferenceWrite = { fg = matrix.matrix_green_1, bg = matrix.matrix_dark_2 },                -- used for highlighting "write" references
 
         DiagnosticError = { link = "LspDiagnosticsDefaultError" },
         DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" },
@@ -366,18 +370,18 @@ theme.loadPlugins = function()
         NeogitDiffAddHighlight = { fg = matrix.matrix_turquoise_4, style = "reverse" },
 
         -- GitGutter
-        GitGutterAdd = { fg = matrix.matrix_turquoise_4 }, -- diff mode: Added line |diff.txt|
+        GitGutterAdd = { fg = matrix.matrix_turquoise_4 },    -- diff mode: Added line |diff.txt|
         GitGutterChange = { fg = matrix.matrix_turquoise_5 }, -- diff mode: Changed line |diff.txt|
         GitGutterDelete = { fg = matrix.matrix_turquoise_3 }, -- diff mode: Deleted line |diff.txt|
 
         -- GitSigns
-        GitSignsAdd = { fg = matrix.matrix_turquoise_4 }, -- diff mode: Added line |diff.txt|
-        GitSignsAddNr = { fg = matrix.matrix_turquoise_4 }, -- diff mode: Added line |diff.txt|
-        GitSignsAddLn = { fg = matrix.matrix_turquoise_4 }, -- diff mode: Added line |diff.txt|
-        GitSignsChange = { fg = matrix.matrix_turquoise_5 }, -- diff mode: Changed line |diff.txt|
+        GitSignsAdd = { fg = matrix.matrix_turquoise_4 },      -- diff mode: Added line |diff.txt|
+        GitSignsAddNr = { fg = matrix.matrix_turquoise_4 },    -- diff mode: Added line |diff.txt|
+        GitSignsAddLn = { fg = matrix.matrix_turquoise_4 },    -- diff mode: Added line |diff.txt|
+        GitSignsChange = { fg = matrix.matrix_turquoise_5 },   -- diff mode: Changed line |diff.txt|
         GitSignsChangeNr = { fg = matrix.matrix_turquoise_5 }, -- diff mode: Changed line |diff.txt|
         GitSignsChangeLn = { fg = matrix.matrix_turquoise_5 }, -- diff mode: Changed line |diff.txt|
-        GitSignsDelete = { fg = matrix.matrix_turquoise_3 }, -- diff mode: Deleted line |diff.txt|
+        GitSignsDelete = { fg = matrix.matrix_turquoise_3 },   -- diff mode: Deleted line |diff.txt|
         GitSignsDeleteNr = { fg = matrix.matrix_turquoise_3 }, -- diff mode: Deleted line |diff.txt|
         GitSignsDeleteLn = { fg = matrix.matrix_turquoise_3 }, -- diff mode: Deleted line |diff.txt|
 

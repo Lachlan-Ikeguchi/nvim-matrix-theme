@@ -103,3 +103,30 @@ let g:matrix_italic = v:false
 colorscheme matrix
 ```
 
+# Scheme
+## Monochrome
+`#ffffff`: variables, special characters
+`#bfbfbf`: pre-processor / macro
+`#808080`: comments
+`#404040`
+`#000000`: background
+
+## Red
+`#ff0000`: error, deleted (git)
+
+## Amber
+`#ffbf00`: caution, todo, changed (git)
+
+## Green
+7 palette gradient from `#00ff00` to `#003200`
+`#00ff00`: values
+`#00dd00`: delimiters, added (git), default color for not specified in colorscheme
+`#00bb00`: types
+`#009a00`: structs
+`#007800`: operators
+`#005600`: key-word
+`#003200`: conditional
+
+## Turquoise
+3 palette gradient from `#009090` to `#004040`, heading steps brightest at 
+

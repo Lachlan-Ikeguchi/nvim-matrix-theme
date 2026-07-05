@@ -91,6 +91,31 @@ The theme uses a structured colour palette with the following categories, as def
 
 ---
 
+### 2026-07-05 - Colourscheme Loading Compatibility Fix
+
+**Agent:** Mistral Vibe
+
+**Task:** Fix colorscheme loading issue after British English spelling changes.
+
+**Problem:** After renaming `colors/matrix.vim` to `colours/matrix.vim` in commit `99b84d7`, the command `vim.cmd [[colorscheme matrix]]` returned "cannot find color scheme 'matrix'" because Vim/Neovim only looks for colorschemes in `colors/` directories in the runtimepath.
+
+**Solution:** Created a compatibility `colors/` directory with a `matrix.vim` file that has identical content to `colours/matrix.vim`. This maintains:
+- British English spelling for all internal code (files in `colours/` directory and `lua/matrix/colours.lua` module)
+- Vim/Neovim compatibility via the standard `colors/` directory path
+
+**Files Modified:**
+- Created `colors/matrix.vim` (new file, same content as `colours/matrix.vim`)
+
+**Testing:**
+- `vim.cmd [[colorscheme matrix]]` now loads successfully
+- `vim.g.colors_name` equals "matrix"
+- `require('matrix.colours')` returns the correct colour palette
+- Both `source colors/matrix.vim` and `source colours/matrix.vim` work correctly
+
+**Commit:** (pending) fix(colours): add colors/ compatibility directory for Vim colorscheme loading
+
+---
+
 ### 2025-07-05 - Initial Colour Verification
 
 **Agent:** Initial verification agent
@@ -406,7 +431,8 @@ If you add new colour categories to the palette:
 | 2025-07-05 | ~20:30 | Initial agent | Commit colour fixes | Committed 14 fixes to theme.lua and created AGENTS.md living documentation |
 | 2025-07-05 | ~20:35 | Initial agent | Update guidelines | Added conventional commit style requirement and frequent update requirement to AGENTS.md |
 | 2026-07-05 | ~21:00 | Mistral Vibe | Fix spelling errors | Comprehensive spelling fix: Changed all "color" to "colour" (British English) throughout codebase including file names, variable names, function names, module references, and documentation. Preserved Vim API variables (colors_name, termguicolors, colorscheme, ColorScheme). |
+| 2026-07-05 | ~22:00 | Mistral Vibe | Fix colorscheme loading | Added `colors/matrix.vim` compatibility wrapper to maintain Vim/Neovim colorscheme loading while preserving British English spelling in `colours/` directory. Both `colorscheme matrix` and direct sourcing of either file work correctly. |
 
 ---
 
-**Last Updated:** 2026-07-05 21:00
+**Last Updated:** 2026-07-05 22:00

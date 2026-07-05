@@ -312,6 +312,10 @@ These sections may still have colour mismatches but lack the explicit colour cat
 
 **UPDATE FREQUENTLY:** Update this AGENTS.md file after EVERY action, finding, or change. Do not batch updates - document incrementally as you work.
 
+**DO NOT PUSH CHANGES:** Never push changes to remote repositories. Always leave commits for human review and approval before pushing.
+
+**USE PROPER BRITISH ENGLISH:** Always use British English spelling (e.g., "colour" not "color", "behaviour" not "behavior") in all code, comments, documentation, and file names.
+
 ### Commit Style
 
 **ALWAYS use Conventional Commits format:**

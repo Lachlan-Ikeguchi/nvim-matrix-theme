@@ -51,8 +51,8 @@ theme.loadSyntax = function()
         htmlH1 = { fg = matrix.matrix_turquoise_1, style = "bold" },
         htmlH2 = { fg = matrix.matrix_turquoise_2, style = "bold" },
         htmlH3 = { fg = matrix.matrix_turquoise_3, style = "bold" },
-        htmlH4 = { fg = matrix.matrix_amber, style = "bold" },
-        htmlH5 = { fg = matrix.matrix_red, style = "bold" },
+        htmlH4 = { fg = matrix.matrix_turquoise_1, style = "bold" },
+        htmlH5 = { fg = matrix.matrix_turquoise_2, style = "bold" },
 
         markdownH1 = { fg = matrix.matrix_turquoise_1, style = "bold" },
         markdownH2 = { fg = matrix.matrix_turquoise_2, style = "bold" },
@@ -103,7 +103,7 @@ theme.loadEditor = function()
         -- Monochrome
         EndOfBuffer = { fg = matrix.matrix_dark_1 },
         Folded = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" },
-        FoldColumn = { fg = matrix.matrix_green_4 },
+        FoldColumn = { fg = matrix.matrix_gray },
         LineNr = { fg = matrix.matrix_gray },
         NonText = { fg = matrix.matrix_dark_1 },
 
@@ -130,51 +130,51 @@ theme.loadEditor = function()
         PmenuThumb = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_7 },
         QuickFixLine = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
         qfLineNr = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
-        Search = { fg = matrix.matrix_red, bg = matrix.matrix_green_5, style = "reverse" },
+        Search = { fg = matrix.matrix_green_1, bg = matrix.matrix_green_5, style = "reverse" },
         SpecialKey = { fg = matrix.matrix_green_7 },
         StatusLine = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
-        StatusLineNC = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
+        StatusLineNC = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
         StatusLineTerm = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
-        StatusLineTermNC = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
+        StatusLineTermNC = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
         TabLineFill = { fg = matrix.matrix_green_7, bg = matrix.none },
-        TablineSel = { fg = matrix.matrix_dark_1, bg = matrix.matrix_green_7 },
-        Tabline = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
+        TablineSel = { fg = matrix.matrix_green_1, bg = matrix.matrix_green_7 },
+        Tabline = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
         Visual = { fg = matrix.none, bg = matrix.matrix_green_2 },
         VisualNOS = { fg = matrix.none, bg = matrix.matrix_green_2 },
         CursorColumn = { fg = matrix.none, bg = matrix.cursorlinefg },
         CursorLine = { fg = matrix.none, bg = matrix.cursorlinefg },
-        ToolbarLine = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
+        ToolbarLine = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
         ToolbarButton = { fg = matrix.matrix_green_7, bg = matrix.none, style = "bold" },
         NormalMode = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
-        InsertMode = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "reverse" },
-        ReplacelMode = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "reverse" },
+        InsertMode = { fg = matrix.matrix_green_2, bg = matrix.none, style = "reverse" },
+        ReplacelMode = { fg = matrix.matrix_green_3, bg = matrix.none, style = "reverse" },
         VisualMode = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
         CommandMode = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
-        Warnings = { fg = matrix.matrix_turquoise_1 },
+        Warnings = { fg = matrix.matrix_green_1 },
 
         -- Turquoise (descending brightness)
         Title = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "bold" },
         Question = { fg = matrix.matrix_turquoise_2 },
         SpellBad = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "italic,undercurl" },
-        SpellCap = { fg = matrix.matrix_green_4, bg = matrix.none, style = "italic,undercurl" },
-        SpellLocal = { fg = matrix.matrix_green_3, bg = matrix.none, style = "italic,undercurl" },
-        SpellRare = { fg = matrix.matrix_green_7, bg = matrix.none, style = "italic,undercurl" },
-        WildMenu = { fg = matrix.matrix_light_2, bg = matrix.none, style = "bold" },
+        SpellCap = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "italic,undercurl" },
+        SpellLocal = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "italic,undercurl" },
+        SpellRare = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "italic,undercurl" },
+        WildMenu = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "bold" },
 
         -- health
-        healthError = { fg = matrix.matrix_red },
-        healthWarning = { fg = matrix.matrix_amber },
-        healthSuccess = { fg = matrix.matrix_green_1 },
+        healthError = { fg = matrix.matrix_turquoise_3 },
+        healthWarning = { fg = matrix.matrix_turquoise_2 },
+        healthSuccess = { fg = matrix.matrix_turquoise_1 },
 
         -- dashboard
-        DashboardShortCut = { fg = matrix.matrix_green_4 },
-        DashboardHeader = { fg = matrix.matrix_green_7 },
-        DashboardCenter = { fg = matrix.matrix_green_3 },
+        DashboardShortCut = { fg = matrix.matrix_turquoise_3 },
+        DashboardHeader = { fg = matrix.matrix_turquoise_1 },
+        DashboardCenter = { fg = matrix.matrix_turquoise_2 },
         DashboardFooter = { fg = matrix.matrix_turquoise_2, style = "italic" },
 
         -- BufferLine
-        BufferLineIndicatorSelected = { fg = matrix.matrix_dark_2 },
-        BufferLineFill = { bg = matrix.matrix_dark_2 },
+        BufferLineIndicatorSelected = { fg = matrix.matrix_turquoise_1 },
+        BufferLineFill = { bg = matrix.matrix_turquoise_3 },
     }
 
     -- Options:
@@ -200,40 +200,39 @@ end
 
 theme.loadTerminal = function()
     -- Terminal colors grouped by categories where relevant.
-    -- (Original assigned many to same green; preserve grouping for clarity.)
 
     -- Monochrome / base
-    vim.g.terminal_color_0 = matrix.matrix_green_2
-    vim.g.terminal_color_7 = matrix.matrix_green_2
-    vim.g.terminal_color_8 = matrix.matrix_green_2
-    vim.g.terminal_color_15 = matrix.matrix_green_2
+    vim.g.terminal_color_0 = matrix.matrix_dark_2
+    vim.g.terminal_color_7 = matrix.matrix_light_2
+    vim.g.terminal_color_8 = matrix.matrix_dark_1
+    vim.g.terminal_color_15 = matrix.matrix_light_1
 
     -- Red
-    vim.g.terminal_color_1 = matrix.matrix_green_2
-    vim.g.terminal_color_9 = matrix.matrix_green_2
+    vim.g.terminal_color_1 = matrix.matrix_red
+    vim.g.terminal_color_9 = matrix.matrix_red
 
     -- Amber
-    vim.g.terminal_color_3 = matrix.matrix_green_2
-    vim.g.terminal_color_11 = matrix.matrix_green_2
+    vim.g.terminal_color_3 = matrix.matrix_amber
+    vim.g.terminal_color_11 = matrix.matrix_amber
 
     -- Green (descending brightness)
-    vim.g.terminal_color_2 = matrix.matrix_green_2
+    vim.g.terminal_color_2 = matrix.matrix_green_1
     vim.g.terminal_color_10 = matrix.matrix_green_2
-    vim.g.terminal_color_4 = matrix.matrix_green_2
-    vim.g.terminal_color_12 = matrix.matrix_green_2
-    vim.g.terminal_color_5 = matrix.matrix_green_2
-    vim.g.terminal_color_13 = matrix.matrix_green_2
-    vim.g.terminal_color_6 = matrix.matrix_green_2
-    vim.g.terminal_color_14 = matrix.matrix_green_2
+    vim.g.terminal_color_4 = matrix.matrix_green_3
+    vim.g.terminal_color_12 = matrix.matrix_green_4
+    vim.g.terminal_color_5 = matrix.matrix_green_5
+    vim.g.terminal_color_13 = matrix.matrix_green_6
+    vim.g.terminal_color_6 = matrix.matrix_green_7
+    vim.g.terminal_color_14 = matrix.matrix_green_7
 end
 
 theme.loadTreeSitter = function()
     -- TreeSitter highlight groups
     local treesitter = {
         -- Monochrome
-        TSError = { fg = matrix.matrix_red }, -- For syntax/parser errors.
 
         -- Red
+        TSError = { fg = matrix.matrix_red }, -- For syntax/parser errors.
         TSEmphasis = { fg = matrix.matrix_red },                                -- For text to be represented with emphasis.
         TSTitle = { fg = matrix.matrix_red, bg = matrix.none, style = "bold" }, -- Text that is part of a title.
 
@@ -254,8 +253,8 @@ theme.loadTreeSitter = function()
         TSConstMacro = { fg = matrix.matrix_green_4, style = "bold" },   -- For constants defined by macros.
         TSMethod = { fg = matrix.matrix_green_4 },                       -- For method calls and definitions.
         TSField = { fg = matrix.matrix_green_7 },                        -- For fields in literals
-        TSParameter = { fg = matrix.matrix_red },                        -- For parameters of a function.
-        TSParameterReference = { fg = matrix.matrix_red },               -- For references to parameters of a function.
+        TSParameter = { fg = matrix.matrix_green_7 },                        -- For parameters of a function.
+        TSParameterReference = { fg = matrix.matrix_green_7 },               -- For references to parameters of a function.
         TSPunctDelimiter = { fg = matrix.matrix_green_3 },               -- For delimiters ie: `.`
         TSPunctBracket = { fg = matrix.matrix_green_3 },                 -- For brackets and parens.
         TSPunctSpecial = { fg = matrix.matrix_green_3 },                 -- For special punctuation.
@@ -263,20 +262,20 @@ theme.loadTreeSitter = function()
 
         -- Turquoise (descending brightness)
         TSAnnotation = { fg = matrix.matrix_turquoise_3 },                                   -- For attributes/annotations.
-        TSConst = { fg = matrix.matrix_light_1 },                                            -- For constants (mapped to light_2)
+        TSConst = { fg = matrix.matrix_turquoise_3 },                                            -- For constants
         TSFloat = { fg = matrix.matrix_turquoise_1 },                                        -- For floats
         TSNumber = { fg = matrix.matrix_turquoise_1 },                                       -- For all numbers
         TSAttribute = { fg = matrix.matrix_turquoise_1 },                                    -- (unstable) TODO: docs
-        TSVariable = { fg = matrix.matrix_light_1, style = "bold" },                         -- Any variable name that does not have another highlight.
+        TSVariable = { fg = matrix.matrix_turquoise_1, style = "bold" },                         -- Any variable name that does not have another highlight.
         TSException = { fg = matrix.matrix_turquoise_1 },                                    -- For exception related keywords.
-        TSInclude = { fg = matrix.matrix_green_7 },                                          -- For includes / use / require
+        TSInclude = { fg = matrix.matrix_turquoise_1 },                                          -- For includes / use / require
         TSLabel = { fg = matrix.matrix_turquoise_1 },                                        -- For labels
         TSSymbol = { fg = matrix.matrix_turquoise_1 },                                       -- For identifiers referring to symbols or atoms.
         TSTagDelimiter = { fg = matrix.matrix_turquoise_1 },                                 -- Tag delimiter like `<` `>` `/`
         TSTextReference = { fg = matrix.matrix_turquoise_1 },                                -- FIXME
-        TSUnderline = { fg = matrix.matrix_green_7, bg = matrix.none, style = "underline" }, -- Underline
+        TSUnderline = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "underline" }, -- Underline
         TSURI = { fg = matrix.matrix_turquoise_2 },                                          -- Any URI like a link or email.
-        TSAnnotationAlt = { fg = matrix.matrix_light_2 },                                    -- alternate annotation mapping (preserve original light_1 mapping as alt)
+        TSAnnotationAlt = { fg = matrix.matrix_turquoise_2 },                                    -- alternate annotation mapping (preserve original light_1 mapping as alt)
     }
 
     if vim.g.matrix_italic == false then
@@ -402,8 +401,8 @@ theme.loadPlugins = function()
         LspSagaCodeActionTitle = { fg = matrix.matrix_red },
 
         -- Amber
-        diffOldFile = { fg = matrix.yelow },                             -- note: original key 'yelow' kept
-        WhichKeyDesc = { fg = matrix.matrix_green_4, style = "italic" }, -- group placement makes sense in context
+        diffOldFile = { fg = matrix.matrix_amber },                             -- note: original key 'yelow' kept
+        WhichKeyDesc = { fg = matrix.matrix_amber, style = "italic" }, -- group placement makes sense in context
 
         -- Green (descending brightness)
         LspTroubleText = { fg = matrix.matrix_green_7 },
@@ -413,7 +412,7 @@ theme.loadPlugins = function()
         diffIndexLine = { fg = matrix.matrix_green_7 },
         diffFile = { fg = matrix.matrix_green_4 },
         diffLine = { fg = matrix.matrix_green_7 },
-        diffNewFile = { fg = matrix.matrix_light_2 },
+        diffNewFile = { fg = matrix.matrix_green_2 },
 
         GitGutterAdd = { fg = matrix.matrix_turquoise_2 },
         GitGutterChange = { fg = matrix.matrix_turquoise_1 },

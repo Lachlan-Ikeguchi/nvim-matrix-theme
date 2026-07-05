@@ -1,4 +1,4 @@
-local matrix = require("matrix.colors")
+local matrix = require("matrix.colours")
 
 local theme = {}
 
@@ -116,8 +116,8 @@ theme.loadEditor = function()
         WarningMsg = { fg = matrix.matrix_amber },
 
         -- Green (descending brightness)
-        NormalFloat = { fg = matrix.matrix_green_7, bg = matrix.float },                -- normal text and background color
-        FloatBorder = { fg = matrix.matrix_green_7, bg = matrix.float },                -- normal text and background color
+        NormalFloat = { fg = matrix.matrix_green_7, bg = matrix.float },                -- normal text and background colour
+        FloatBorder = { fg = matrix.matrix_green_7, bg = matrix.float },                -- normal text and background colour
         Cursor = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },   -- the character under the cursor
         CursorIM = { fg = matrix.matrix_green_6, bg = matrix.none, style = "reverse" }, -- like Cursor, but used when in IME mode
         Directory = { fg = matrix.matrix_green_4, bg = matrix.none },                   -- directory names (and other special names in listings)
@@ -181,10 +181,10 @@ theme.loadEditor = function()
 
     -- Set transparent background
     if vim.g.matrix_disable_background then
-        editor.Normal = { fg = matrix.matrix_green_2, bg = matrix.none } -- normal text and background color
+        editor.Normal = { fg = matrix.matrix_green_2, bg = matrix.none } -- normal text and background colour
         editor.SignColumn = { fg = matrix.matrix_green_2, bg = matrix.none }
     else
-        editor.Normal = { fg = matrix.matrix_green_2, bg = matrix.matrix_dark_2 } -- normal text and background color
+        editor.Normal = { fg = matrix.matrix_green_2, bg = matrix.matrix_dark_2 } -- normal text and background colour
         editor.SignColumn = { fg = matrix.matrix_green_2, bg = matrix.matrix_dark_2 }
     end
 
@@ -199,31 +199,31 @@ theme.loadEditor = function()
 end
 
 theme.loadTerminal = function()
-    -- Terminal colors grouped by categories where relevant.
+    -- Terminal colours grouped by categories where relevant.
 
     -- Monochrome / base
-    vim.g.terminal_color_0 = matrix.matrix_dark_2
-    vim.g.terminal_color_7 = matrix.matrix_light_2
-    vim.g.terminal_color_8 = matrix.matrix_dark_1
-    vim.g.terminal_color_15 = matrix.matrix_light_1
+    vim.g.terminal_colour_0 = matrix.matrix_dark_2
+    vim.g.terminal_colour_7 = matrix.matrix_light_2
+    vim.g.terminal_colour_8 = matrix.matrix_dark_1
+    vim.g.terminal_colour_15 = matrix.matrix_light_1
 
     -- Red
-    vim.g.terminal_color_1 = matrix.matrix_red
-    vim.g.terminal_color_9 = matrix.matrix_red
+    vim.g.terminal_colour_1 = matrix.matrix_red
+    vim.g.terminal_colour_9 = matrix.matrix_red
 
     -- Amber
-    vim.g.terminal_color_3 = matrix.matrix_amber
-    vim.g.terminal_color_11 = matrix.matrix_amber
+    vim.g.terminal_colour_3 = matrix.matrix_amber
+    vim.g.terminal_colour_11 = matrix.matrix_amber
 
     -- Green (descending brightness)
-    vim.g.terminal_color_2 = matrix.matrix_green_1
-    vim.g.terminal_color_10 = matrix.matrix_green_2
-    vim.g.terminal_color_4 = matrix.matrix_green_3
-    vim.g.terminal_color_12 = matrix.matrix_green_4
-    vim.g.terminal_color_5 = matrix.matrix_green_5
-    vim.g.terminal_color_13 = matrix.matrix_green_6
-    vim.g.terminal_color_6 = matrix.matrix_green_7
-    vim.g.terminal_color_14 = matrix.matrix_green_7
+    vim.g.terminal_colour_2 = matrix.matrix_green_1
+    vim.g.terminal_colour_10 = matrix.matrix_green_2
+    vim.g.terminal_colour_4 = matrix.matrix_green_3
+    vim.g.terminal_colour_12 = matrix.matrix_green_4
+    vim.g.terminal_colour_5 = matrix.matrix_green_5
+    vim.g.terminal_colour_13 = matrix.matrix_green_6
+    vim.g.terminal_colour_6 = matrix.matrix_green_7
+    vim.g.terminal_colour_14 = matrix.matrix_green_7
 end
 
 theme.loadTreeSitter = function()

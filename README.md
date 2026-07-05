@@ -75,7 +75,7 @@ require('lualine').setup {
 | ----------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | matrix_contrast                     | `false`     | Make sidebars and popup menus like nvim-tree and telescope have a different background                                                                                       |
 | matrix_borders                      | `false`     | Enable the border between verticaly split windows visable
-| matrix_disable_background           | `false`     | Disable the setting of background color so that NeoVim can use your terminal background
+| matrix_disable_background           | `false`     | Disable the setting of background colour so that NeoVim can use your terminal background
 | matrix_cursorline_transparent       | `false`     | Set the cursorline transparent/visible
 | matrix_enable_sidebar_background    | `false`     | Re-enables the background of the sidebar if you disabled the background of everything
 | matrix_italic                       | `true`      | enables/disables italics
@@ -120,7 +120,7 @@ colorscheme matrix
 ## Green
 7 palette gradient from `#00ff00` to `#003200`
 `#00ff00`: values
-`#00dd00`: delimiters, added (git), default color for not specified in colorscheme
+`#00dd00`: delimiters, added (git), default colour for not specified in colorscheme
 `#00bb00`: types
 `#009a00`: structs
 `#007800`: operators

@@ -1,4 +1,4 @@
--- Colorscheme name:    matrix
+-- Colourscheme name:    matrix
 -- Description:         matrix theme
 -- Author:              https://gitlab.com/iruzo
 

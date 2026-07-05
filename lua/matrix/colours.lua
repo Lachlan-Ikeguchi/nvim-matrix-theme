@@ -11,7 +11,7 @@ local matrix = {
     matrix_amber = "#ffbf00",   -- caution, todo, changed (git)
     -- Green: 7 palette gradient from #00ff00 to #003200 
     matrix_green_1 = "#00ff00", -- values
-    matrix_green_2 = "#00dd00", -- delimiters, added (git), default color
+    matrix_green_2 = "#00dd00", -- delimiters, added (git), default colour
     matrix_green_3 = "#00bb00", -- types
     matrix_green_4 = "#009a00", -- structs
     matrix_green_5 = "#007800", -- operators

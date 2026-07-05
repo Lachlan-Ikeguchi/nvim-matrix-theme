@@ -1,23 +1,23 @@
 local util = {}
 local matrix = require("matrix.theme")
 
--- Go trough the table and highlight the group with the color values
-util.highlight = function(group, color)
-	local style = color.style and "gui=" .. color.style or "gui=NONE"
-	local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
-	local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
-	local sp = color.sp and "guisp=" .. color.sp or ""
+-- Go trough the table and highlight the group with the colour values
+util.highlight = function(group, colour)
+	local style = colour.style and "gui=" .. colour.style or "gui=NONE"
+	local fg = colour.fg and "guifg=" .. colour.fg or "guifg=NONE"
+	local bg = colour.bg and "guibg=" .. colour.bg or "guibg=NONE"
+	local sp = colour.sp and "guisp=" .. colour.sp or ""
 
 	local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
 
 	vim.cmd(hl)
-	if color.link then
-		vim.cmd("highlight! link " .. group .. " " .. color.link)
+	if colour.link then
+		vim.cmd("highlight! link " .. group .. " " .. colour.link)
 	end
 end
 
--- Only define matrix if it's the active colorscheme
-function util.onColorScheme()
+-- Only define matrix if it's the active colourscheme
+function util.onColourScheme()
 	if vim.g.colors_name ~= "matrix" then
 		vim.cmd([[autocmd! matrix]])
 		vim.cmd([[augroup! matrix]])
@@ -28,16 +28,16 @@ end
 util.contrast = function()
 	vim.cmd([[augroup matrix]])
 	vim.cmd([[  autocmd!]])
-	vim.cmd([[  autocmd ColorScheme * lua require("matrix.util").onColorScheme()]])
+	vim.cmd([[  autocmd ColorScheme * lua require("matrix.util").onColourScheme()]])
 	vim.cmd([[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]])
 	vim.cmd([[  autocmd FileType packer setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]])
 	vim.cmd([[  autocmd FileType qf setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]])
 	vim.cmd([[augroup end]])
 end
--- Loads the colors from the dictionary Object (colorSet)
-function util.loadColorSet(colorSet)
-	for group, colors in pairs(colorSet) do
-		util.highlight(group, colors)
+-- Loads the colours from the dictionary Object (colourSet)
+function util.loadColourSet(colourSet)
+	for group, colours in pairs(colourSet) do
+		util.highlight(group, colours)
 	end
 end
 -- Load the theme
@@ -57,13 +57,13 @@ function util.load()
 	local treesitter = matrix.loadTreeSitter()
 
 	-- load editor highlights
-	util.loadColorSet(editor)
+	util.loadColourSet(editor)
 
 	-- load syntax highlights
-	util.loadColorSet(syntax)
+	util.loadColourSet(syntax)
 
 	-- load treesitter highlights
-	util.loadColorSet(treesitter)
+	util.loadColourSet(treesitter)
 
 	matrix.loadTerminal()
 
@@ -72,10 +72,10 @@ function util.load()
 	local lsp = matrix.loadLSP()
 
 	-- load plugin highlights
-	util.loadColorSet(plugins)
+	util.loadColourSet(plugins)
 
 	-- load lsp highlights
-	util.loadColorSet(lsp)
+	util.loadColourSet(lsp)
 
 	-- if contrast is enabled, apply it to sidebars and floating windows
 	if vim.g.matrix_contrast == true then

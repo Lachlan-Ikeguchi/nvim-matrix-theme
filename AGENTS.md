@@ -18,7 +18,7 @@
 
 ## 🎨 Colour Categories
 
-The theme uses a structured colour palette with the following categories, as defined in `lua/matrix/colors.lua`:
+The theme uses a structured colour palette with the following categories, as defined in `lua/matrix/colours.lua`:
 
 ### Monochrome (5-step gradient: #ffffff → #000000)
 - `matrix_light_1 = "#ffffff"` — variables, special characters
@@ -35,7 +35,7 @@ The theme uses a structured colour palette with the following categories, as def
 
 ### Green (7-step gradient: #00ff00 → #003200)
 - `matrix_green_1 = "#00ff00"` — values
-- `matrix_green_2 = "#00dd00"` — delimiters, added (git), default color
+- `matrix_green_2 = "#00dd00"` — delimiters, added (git), default colour
 - `matrix_green_3 = "#00bb00"` — types
 - `matrix_green_4 = "#009a00"` — structs
 - `matrix_green_5 = "#007800"` — operators
@@ -69,7 +69,7 @@ The theme uses a structured colour palette with the following categories, as def
 - One undefined variable (`matrix.yelow`) causing potential nil errors
 
 **Initial Issues Identified:**
-1. Terminal colors section: All 16 terminal colors used `matrix.matrix_green_2` despite section headers indicating Monochrome, Red, Amber, and Green categories
+1. Terminal colours section: All 16 terminal colours used `matrix.matrix_green_2` despite section headers indicating Monochrome, Red, Amber, and Green categories
 2. TreeSitter section: Multiple items used colours from wrong categories
 3. Plugins section: `diffOldFile` used undefined `matrix.yelow`; other items used wrong categories
 4. Editor section: `FoldColumn`, `Search`, status line items used wrong categories
@@ -95,7 +95,7 @@ All issues listed below have been fixed:
 | Colour mismatch | theme.lua:140-141 | Green section used dark_1 | Changed to green colours |
 | Colour mismatch | theme.lua:149-153 | Green section used turquoise | Changed to green colours |
 | Colour mismatch | theme.lua:177 | BufferLine section used dark_2 | Changed to `matrix.matrix_turquoise_3` |
-| Terminal colors | theme.lua:205-226 | All used green_2 | Reassigned to category-appropriate colours |
+| Terminal colours | theme.lua:205-226 | All used green_2 | Reassigned to category-appropriate colours |
 | Section mismatch | theme.lua:235 | TSError in Monochrome used red | Moved to Red section |
 | Colour mismatch | theme.lua:256-257 | Green section used red | Changed to `matrix.matrix_green_7` |
 | Colour mismatch | theme.lua:265-271 | Turquoise section used wrong colours | Changed to turquoise colours |
@@ -175,9 +175,9 @@ None at this time. The following sections do not have colour category documentat
    -- After:  BufferLineFill = { bg = matrix.matrix_turquoise_3 }
    ```
 
-9. **Lines 205-226** (Terminal colors section):
+9. **Lines 205-226** (Terminal colours section):
    ```lua
-   -- Before: All terminal colors = matrix.matrix_green_2
+   -- Before: All terminal colours = matrix.matrix_green_2
    -- After:  
    --   Monochrome: matrix_dark_2, matrix_light_2, matrix_dark_1, matrix_light_1
    --   Red: matrix_red
@@ -235,11 +235,11 @@ None at this time. The following sections do not have colour category documentat
   - Green: NormalFloat, FloatBorder, Cursor, CursorIM, Directory, CursorLineNr, ModeMsg, MoreMsg, Pmenu, PmenuSel, PmenuSbar, PmenuThumb, QuickFixLine, qfLineNr, Search, SpecialKey, StatusLine, StatusLineNC, StatusLineTerm, StatusLineTermNC, TabLineFill, TablineSel, Tabline, Visual, VisualNOS, CursorColumn, CursorLine, ToolbarLine, ToolbarButton, NormalMode, InsertMode, ReplacelMode, VisualMode, CommandMode, Warnings
   - Turquoise: Title, Question, SpellBad, SpellCap, SpellLocal, SpellRare, WildMenu, healthError, healthWarning, healthSuccess, DashboardShortCut, DashboardHeader, DashboardCenter, DashboardFooter, BufferLineIndicatorSelected, BufferLineFill
 
-- ✅ **Terminal colors section** (lines 205-226 in theme.lua)
-  - Monochrome: terminal_color_0, 7, 8, 15
-  - Red: terminal_color_1, 9
-  - Amber: terminal_color_3, 11
-  - Green: terminal_color_2, 4, 5, 6, 10, 12, 13, 14
+- ✅ **Terminal colours section** (lines 205-226 in theme.lua)
+  - Monochrome: terminal_colour_0, 7, 8, 15
+  - Red: terminal_colour_1, 9
+  - Amber: terminal_colour_3, 11
+  - Green: terminal_colour_2, 4, 5, 6, 10, 12, 13, 14
 
 - ✅ **TreeSitter main section** (lines 233-279 in theme.lua)
   - Red: TSError, TSEmphasis, TSTitle
@@ -264,7 +264,7 @@ These sections may still have colour mismatches but lack the explicit colour cat
 |---------|-------------------------|--------|-------|
 | Syntax | Yes | ✅ Verified | All colours match documentation |
 | Editor | Yes | ✅ Verified | All colours match documentation |
-| Terminal colors | Yes | ✅ Verified | All colours match documentation |
+| Terminal colours | Yes | ✅ Verified | All colours match documentation |
 | TreeSitter (main) | Yes | ✅ Verified | All colours match documentation |
 | TreeSitter (italic) | No | ⚠️ Unverified | Uses descriptive headers |
 | LSP | Partial | ⚠️ Unverified | Uses mixed header types |
@@ -287,14 +287,14 @@ These sections may still have colour mismatches but lack the explicit colour cat
 - `refactor(scope): description` - for code refactoring
 - `chore(scope): description` - for maintenance tasks
 
-Scope should be the file or component being changed (e.g., `colors`, `theme`, `terminal`).
+Scope should be the file or component being changed (e.g., `colours`, `theme`, `terminal`).
 
 **Commit message example:**
 ```
-fix(colors): align terminal color assignments with documented categories
+fix(colours): align terminal colour assignments with documented categories
 
-- Changed terminal_color_0 from green_2 to dark_2 (Monochrome)
-- Changed terminal_color_1 from green_2 to red (Red)
+- Changed terminal_colour_0 from green_2 to dark_2 (Monochrome)
+- Changed terminal_colour_1 from green_2 to red (Red)
 
 Generated by Mistral Vibe.
 Co-Authored-By: Mistral Vibe <vibe@mistral.ai>
@@ -344,7 +344,7 @@ If you add new colour categories to the palette:
 
 1. **Update AGENTS.md first** - Document the new category before making changes
 2. Add the category to the Colour Categories section
-3. Define the colour variables in `lua/matrix/colors.lua`
+3. Define the colour variables in `lua/matrix/colours.lua`
 4. Update the section headers in theme files
 5. Document the new category and its purpose
 6. **Commit with conventional commit message**

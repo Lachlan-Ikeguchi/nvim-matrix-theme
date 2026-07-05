@@ -57,6 +57,40 @@ The theme uses a structured colour palette with the following categories, as def
 
 ## 📜 Verification History
 
+### 2026-07-05 - Comprehensive Spelling Standardization
+
+**Agent:** Mistral Vibe
+
+**Task:** Fix spelling errors from "color" to "colour" (British English) throughout the codebase.
+
+**Scope:** Comprehensive change affecting:
+- File names: `colors.lua` → `colours.lua`, `colors/` directory → `colours/`
+- Module references: `matrix.colors` → `matrix.colours`
+- Variable names: `terminal_color_X` → `terminal_colour_X` (all 16 terminal colors)
+- Function names: `onColorScheme` → `onColourScheme`, `loadColorSet` → `loadColourSet`
+- Function parameters: `color` → `colour`, `colorSet` → `colourSet`
+- All comments and documentation
+
+**Vim API Preserved:** The following Vim/Neovim built-in variables and commands were kept unchanged to maintain compatibility:
+- `vim.g.colors_name`
+- `vim.o.termguicolors`
+- `colorscheme` (Vim command)
+- `ColorScheme` (Vim autocmd event)
+
+**Files Modified:**
+- `lua/matrix/colors.lua` → `lua/matrix/colours.lua`
+- `colors/matrix.vim` → `colours/matrix.vim`
+- `lua/matrix/util.lua`
+- `lua/matrix/theme.lua`
+- `lua/matrix/init.lua`
+- `lua/lualine/themes/matrix.lua`
+- `AGENTS.md`
+- `README.md`
+
+**Commit:** `99b84d7` - fix(colours): change all spelling from color to colour (British English)
+
+---
+
 ### 2025-07-05 - Initial Colour Verification
 
 **Agent:** Initial verification agent
@@ -367,7 +401,8 @@ If you add new colour categories to the palette:
 | 2025-07-05 | ~20:00 | Initial agent | Double check colours are as documented | Created this file, identified 14+ mismatches, applied fixes to theme.lua |
 | 2025-07-05 | ~20:30 | Initial agent | Commit colour fixes | Committed 14 fixes to theme.lua and created AGENTS.md living documentation |
 | 2025-07-05 | ~20:35 | Initial agent | Update guidelines | Added conventional commit style requirement and frequent update requirement to AGENTS.md |
+| 2026-07-05 | ~21:00 | Mistral Vibe | Fix spelling errors | Comprehensive spelling fix: Changed all "color" to "colour" (British English) throughout codebase including file names, variable names, function names, module references, and documentation. Preserved Vim API variables (colors_name, termguicolors, colorscheme, ColorScheme). |
 
 ---
 
-**Last Updated:** 2025-07-05 20:35
+**Last Updated:** 2026-07-05 21:00

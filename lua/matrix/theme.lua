@@ -86,7 +86,7 @@ theme.loadEditor = function()
         ErrorMsg = { fg = matrix.red },
 
         -- Amber
-        WarningMsg = { fg = matrix.amber },
+        WarningMsg = { fg = matrix.amber }, 
 
         -- Green (descending brightness)
         FoldColumn = { fg = matrix.green_4 },

@@ -9,8 +9,10 @@ typedef enum {
     GLYPH_SET_COUNT = 3,
 } glyph_set_t;
 
-/* Function declarations exercise @type, @variable.parameter, @punctuation. */
-const char *glyph_next(unsigned seed, glyph_set_t set);
-char glyph_head(unsigned seed);
+/*
+ * Returns a NUL-terminated UTF-8 glyph drawn from the given pool.
+ * The returned pointer is static and valid until the next call.
+ */
+const char *glyph_next(unsigned *state, glyph_set_t set);
 
-#endif /* GLYPHS_H */
+#endif /* GLYPH_H */

@@ -1,6 +1,6 @@
 #include "rain.h"
 
-#include <stdio.h>
+#include <stdlib.h>
 
 /* Macro call exercises @function.macro. */
 #define CLAMP(x, lo, hi) ((x) < (lo) ? (lo) : ((x) > (hi) ? (hi) : (x)))
@@ -13,48 +13,72 @@ static unsigned advance(unsigned *state)
     return *state;
 }
 
-static void drop_reset(drop_t *drop, rain_t *rain)
+static void drop_start(drop_t *drop, rain_t *rain)
 {
-    drop->col = (int)(advance(&rain->drops[0].state) % RAIN_COLS);
-    drop->len = 4 + (int)(advance(&rain->drops[0].state) % 24);
-    drop->speed = CLAMP(1 + (int)(advance(&rain->drops[0].state) % 12),
-                        DROP_MIN_SPEED, DROP_MAX_SPEED);
-    drop->state = advance(&rain->drops[0].state);
+    /* Streams spawn mid-air so the screen fills without a visible wave. */
+    drop->head = (int)(advance(&drop->state) % (unsigned)rain->rows);
+    drop->length = 3 + (int)(advance(&drop->state) % (unsigned)(rain->rows * 3 / 4));
+    drop->speed = 1;
 }
 
-void rain_init(rain_t *rain, size_t drops)
+int rain_resize(rain_t *rain, int cols, int rows)
 {
-    size_t i;
+    drop_t *drops;
+    int i;
 
-    if (drops > RAIN_MAX_DROPS) {
-        drops = RAIN_MAX_DROPS;
+    if (cols <= 0 || rows <= 0) {
+        return -1;
     }
 
-    rain->drop_count = drops;
-    rain->ticks = 0;
-    rain->running = 1;
-
-    for (i = 0; i < drops; i++) {
-        drop_reset(&rain->drops[i], rain);
+    drops = realloc(rain->drops, (size_t)cols * sizeof(*drops));
+    if (drops == NULL) {
+        return -1;
     }
+
+    /* Newly visible columns start idle; each keeps its own xorshift seed. */
+    for (i = rain->cols; i < cols; i++) {
+        drops[i].head = -1;
+        drops[i].length = 0;
+        drops[i].speed = 1;
+        drops[i].state = (unsigned)(i * 747796405u + 2891336453u);
+    }
+
+    rain->drops = drops;
+    rain->cols = cols;
+    rain->rows = rows;
+
+    return 0;
 }
 
-void rain_step(rain_t *rain)
+void rain_step(rain_t *rain, int async)
 {
-    size_t i;
+    int col;
 
     if (!rain->running) {
         return;
     }
 
-    for (i = 0; i < rain->drop_count; i++) {
-        drop_t *drop = &rain->drops[i];
+    for (col = 0; col < rain->cols; col++) {
+        drop_t *drop = &rain->drops[col];
 
-        drop->state += (unsigned)drop->speed;
-        drop->col = (drop->col + drop->speed) % RAIN_COLS;
+        if (async) {
+            /* Vary scroll rate so streams decouple from the frame clock. */
+            drop->speed = CLAMP(1 + (int)(advance(&drop->state) % 3), 1, 3);
+        }
 
-        if (drop->len > 32 && IS_FAST(drop->speed)) {
-            drop->len = 4;
+        if (drop->head < 0) {
+            if (advance(&drop->state) % 7 == 0) {
+                drop_start(drop, rain);
+            }
+            continue;
+        }
+
+        drop->head += drop->speed;
+
+        /* The tail leaves the screen: idle for a random gap, then respawn. */
+        if (drop->head - drop->length >= rain->rows &&
+            advance(&drop->state) % 2 == 0) {
+            drop->head = -1;
         }
     }
 
@@ -68,5 +92,5 @@ void rain_toggle(rain_t *rain)
 
 int rain_active(const rain_t *rain)
 {
-    return rain->running && rain->drop_count > 0;
+    return rain->running && rain->drops != NULL;
 }

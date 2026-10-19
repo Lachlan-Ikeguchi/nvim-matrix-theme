@@ -9,15 +9,15 @@ local matrix = {
     matrix_red = "#ff0000",     -- error, deleted (git)
     -- Amber
     matrix_amber = "#ffbf00",   -- caution, todo, changed (git)
-    -- Green: 8 palette gradient from #00ff00 to #006000
-    matrix_green_1 = "#00ff00", -- values
-    matrix_green_2 = "#00e800", -- delimiters, added (git), default color
-    matrix_green_3 = "#00d200", -- types
-    matrix_green_4 = "#00bb00", -- structs
-    matrix_green_5 = "#00a400", -- operators
-    matrix_green_6 = "#008d00", -- key-word
-    matrix_green_7 = "#007700", -- conditional
-    matrix_green_8 = "#006000", -- background
+    -- Green: 8 palette gradient from #00f000 to #003000
+    matrix_green_1 = "#00f000", -- values
+    matrix_green_2 = "#00d500", -- delimiters, added (git), default color
+    matrix_green_3 = "#00b900", -- types
+    matrix_green_4 = "#009e00", -- structs
+    matrix_green_5 = "#008200", -- operators
+    matrix_green_6 = "#006700", -- key-word
+    matrix_green_7 = "#004b00", -- conditional
+    matrix_green_8 = "#003000", -- background
     -- Turquoise: 3 palette gradient from #009090 to #004040
     -- heading steps
     matrix_turquoise_1 = "#009090", -- constant

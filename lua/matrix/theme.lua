@@ -7,6 +7,7 @@ theme.loadSyntax = function()
 	local syntax = {
 		-- Monochrome
 		SpecialChar = { fg = matrix.matrix_light_1 }, -- special character in a constant
+	    Comment = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" }, -- comments
 		PreCondit = { fg = matrix.matrix_light_2 }, -- preprocessor #if, #else, #endif, etc.
 		PreProc = { fg = matrix.matrix_light_2 }, -- generic Preprocessor
 		Include = { fg = matrix.matrix_light_2 }, -- preprocessor #include
@@ -23,6 +24,7 @@ theme.loadSyntax = function()
 
 		-- Green (descending brightness)
 		Identifier = { fg = matrix.matrix_green_1 }, -- any variable name
+    	String = { fg = matrix.matrix_green_1, bg = matrix.none, style = "italic" }, -- any string
 		Character = { fg = matrix.matrix_green_2 }, -- any character constant: 'c', '\n'
 		Float = { fg = matrix.matrix_green_2 }, -- a floating point constant: 2.3e10
 		Number = { fg = matrix.matrix_green_2 }, -- a number constant: 5
@@ -38,9 +40,12 @@ theme.loadSyntax = function()
 		Label = { fg = matrix.matrix_green_6 }, -- case, default, etc.
 		Exception = { fg = matrix.matrix_green_6 }, -- try, catch, throw
 		Tag = { fg = matrix.matrix_green_6 }, -- you can use CTRL-] on this
+    	Keyword = { fg = matrix.matrix_green_6, bg = matrix.none, style = "italic" }, -- for, do, while, etc.
+    	Repeat = { fg = matrix.matrix_green_6, bg = matrix.none, style = "italic" }, -- any other keyword
+    	Conditional = { fg = matrix.matrix_green_7, bg = matrix.none, style = "italic" }, -- if, then, else, endif, switch, etc.
 
 		-- Turquoise (descending brightness)
-		Function = { fg = matrix.matrix_turquoise_1 }, -- normal function names
+		Function = { fg = matrix.matrix_turquoise_1, style = "italic" }, -- normal function names
 		Constant = { fg = matrix.matrix_turquoise_1 }, -- any constant
 		Underlined = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "underline" }, -- text that stands out, HTML links
 		SpecialComment = { fg = matrix.matrix_turquoise_2 }, -- special things inside a comment
@@ -62,37 +67,6 @@ theme.loadSyntax = function()
 		markdownH2Delimiter = { fg = matrix.matrix_turquoise_2 },
 		markdownH3Delimiter = { fg = matrix.matrix_turquoise_3 },
 	}
-
-	-- Italic comments & related groups
-	if vim.g.matrix_italic == false then
-		-- no italic
-		-- Monochrome
-		syntax.Comment = { fg = matrix.matrix_gray } -- normal comments
-		syntax.Identifier = { fg = matrix.matrix_light_1 } -- any variable name
-
-		-- Green
-		syntax.String = { fg = matrix.matrix_green_1 } -- any string
-		syntax.Keyword = { fg = matrix.matrix_green_6 } -- normal for, do, while, etc.
-		syntax.Repeat = { fg = matrix.matrix_green_6 } -- normal any other keyword
-		syntax.Conditional = { fg = matrix.matrix_green_7 } -- normal if, then, else, endif, switch, etc.
-
-		-- Turquoise
-		syntax.Function = { fg = matrix.matrix_turquoise_3 } -- normal function names
-	else --italic
-		-- Monochrome
-		syntax.Comment = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" } -- italic comments
-		syntax.Identifier = { fg = matrix.matrix_light_1, bg = matrix.none, style = "italic" } -- any variable name
-
-		-- Green
-		syntax.String = { fg = matrix.matrix_green_1, bg = matrix.none, style = "italic" } -- any string
-		syntax.Keyword = { fg = matrix.matrix_green_6, bg = matrix.none, style = "italic" } -- italic for, do, while, etc.
-		syntax.Repeat = { fg = matrix.matrix_green_6, bg = matrix.none, style = "italic" } -- italic any other keyword
-		syntax.Conditional = { fg = matrix.matrix_green_7, bg = matrix.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
-
-		-- Turquoise
-		syntax.Function = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "italic" } -- italic function names
-	end
-
 	return syntax
 end
 
@@ -279,48 +253,24 @@ theme.loadTreeSitter = function()
 		TSAnnotationAlt = { fg = matrix.matrix_light_2 }, -- alternate annotation mapping (preserve original light_1 mapping as alt)
 	}
 
-	if vim.g.matrix_italic == false then
-		-- Comments
-		treesitter.TSComment = { fg = matrix.matrix_gray }
-		-- Conditionals
-		treesitter.TSConditional = { fg = matrix.matrix_green_7 } -- For keywords related to conditionals.
-		-- Function names
-		treesitter.TSFunction = { fg = matrix.matrix_green_3 } -- For function (calls and definitions).
-		treesitter.TSFuncBuiltin = { fg = matrix.matrix_green_3 }
-		-- Namespaces and property accessors
-		treesitter.TSNamespace = { fg = matrix.matrix_green_7 } -- For identifiers referring to modules and namespaces.
-		treesitter.TSProperty = { fg = matrix.matrix_red } -- Same as `TSField`
-		-- Language keywords
-		treesitter.TSKeyword = { fg = matrix.matrix_green_7 } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = matrix.matrix_green_3 }
-		treesitter.TSKeywordReturn = { fg = matrix.matrix_green_3 }
-		treesitter.TSKeywordOperator = { fg = matrix.matrix_green_3 }
-		treesitter.TSRepeat = { fg = matrix.matrix_green_7 } -- For keywords related to loops.
-		-- Strings
-		treesitter.TSString = { fg = matrix.matrix_turquoise_2 } -- For strings.
-		treesitter.TSStringRegex = { fg = matrix.matrix_green_4 } -- For regexes.
-		treesitter.TSStringEscape = { fg = matrix.matrix_turquoise_1 } -- For escape characters within a string.
-		treesitter.TSCharacter = { fg = matrix.matrix_turquoise_2 } -- For characters.
-	else
-		-- Italic variants
-		treesitter.TSComment = { fg = matrix.matrix_gray, style = "italic" }
-		treesitter.TSConditional = { fg = matrix.matrix_green_7, style = "italic" }
-		treesitter.TSFunction = { fg = matrix.matrix_green_3, style = "italic" }
-		treesitter.TSMethod = { fg = matrix.matrix_green_4, style = "italic" }
-		treesitter.TSFuncBuiltin = { fg = matrix.matrix_green_3, style = "italic" }
-		treesitter.TSNamespace = { fg = matrix.matrix_green_7, style = "italic" }
-		treesitter.TSField = { fg = matrix.matrix_green_7, style = "italic" }
-		treesitter.TSProperty = { fg = matrix.matrix_red, style = "italic" }
-		treesitter.TSKeyword = { fg = matrix.matrix_green_7, style = "italic" }
-		treesitter.TSKeywordFunction = { fg = matrix.matrix_green_3, style = "italic" }
-		treesitter.TSKeywordReturn = { fg = matrix.matrix_green_3, style = "italic" }
-		treesitter.TSKeywordOperator = { fg = matrix.matrix_green_3, style = "italic" }
-		treesitter.TSRepeat = { fg = matrix.matrix_green_7, style = "italic" }
-		treesitter.TSString = { fg = matrix.matrix_turquoise_2, style = "italic" }
-		treesitter.TSStringRegex = { fg = matrix.matrix_green_4, style = "italic" }
-		treesitter.TSStringEscape = { fg = matrix.matrix_turquoise_1, style = "italic" }
-		treesitter.TSCharacter = { fg = matrix.matrix_turquoise_2, style = "italic" }
-	end
+	-- Italic variants
+	treesitter.TSComment = { fg = matrix.matrix_gray, style = "italic" }
+	treesitter.TSConditional = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter.TSFunction = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter.TSMethod = { fg = matrix.matrix_green_4, style = "italic" }
+	treesitter.TSFuncBuiltin = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter.TSNamespace = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter.TSField = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter.TSProperty = { fg = matrix.matrix_red, style = "italic" }
+	treesitter.TSKeyword = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter.TSKeywordFunction = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter.TSKeywordReturn = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter.TSKeywordOperator = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter.TSRepeat = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter.TSString = { fg = matrix.matrix_turquoise_2, style = "italic" }
+	treesitter.TSStringRegex = { fg = matrix.matrix_green_4, style = "italic" }
+	treesitter.TSStringEscape = { fg = matrix.matrix_turquoise_1, style = "italic" }
+	treesitter.TSCharacter = { fg = matrix.matrix_turquoise_2, style = "italic" }
 
 	return treesitter
 end

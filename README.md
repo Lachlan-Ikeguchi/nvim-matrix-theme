@@ -78,7 +78,6 @@ require('lualine').setup {
 | matrix_disable_background           | `false`     | Disable the setting of background color so that NeoVim can use your terminal background
 | matrix_cursorline_transparent       | `false`     | Set the cursorline transparent/visible
 | matrix_enable_sidebar_background    | `false`     | Re-enables the background of the sidebar if you disabled the background of everything
-| matrix_italic                       | `true`      | enables/disables italics
 
 
 ```lua
@@ -86,7 +85,6 @@ require('lualine').setup {
 vim.g.matrix_contrast = true
 vim.g.matrix_borders = false
 vim.g.matrix_disable_background = false
-vim.g.matrix_italic = false
 
 -- Load the colorscheme
 require('matrix').set()
@@ -97,7 +95,6 @@ require('matrix').set()
 let g:matrix_contrast = v:true
 let g:matrix_borders = v:false
 let g:matrix_disable_background = v:false
-let g:matrix_italic = v:false
 
 " Load the colorscheme
 colorscheme matrix

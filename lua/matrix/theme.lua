@@ -202,75 +202,74 @@ theme.loadTerminal = function()
 end
 
 theme.loadTreeSitter = function()
-	-- TreeSitter highlight groups
+	-- TreeSitter highlight groups.
+	-- Modern nvim-treesitter uses capture-based groups ("@keyword", "@string", ...);
+	-- the legacy "TSKeyword"-style groups were removed and no longer match anything.
 	local treesitter = {
 		-- Monochrome
-		TSError = { fg = matrix.matrix_red }, -- For syntax/parser errors.
+		["@error"] = { fg = matrix.matrix_red }, -- For syntax/parser errors.
 
 		-- Red
-		TSEmphasis = { fg = matrix.matrix_red }, -- For text to be represented with emphasis.
-		TSTitle = { fg = matrix.matrix_red, style = "bold" }, -- Text that is part of a title.
+		["@markup.italic"] = { fg = matrix.matrix_red }, -- For text to be represented with emphasis.
+		["@markup.heading"] = { fg = matrix.matrix_red, style = "bold" }, -- Text that is part of a title.
+		["@variable.parameter"] = { fg = matrix.matrix_red }, -- For parameters of a function.
 
 		-- Amber
 		-- (none specifically amber in original TreeSitter mapping)
 
 		-- Green (descending brightness)
-		TSText = { fg = matrix.matrix_green_7 }, -- For strings considered text in a markup language.
-		TSConstructor = { fg = matrix.matrix_green_7 }, -- For constructor calls and definitions.
-		TSVariableBuiltin = { fg = matrix.matrix_green_7, style = "bold" },
-		TSBoolean = { fg = matrix.matrix_green_7, style = "bold" }, -- For booleans.
-		TSType = { fg = matrix.matrix_green_7 }, -- For types.
-		TSTypeBuiltin = { fg = matrix.matrix_green_7 }, -- For builtin types.
-		TSTag = { fg = matrix.matrix_green_7 }, -- Tags like html tag names.
-		TSOperator = { fg = matrix.matrix_green_7 }, -- For any operator.
-		TSFuncMacro = { fg = matrix.matrix_green_4 }, -- For macro defined functions
-		TSConstBuiltin = { fg = matrix.matrix_green_4, style = "bold" }, -- For builtin constants.
-		TSConstMacro = { fg = matrix.matrix_green_4, style = "bold" }, -- For constants defined by macros.
-		TSMethod = { fg = matrix.matrix_green_4 }, -- For method calls and definitions.
-		TSField = { fg = matrix.matrix_green_7 }, -- For fields in literals
-		TSParameter = { fg = matrix.matrix_red }, -- For parameters of a function.
-		TSParameterReference = { fg = matrix.matrix_red }, -- For references to parameters of a function.
-		TSPunctDelimiter = { fg = matrix.matrix_green_3 }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = matrix.matrix_green_3 }, -- For brackets and parens.
-		TSPunctSpecial = { fg = matrix.matrix_green_3 }, -- For special punctuation.
-		TSLiteral = { fg = matrix.matrix_green_7 }, -- Literal text.
+		["@markup"] = { fg = matrix.matrix_green_7 }, -- For strings considered text in a markup language.
+		["@markup.raw"] = { fg = matrix.matrix_green_7 }, -- Literal text.
+		["@constructor"] = { fg = matrix.matrix_green_7 }, -- For constructor calls and definitions.
+		["@variable.builtin"] = { fg = matrix.matrix_green_7, style = "bold" },
+		["@boolean"] = { fg = matrix.matrix_green_7, style = "bold" }, -- For booleans.
+		["@type"] = { fg = matrix.matrix_green_7 }, -- For types.
+		["@type.builtin"] = { fg = matrix.matrix_green_7 }, -- For builtin types.
+		["@tag"] = { fg = matrix.matrix_green_7 }, -- Tags like html tag names.
+		["@operator"] = { fg = matrix.matrix_green_7 }, -- For any operator.
+		["@function.macro"] = { fg = matrix.matrix_green_4 }, -- For macro defined functions
+		["@constant.builtin"] = { fg = matrix.matrix_green_4, style = "bold" }, -- For builtin constants.
+		["@constant.macro"] = { fg = matrix.matrix_green_4, style = "bold" }, -- For constants defined by macros.
+		["@function.method"] = { fg = matrix.matrix_green_4 }, -- For method calls and definitions.
+		["@variable.member"] = { fg = matrix.matrix_green_7 }, -- For fields in literals
+		["@punctuation.delimiter"] = { fg = matrix.matrix_green_3 }, -- For delimiters ie: `.`
+		["@punctuation.bracket"] = { fg = matrix.matrix_green_3 }, -- For brackets and parens.
+		["@punctuation.special"] = { fg = matrix.matrix_green_3 }, -- For special punctuation.
+		["@keyword.import"] = { fg = matrix.matrix_green_7 }, -- For includes / use / require
 
 		-- Turquoise (descending brightness)
-		TSAnnotation = { fg = matrix.matrix_turquoise_3 }, -- For attributes/annotations.
-		TSConst = { fg = matrix.matrix_light_1 }, -- For constants (mapped to light_2)
-		TSFloat = { fg = matrix.matrix_turquoise_1 }, -- For floats
-		TSNumber = { fg = matrix.matrix_turquoise_1 }, -- For all numbers
-		TSAttribute = { fg = matrix.matrix_turquoise_1 }, -- (unstable) TODO: docs
-		TSVariable = { fg = matrix.matrix_light_1, style = "bold" }, -- Any variable name that does not have another highlight.
-		TSException = { fg = matrix.matrix_turquoise_1 }, -- For exception related keywords.
-		TSInclude = { fg = matrix.matrix_green_7 }, -- For includes / use / require
-		TSLabel = { fg = matrix.matrix_turquoise_1 }, -- For labels
-		TSSymbol = { fg = matrix.matrix_turquoise_1 }, -- For identifiers referring to symbols or atoms.
-		TSTagDelimiter = { fg = matrix.matrix_turquoise_1 }, -- Tag delimiter like `<` `>` `/`
-		TSTextReference = { fg = matrix.matrix_turquoise_1 }, -- FIXME
-		TSUnderline = { fg = matrix.matrix_green_7, style = "underline" }, -- Underline
-		TSURI = { fg = matrix.matrix_turquoise_2 }, -- Any URI like a link or email.
-		TSAnnotationAlt = { fg = matrix.matrix_light_2 }, -- alternate annotation mapping (preserve original light_1 mapping as alt)
+		["@attribute"] = { fg = matrix.matrix_turquoise_3 }, -- For attributes/annotations.
+		["@constant"] = { fg = matrix.matrix_light_1 }, -- For constants (mapped to light_2)
+		["@number.float"] = { fg = matrix.matrix_turquoise_1 }, -- For floats
+		["@number"] = { fg = matrix.matrix_turquoise_1 }, -- For all numbers
+		["@variable"] = { fg = matrix.matrix_light_1, style = "bold" }, -- Any variable name that does not have another highlight.
+		["@keyword.exception"] = { fg = matrix.matrix_turquoise_1 }, -- For exception related keywords.
+		["@label"] = { fg = matrix.matrix_turquoise_1 }, -- For labels
+		["@string.special.symbol"] = { fg = matrix.matrix_turquoise_1 }, -- For identifiers referring to symbols or atoms.
+		["@tag.delimiter"] = { fg = matrix.matrix_turquoise_1 }, -- Tag delimiter like `<` `>` `/`
+		["@markup.link"] = { fg = matrix.matrix_turquoise_1 },
+		["@markup.underline"] = { fg = matrix.matrix_green_7, style = "underline" }, -- Underline
+		["@markup.link.url"] = { fg = matrix.matrix_turquoise_2 }, -- Any URI like a link or email.
 	}
 
 	-- Italic variants
-	treesitter.TSComment = { fg = matrix.matrix_gray, style = "italic" }
-	treesitter.TSConditional = { fg = matrix.matrix_green_7, style = "italic" }
-	treesitter.TSFunction = { fg = matrix.matrix_green_3, style = "italic" }
-	treesitter.TSMethod = { fg = matrix.matrix_green_4, style = "italic" }
-	treesitter.TSFuncBuiltin = { fg = matrix.matrix_green_3, style = "italic" }
-	treesitter.TSNamespace = { fg = matrix.matrix_green_7, style = "italic" }
-	treesitter.TSField = { fg = matrix.matrix_green_7, style = "italic" }
-	treesitter.TSProperty = { fg = matrix.matrix_red, style = "italic" }
-	treesitter.TSKeyword = { fg = matrix.matrix_green_7, style = "italic" }
-	treesitter.TSKeywordFunction = { fg = matrix.matrix_green_3, style = "italic" }
-	treesitter.TSKeywordReturn = { fg = matrix.matrix_green_3, style = "italic" }
-	treesitter.TSKeywordOperator = { fg = matrix.matrix_green_3, style = "italic" }
-	treesitter.TSRepeat = { fg = matrix.matrix_green_7, style = "italic" }
-	treesitter.TSString = { fg = matrix.matrix_turquoise_2, style = "italic" }
-	treesitter.TSStringRegex = { fg = matrix.matrix_green_4, style = "italic" }
-	treesitter.TSStringEscape = { fg = matrix.matrix_turquoise_1, style = "italic" }
-	treesitter.TSCharacter = { fg = matrix.matrix_turquoise_2, style = "italic" }
+	treesitter["@comment"] = { fg = matrix.matrix_gray, style = "italic" }
+	treesitter["@keyword.conditional"] = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter["@function"] = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter["@function.method"] = { fg = matrix.matrix_green_4, style = "italic" }
+	treesitter["@function.builtin"] = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter["@module"] = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter["@variable.member"] = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter["@property"] = { fg = matrix.matrix_red, style = "italic" }
+	treesitter["@keyword"] = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter["@keyword.function"] = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter["@keyword.return"] = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter["@keyword.operator"] = { fg = matrix.matrix_green_3, style = "italic" }
+	treesitter["@keyword.repeat"] = { fg = matrix.matrix_green_7, style = "italic" }
+	treesitter["@string"] = { fg = matrix.matrix_turquoise_2, style = "italic" }
+	treesitter["@string.regexp"] = { fg = matrix.matrix_green_4, style = "italic" }
+	treesitter["@string.escape"] = { fg = matrix.matrix_turquoise_1, style = "italic" }
+	treesitter["@character"] = { fg = matrix.matrix_turquoise_2, style = "italic" }
 
 	return treesitter
 end

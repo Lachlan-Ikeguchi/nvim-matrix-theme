@@ -1,128 +1,34 @@
-# This is a fork of [iruzo/nvim-matrix-theme](https://github.com/lachlan-ikeguchi/nvim-matrix-theme) customized to my tastes.
+# Neovim matrix theme
+=====================
 
-## Features
-+ Supported plugins:
-    + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-    + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
-    + [Lsp Saga](https://github.com/glepnir/lspsaga.nvim)
-    + [LSP Trouble](https://github.com/folke/lsp-trouble.nvim)
-    + [Git Gutter](https://github.com/airblade/vim-gitgutter)
-    + [git-messenger](https://github.com/rhysd/git-messenger.vim)
-    + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-    + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-    + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-    + [NERDTree](https://github.com/preservim/nerdtree)
-    + [vim-which-key](https://github.com/liuchengxu/vim-which-key)
-    + [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-    + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-    + [BufferLine](https://github.com/akinsho/nvim-bufferline.lua)
-    + [Lualine](https://github.com/hoob3rt/lualine.nvim)
-    + [Neogit](https://github.com/TimUntersberger/neogit)
-    + [vim-sneak](https://github.com/justinmk/vim-sneak)
-    + [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)
-
-+ Ability to change background on sidebar-like windows like Nvim-Tree, Packer, terminal ...
-
-## Requirements
-
-+ Neovim >= 0.5.0
-
-## Installation
-
-- Plug
-```vim
-Plug 'lachlan-ikeguchi/nvim-matrix-theme'
-```
-- Packer
-```lua
-use 'lachlan-ikeguchi/nvim-matrix-theme'
-```
-- lazy
-```lua
-'lachlan-ikeguchi/nvim-matrix-theme',
-```
-## Usage
-
-Enable the colorscheme:
-- Vim-Script
-```vim
-colorscheme matrix
-```
-- Lua
-```lua
-vim.cmd[[colorscheme matrix]]
-```
-```lua
-vim.api.nvim_command "colorscheme matrix"
-```
-
-To enable the `matrix` theme for `Lualine`, simply specify it in your lualine settings:
-
-```lua
-require('lualine').setup {
-  options = {
-    -- ... your lualine config
-    theme = 'matrix'
-    -- ... your lualine config
-  }
-}
-```
-
-## Configuration
-
-| Option                              | Default     | Description                                                                                                                                                     |
-| ----------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| matrix_contrast                     | `false`     | Make sidebars and popup menus like nvim-tree and telescope have a different background                                                                                       |
-| matrix_borders                      | `false`     | Enable the border between verticaly split windows visable
-| matrix_disable_background           | `false`     | Disable the setting of background color so that NeoVim can use your terminal background
-| matrix_cursorline_transparent       | `false`     | Set the cursorline transparent/visible
-| matrix_enable_sidebar_background    | `false`     | Re-enables the background of the sidebar if you disabled the background of everything
-
-
-```lua
--- Example config in lua
-vim.g.matrix_contrast = true
-vim.g.matrix_borders = false
-vim.g.matrix_disable_background = false
-
--- Load the colorscheme
-require('matrix').set()
-```
-
-```vim
-" Example config in Vim-Script
-let g:matrix_contrast = v:true
-let g:matrix_borders = v:false
-let g:matrix_disable_background = v:false
-
-" Load the colorscheme
-colorscheme matrix
-```
-
-# Scheme
-## Monochrome
-`#ffffff`: variables, special characters
-`#bfbfbf`: pre-processor / macro
-`#808080`: comments
-`#404040`
+## Scheme
+### Monochrome
+5 palette gradient from `#ffffff` to `#000000`
+`#ffffff`: special characters
+`#bfbfbf`: pre-processor / macros, wildmenu
+`#808080`: comments (italic), line numbers
+`#404040`: ignored text, end-of-buffer, inactive statusline, cursor line background
 `#000000`: background
 
-## Red
-`#ff0000`: error, deleted (git)
+### Red
+`#ff5050`: errors (bold, underlined), matching parenthesis, LSP information diagnostics
 
-## Amber
-`#ffbf00`: caution, todo, changed (git)
+### Amber
+`#ffbf00`: caution, todo (bold, italic), warnings, `diffOldFile`
 
-## Green
-7 palette gradient from `#00ff00` to `#003200`
-`#00ff00`: values
-`#00dd00`: delimiters, added (git), default color for not specified in colorscheme
-`#00bb00`: types
-`#009a00`: structs
-`#007800`: operators
-`#005600`: key-word
-`#003200`: conditional
+### Green
+8 palette gradient from `#00f000` to `#003000`
+`#00f000`: variables, identifiers
+`#00d500`: values, strings, numbers, delimiters, default color for anything not specified
+`#00b900`: types
+`#009e00`: structs, constructors
+`#008200`: operators
+`#006700`: keywords (statements, storage classes, labels)
+`#004b00`: conditionals, hints, mode messages
+`#003000`: floating window background
 
-## Turquoise
-3 palette gradient from `#009090` to `#004040`, heading steps brightest at 
-
+### Turquoise
+3 palette gradient from `#00d0d0` to `#009090`, heading steps brightest at `#00d0d0`
+`#00d0d0`: functions (italic), headings, links, LSP warnings
+`#00b0b0`: special comments, headings H2, insert mode, title
+`#009090`: constants, tags, debug statements, LSP errors, `SpellBad`, headings H3

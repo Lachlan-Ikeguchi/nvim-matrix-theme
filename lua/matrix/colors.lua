@@ -20,9 +20,9 @@ local matrix = {
     matrix_green_8 = "#003000", -- background
     -- Turquoise: 3 palette gradient from #009090 to #004040
     -- heading steps
-    matrix_turquoise_1 = "#009090", -- constant
+    matrix_turquoise_1 = "#009090", -- functions
     matrix_turquoise_2 = "#006868", -- highlight
-    matrix_turquoise_3 = "#004040", -- functions
+    matrix_turquoise_3 = "#004040", -- constant, tags
     none = "NONE",
 }
 

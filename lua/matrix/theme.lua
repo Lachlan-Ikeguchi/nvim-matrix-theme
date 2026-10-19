@@ -7,24 +7,24 @@ theme.loadSyntax = function()
 	local syntax = {
 		-- Monochrome
 		SpecialChar = { fg = matrix.matrix_light_1 }, -- special character in a constant
-	    Comment = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" }, -- comments
 		PreCondit = { fg = matrix.matrix_light_2 }, -- preprocessor #if, #else, #endif, etc.
 		PreProc = { fg = matrix.matrix_light_2 }, -- generic Preprocessor
 		Include = { fg = matrix.matrix_light_2 }, -- preprocessor #include
 		Define = { fg = matrix.matrix_light_2 }, -- preprocessor #define
 		Macro = { fg = matrix.matrix_light_2 }, -- same as Define
+		Comment = { fg = matrix.matrix_gray, style = "italic" }, -- comments
 		Ignore = { fg = matrix.matrix_dark_1 }, -- left blank, hidden
 		Conceal = { fg = matrix.none, bg = matrix.matrix_dark_2 },
 
 		-- Red
-		Error = { fg = matrix.matrix_red, bg = matrix.none, style = "bold,underline" }, -- any erroneous construct
+		Error = { fg = matrix.matrix_red, style = "bold,underline" }, -- any erroneous construct
 
 		-- Amber
-		Todo = { fg = matrix.matrix_amber, bg = matrix.none, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { fg = matrix.matrix_amber, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		-- Green (descending brightness)
 		Identifier = { fg = matrix.matrix_green_1 }, -- any variable name
-    	String = { fg = matrix.matrix_green_1, bg = matrix.none, style = "italic" }, -- any string
+		String = { fg = matrix.matrix_green_2, style = "italic" }, -- any string
 		Character = { fg = matrix.matrix_green_2 }, -- any character constant: 'c', '\n'
 		Float = { fg = matrix.matrix_green_2 }, -- a floating point constant: 2.3e10
 		Number = { fg = matrix.matrix_green_2 }, -- a number constant: 5
@@ -39,17 +39,17 @@ theme.loadSyntax = function()
 		Statement = { fg = matrix.matrix_green_6 }, -- any statement
 		Label = { fg = matrix.matrix_green_6 }, -- case, default, etc.
 		Exception = { fg = matrix.matrix_green_6 }, -- try, catch, throw
-		Tag = { fg = matrix.matrix_green_6 }, -- you can use CTRL-] on this
-    	Keyword = { fg = matrix.matrix_green_6, bg = matrix.none, style = "italic" }, -- for, do, while, etc.
-    	Repeat = { fg = matrix.matrix_green_6, bg = matrix.none, style = "italic" }, -- any other keyword
-    	Conditional = { fg = matrix.matrix_green_7, bg = matrix.none, style = "italic" }, -- if, then, else, endif, switch, etc.
+		Keyword = { fg = matrix.matrix_green_6, style = "italic" }, -- for, do, while, etc.
+		Repeat = { fg = matrix.matrix_green_6, style = "italic" }, -- any other keyword
+		Conditional = { fg = matrix.matrix_green_7, style = "italic" }, -- if, then, else, endif, switch, etc.
 
 		-- Turquoise (descending brightness)
-		Function = { fg = matrix.matrix_turquoise_1, style = "italic" }, -- normal function names
-		Constant = { fg = matrix.matrix_turquoise_1 }, -- any constant
-		Underlined = { fg = matrix.matrix_turquoise_1, bg = matrix.none, style = "underline" }, -- text that stands out, HTML links
+		Function = { fg = matrix.matrix_turquoise_1, style = "italic" }, -- function names
+		Underlined = { fg = matrix.matrix_turquoise_1, style = "underline" }, -- text that stands out, HTML links
 		SpecialComment = { fg = matrix.matrix_turquoise_2 }, -- special things inside a comment
 		Debug = { fg = matrix.matrix_turquoise_3 }, -- debugging statements
+		Constant = { fg = matrix.matrix_turquoise_3 }, -- any constant
+		Tag = { fg = matrix.matrix_turquoise_3 }, -- you can use CTRL-] on this
 
 		htmlLink = { fg = matrix.matrix_turquoise_1, style = "underline" },
 
@@ -63,9 +63,9 @@ theme.loadSyntax = function()
 		markdownH2 = { fg = matrix.matrix_turquoise_2, style = "bold" },
 		markdownH3 = { fg = matrix.matrix_turquoise_3, style = "bold" },
 
-		markdownH1Delimiter = { fg = matrix.matrix_turquoise_1 },
-		markdownH2Delimiter = { fg = matrix.matrix_turquoise_2 },
-		markdownH3Delimiter = { fg = matrix.matrix_turquoise_3 },
+		markdownH1Delimiter = { fg = matrix.matrix_turquoise_1, style = "bold" },
+		markdownH2Delimiter = { fg = matrix.matrix_turquoise_2, style = "bold" },
+		markdownH3Delimiter = { fg = matrix.matrix_turquoise_3, style = "bold" },
 	}
 	return syntax
 end
@@ -76,13 +76,13 @@ theme.loadEditor = function()
 	local editor = {
 		-- Monochrome
 		EndOfBuffer = { fg = matrix.matrix_dark_1 },
-		Folded = { fg = matrix.matrix_gray, bg = matrix.none, style = "italic" },
+		Folded = { fg = matrix.matrix_gray, style = "italic" },
 		FoldColumn = { fg = matrix.matrix_green_4 },
 		LineNr = { fg = matrix.matrix_gray },
 		NonText = { fg = matrix.matrix_dark_1 },
 
 		-- Red
-		MatchParen = { fg = matrix.matrix_red, bg = matrix.none, style = "bold" },
+		MatchParen = { fg = matrix.matrix_red, style = "bold" },
 		IncSearch = { fg = matrix.matrix_red, bg = matrix.matrix_red },
 		ErrorMsg = { fg = matrix.matrix_red },
 
@@ -92,8 +92,8 @@ theme.loadEditor = function()
 		-- Green (descending brightness)
 		NormalFloat = { fg = matrix.matrix_green_7, bg = matrix.float }, -- normal text and background color
 		FloatBorder = { fg = matrix.matrix_green_7, bg = matrix.float }, -- normal text and background color
-		Cursor = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" }, -- the character under the cursor
-		CursorIM = { fg = matrix.matrix_green_6, bg = matrix.none, style = "reverse" }, -- like Cursor, but used when in IME mode
+		Cursor = { fg = matrix.matrix_green_7, style = "reverse" }, -- the character under the cursor
+		CursorIM = { fg = matrix.matrix_green_6, style = "reverse" }, -- like Cursor, but used when in IME mode
 		Directory = { fg = matrix.matrix_green_4, bg = matrix.none }, -- directory names (and other special names in listings)
 		CursorLineNr = { fg = matrix.matrix_green_7 },
 		ModeMsg = { fg = matrix.matrix_green_7 },
@@ -102,8 +102,8 @@ theme.loadEditor = function()
 		PmenuSel = { fg = matrix.matrix_green_7, bg = matrix.matrix_red },
 		PmenuSbar = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
 		PmenuThumb = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_7 },
-		QuickFixLine = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
-		qfLineNr = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
+		QuickFixLine = { fg = matrix.matrix_green_7, style = "reverse" },
+		qfLineNr = { fg = matrix.matrix_green_7, style = "reverse" },
 		Search = { fg = matrix.matrix_red, bg = matrix.matrix_green_5, style = "reverse" },
 		SpecialKey = { fg = matrix.matrix_green_7 },
 		StatusLine = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2 },
@@ -118,22 +118,22 @@ theme.loadEditor = function()
 		CursorColumn = { fg = matrix.none, bg = matrix.cursorlinefg },
 		CursorLine = { fg = matrix.none, bg = matrix.cursorlinefg },
 		ToolbarLine = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
-		ToolbarButton = { fg = matrix.matrix_green_7, bg = matrix.none, style = "bold" },
-		NormalMode = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
-		InsertMode = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "reverse" },
-		ReplacelMode = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "reverse" },
-		VisualMode = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
-		CommandMode = { fg = matrix.matrix_green_7, bg = matrix.none, style = "reverse" },
+		ToolbarButton = { fg = matrix.matrix_green_7, style = "bold" },
+		NormalMode = { fg = matrix.matrix_green_7, style = "reverse" },
+		InsertMode = { fg = matrix.matrix_turquoise_2, style = "reverse" },
+		ReplacelMode = { fg = matrix.matrix_turquoise_3, style = "reverse" },
+		VisualMode = { fg = matrix.matrix_green_7, style = "reverse" },
+		CommandMode = { fg = matrix.matrix_green_7, style = "reverse" },
 		Warnings = { fg = matrix.matrix_turquoise_1 },
 
 		-- Turquoise (descending brightness)
-		Title = { fg = matrix.matrix_turquoise_2, bg = matrix.none, style = "bold" },
+		Title = { fg = matrix.matrix_turquoise_2, style = "bold" },
 		Question = { fg = matrix.matrix_turquoise_2 },
-		SpellBad = { fg = matrix.matrix_turquoise_3, bg = matrix.none, style = "italic,undercurl" },
-		SpellCap = { fg = matrix.matrix_green_4, bg = matrix.none, style = "italic,undercurl" },
-		SpellLocal = { fg = matrix.matrix_green_3, bg = matrix.none, style = "italic,undercurl" },
-		SpellRare = { fg = matrix.matrix_green_7, bg = matrix.none, style = "italic,undercurl" },
-		WildMenu = { fg = matrix.matrix_light_2, bg = matrix.none, style = "bold" },
+		SpellBad = { fg = matrix.matrix_turquoise_3, style = "italic,undercurl" },
+		SpellCap = { fg = matrix.matrix_green_4, style = "italic,undercurl" },
+		SpellLocal = { fg = matrix.matrix_green_3, style = "italic,undercurl" },
+		SpellRare = { fg = matrix.matrix_green_7, style = "italic,undercurl" },
+		WildMenu = { fg = matrix.matrix_light_2, style = "bold" },
 
 		-- health
 		healthError = { fg = matrix.matrix_red },
@@ -209,7 +209,7 @@ theme.loadTreeSitter = function()
 
 		-- Red
 		TSEmphasis = { fg = matrix.matrix_red }, -- For text to be represented with emphasis.
-		TSTitle = { fg = matrix.matrix_red, bg = matrix.none, style = "bold" }, -- Text that is part of a title.
+		TSTitle = { fg = matrix.matrix_red, style = "bold" }, -- Text that is part of a title.
 
 		-- Amber
 		-- (none specifically amber in original TreeSitter mapping)
@@ -248,7 +248,7 @@ theme.loadTreeSitter = function()
 		TSSymbol = { fg = matrix.matrix_turquoise_1 }, -- For identifiers referring to symbols or atoms.
 		TSTagDelimiter = { fg = matrix.matrix_turquoise_1 }, -- Tag delimiter like `<` `>` `/`
 		TSTextReference = { fg = matrix.matrix_turquoise_1 }, -- FIXME
-		TSUnderline = { fg = matrix.matrix_green_7, bg = matrix.none, style = "underline" }, -- Underline
+		TSUnderline = { fg = matrix.matrix_green_7, style = "underline" }, -- Underline
 		TSURI = { fg = matrix.matrix_turquoise_2 }, -- Any URI like a link or email.
 		TSAnnotationAlt = { fg = matrix.matrix_light_2 }, -- alternate annotation mapping (preserve original light_1 mapping as alt)
 	}
@@ -347,7 +347,7 @@ theme.loadPlugins = function()
 		diffLine = { fg = matrix.matrix_green_7 },
 		diffNewFile = { fg = matrix.matrix_light_2 },
 
-        -- GitSigns
+		-- GitSigns
 		GitSignsAdd = { fg = matrix.matrix_turquoise_2 },
 		GitSignsAddNr = { fg = matrix.matrix_turquoise_2 },
 		GitSignsAddLn = { fg = matrix.matrix_turquoise_2 },

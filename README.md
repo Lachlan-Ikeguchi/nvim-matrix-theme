@@ -1,7 +1,6 @@
 # This is a fork of [iruzo/nvim-matrix-theme](https://github.com/lachlan-ikeguchi/nvim-matrix-theme) customized to my tastes.
 
 ## Features
-
 + Supported plugins:
     + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
     + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)

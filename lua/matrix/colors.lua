@@ -1,6 +1,6 @@
 local matrix = {
     -- Monochrome: 5 palette gradient from #ffffff to #000000 
-    matrix_light_1 = "#ffffff", -- variables, special characters
+    matrix_light_1 = "#ffffff", -- special characters
     matrix_light_2 = "#bfbfbf", -- pre-processor / macro
     matrix_gray = "#808080",    -- comments
     matrix_dark_1 = "#404040",
@@ -10,8 +10,8 @@ local matrix = {
     -- Amber
     matrix_amber = "#ffbf00",   -- caution, todo, changed (git)
     -- Green: 8 palette gradient from #00f000 to #003000
-    matrix_green_1 = "#00f000", -- values
-    matrix_green_2 = "#00d500", -- delimiters, added (git), default color
+    matrix_green_1 = "#00f000", -- variables 
+    matrix_green_2 = "#00d500", -- delimiters, added (git), values
     matrix_green_3 = "#00b900", -- types
     matrix_green_4 = "#009e00", -- structs
     matrix_green_5 = "#008200", -- operators

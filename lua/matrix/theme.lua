@@ -391,35 +391,13 @@ end
 theme.loadPlugins = function()
 	-- Plugins highlight groups
 	local plugins = {
-		-- Monochrome
-		FernBranchText = { fg = matrix.matrix_gray },
-
-		-- Red
-		NeogitBranch = { fg = matrix.matrix_red },
-		LightspeedShortcut = { fg = matrix.matrix_red, style = "bold" },
-		LightspeedShortcutOverlapped = { fg = matrix.matrix_red, style = "bold,underline" },
-		LspSagaHoverBorder = { fg = matrix.matrix_red },
-		LspSagaCodeActionTitle = { fg = matrix.matrix_red },
-
-		-- Amber
 		diffOldFile = { fg = matrix.yelow }, -- note: original key 'yelow' kept
-		WhichKeyDesc = { fg = matrix.matrix_green_4, style = "italic" }, -- group placement makes sense in context
-
-		-- Green (descending brightness)
-		LspTroubleText = { fg = matrix.matrix_green_7 },
-		LspTroubleCount = { fg = matrix.matrix_green_7, bg = matrix.matrix_red },
-		LspTroubleNormal = { fg = matrix.matrix_green_7, bg = matrix.sidebar },
-
 		diffIndexLine = { fg = matrix.matrix_green_7 },
 		diffFile = { fg = matrix.matrix_green_4 },
 		diffLine = { fg = matrix.matrix_green_7 },
 		diffNewFile = { fg = matrix.matrix_light_2 },
 
-		GitGutterAdd = { fg = matrix.matrix_turquoise_2 },
-		GitGutterChange = { fg = matrix.matrix_turquoise_1 },
-		GitGutterDelete = { fg = matrix.matrix_turquoise_3 },
-
-		-- GitSigns
+        -- GitSigns
 		GitSignsAdd = { fg = matrix.matrix_turquoise_2 },
 		GitSignsAddNr = { fg = matrix.matrix_turquoise_2 },
 		GitSignsAddLn = { fg = matrix.matrix_turquoise_2 },
@@ -438,50 +416,6 @@ theme.loadPlugins = function()
 		TelescopeSelection = { fg = matrix.matrix_green_7 },
 		TelescopeMatching = { fg = matrix.matrix_green_3 },
 
-		-- NvimTree (folder/file related)
-		NvimTreeRootFolder = { fg = matrix.matrix_green_4, style = "bold" },
-		NvimTreeGitDirty = { fg = matrix.matrix_turquoise_1 },
-		NvimTreeGitNew = { fg = matrix.matrix_turquoise_2 },
-		NvimTreeImageFile = { fg = matrix.matrix_turquoise_1 },
-		NvimTreeExecFile = { fg = matrix.matrix_turquoise_2 },
-		NvimTreeSpecialFile = { fg = matrix.matrix_green_7, style = "underline" },
-		NvimTreeFolderName = { fg = matrix.matrix_red },
-		NvimTreeEmptyFolderName = { fg = matrix.matrix_dark_1 },
-		NvimTreeFolderIcon = { fg = matrix.matrix_green_7 },
-		NvimTreeIndentMarker = { fg = matrix.matrix_dark_1 },
-
-		-- WhichKey
-		WhichKey = { fg = matrix.matrix_green_7, style = "bold" },
-		WhichKeyGroup = { fg = matrix.matrix_green_7 },
-		WhichKeySeperator = { fg = matrix.matrix_green_7 },
-		WhichKeyFloating = { bg = matrix.float },
-		WhichKeyFloat = { bg = matrix.float },
-
-		-- LspSaga / Diagnostic mappings
-		DiagnosticError = { fg = matrix.matrix_turquoise_3 },
-		DiagnosticWarning = { fg = matrix.matrix_turquoise_1 },
-		DiagnosticInformation = { fg = matrix.matrix_red },
-		DiagnosticHint = { fg = matrix.matrix_green_7 },
-		DiagnosticTruncateLine = { fg = matrix.matrix_green_7 },
-		LspFloatWinNormal = { bg = matrix.matrix_green_2 },
-		LspFloatWinBorder = { fg = matrix.matrix_green_7 },
-		LspSagaBorderTitle = { fg = matrix.matrix_green_3 },
-		LspSagaRenameBorder = { fg = matrix.matrix_turquoise_2 },
-		LspSagaDefPreviewBorder = { fg = matrix.matrix_turquoise_2 },
-		LspSagaCodeActionBorder = { fg = matrix.matrix_green_4 },
-		LspSagaFinderSelection = { fg = matrix.matrix_turquoise_2 },
-		LspSagaCodeActionContent = { fg = matrix.matrix_green_7 },
-		LspSagaSignatureHelpBorder = { fg = matrix.matrix_light_1 },
-		ReferencesCount = { fg = matrix.matrix_green_7 },
-		DefinitionCount = { fg = matrix.matrix_green_7 },
-		DefinitionIcon = { fg = matrix.matrix_green_4 },
-		ReferencesIcon = { fg = matrix.matrix_green_4 },
-		TargetWord = { fg = matrix.matrix_green_3 },
-
-		-- Sneak
-		Sneak = { fg = matrix.matrix_dark_2, bg = matrix.matrix_green_7 },
-		SneakScope = { bg = matrix.matrix_dark_1 },
-
 		-- Cmp
 		CmpItemKind = { fg = matrix.matrix_turquoise_1 },
 		CmpItemAbbrMatch = { fg = matrix.matrix_green_6, style = "bold" },
@@ -492,84 +426,7 @@ theme.loadPlugins = function()
 		-- Indent Blankline
 		IndentBlanklineChar = { fg = matrix.matrix_green_7 },
 		IndentBlanklineContextChar = { fg = matrix.matrix_red },
-
-		-- Illuminate
-		illuminatedWord = { bg = matrix.matrix_green_7 },
-		illuminatedCurWord = { bg = matrix.matrix_green_7 },
-
-		-- nvim-dap
-		DapBreakpoint = { fg = matrix.matrix_turquoise_2 },
-		DapStopped = { fg = matrix.matrix_turquoise_1 },
-
-		-- nvim-dap-ui
-		DapUIVariable = { fg = matrix.matrix_green_7 },
-		DapUIScope = { fg = matrix.matrix_green_3 },
-		DapUIType = { fg = matrix.matrix_green_7 },
-		DapUIValue = { fg = matrix.matrix_green_7 },
-		DapUIModifiedValue = { fg = matrix.matrix_green_3 },
-		DapUIDecoration = { fg = matrix.matrix_green_3 },
-		DapUIThread = { fg = matrix.matrix_green_3 },
-		DapUIStoppedThread = { fg = matrix.matrix_green_3 },
-		DapUIFrameName = { fg = matrix.matrix_green_7 },
-		DapUISource = { fg = matrix.matrix_green_7 },
-		DapUILineNumber = { fg = matrix.matrix_green_3 },
-		DapUIFloatBorder = { fg = matrix.matrix_green_3 },
-		DapUIWatchesEmpty = { fg = matrix.matrix_turquoise_3 },
-		DapUIWatchesValue = { fg = matrix.matrix_green_3 },
-		DapUIWatchesError = { fg = matrix.matrix_turquoise_3 },
-		DapUIBreakpointsPath = { fg = matrix.matrix_green_3 },
-		DapUIBreakpointsInfo = { fg = matrix.matrix_green_3 },
-		DapUIBreakpointsCurrentLine = { fg = matrix.matrix_green_3 },
-		DapUIBreakpointsLine = { fg = matrix.matrix_green_3 },
-
-		-- Hop
-		HopNextKey = { fg = matrix.matrix_green_7, style = "bold" },
-		HopNextKey1 = { fg = matrix.matrix_green_3, style = "bold" },
-		HopNextKey2 = { fg = matrix.matrix_green_7 },
-		HopUnmatched = { fg = matrix.matrix_green_7 },
-
-		-- nvim-ts-rainbow
-		rainbowcol1 = { fg = matrix.matrix_turquoise_1 },
-		rainbowcol2 = { fg = matrix.matrix_light_1 },
-		rainbowcol3 = { fg = matrix.matrix_turquoise_3 },
-		rainbowcol4 = { fg = matrix.matrix_green_4 },
-		rainbowcol5 = { fg = matrix.matrix_green_3 },
-		rainbowcol6 = { fg = matrix.matrix_turquoise_1 },
-		rainbowcol7 = { fg = matrix.matrix_light_1 },
-
-		-- lightspeed
-		LightspeedLabel = { fg = matrix.matrix_green_3, style = "bold" },
-		LightspeedLabelOverlapped = { fg = matrix.matrix_green_3, style = "bold,underline" },
-		LightspeedLabelDistant = { fg = matrix.matrix_turquoise_1, style = "bold" },
-		LightspeedLabelDistantOverlapped = { fg = matrix.matrix_turquoise_1, style = "bold,underline" },
-		LightspeedMaskedChar = { fg = matrix.matrix_green_7, bg = matrix.matrix_green_2, style = "bold" },
-		LightspeedGreyWash = { fg = matrix.matrix_gray },
-		LightspeedUnlabeledMatch = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
-		LightspeedOneCharMatch = { fg = matrix.matrix_green_3, style = "bold,reverse" },
-		LightspeedUniqueChar = { style = "bold,underline" },
-
-		-- copilot
-		CopilotLabel = { fg = matrix.matrix_green_7, bg = matrix.none },
-
-		-- Statusline
-		StatusLineDull = { fg = matrix.matrix_green_7, bg = matrix.matrix_dark_1 },
-		StatusLineAccent = { fg = matrix.matrix_dark_2, bg = matrix.matrix_light_1 },
 	}
-
-	-- Options:
-
-	-- Disable nvim-tree background
-	if vim.g.matrix_disable_background then
-		plugins.NvimTreeNormal = { fg = matrix.matrix_green_7, bg = matrix.none }
-	else
-		plugins.NvimTreeNormal = { fg = matrix.matrix_green_7, bg = matrix.sidebar }
-	end
-
-	if vim.g.matrix_enable_sidebar_background then
-		plugins.NvimTreeNormal = { fg = matrix.matrix_green_7, bg = matrix.sidebar }
-	else
-		plugins.NvimTreeNormal = { fg = matrix.matrix_green_7, bg = matrix.none }
-	end
 
 	return plugins
 end

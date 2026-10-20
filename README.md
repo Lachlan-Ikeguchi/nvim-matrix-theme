@@ -1,34 +1,85 @@
-# Neovim matrix theme
+# Neovim Matrix Theme
+
 =====================
 
-## Scheme
+## Principles
+
+- Instead of hue contrast, prefer value and form contrast to spare hue for where it matters.
+- Maximise syntax highlighting value by having a lean set of variations to be able to deduce what it is at a glance.
+
+## Language Targets
+
+- C
+- C++
+- Rust
+- Lua
+- Julia
+- Python
+- LaTeX
+- Markdown
+
+### Syntax Highlighting (ordered: hue -> value -> bold -> italic -> normal)
+
+- Preprocessors: `turquoise_2`
+- Headings:
+  - 1: `turquoise_1, bold`
+  - 2: `turquoise_1`
+  - 3: `turquoise_2, bold`
+  - 4: `turquoise_2`
+  - 5: `turquoise_3, bold`
+  - 6: `turquoise_3`
+- Types: `green_1, bold`
+- Functions: `green_1, italic`
+- Keywords: `green_2, bold`
+- Values: `green_2, italic`
+- Variables: `green_2`
+  - field: `green_3, italic`
+- Operators: `green_3`
+
+## Palette
+
 ### Monochrome
-5 palette gradient from `#ffffff` to `#000000`
-`#ffffff`: special characters
-`#bfbfbf`: pre-processor / macros, wildmenu
-`#808080`: comments (italic), line numbers
-`#404040`: ignored text, end-of-buffer, inactive statusline, cursor line background
-`#000000`: background
+
+Complementary palette
+
+- `#ffffff`
+- `#bfbfbf`
+- `#808080`: all comments
+- `#505050`: all dim
+- `#000000`
 
 ### Red
-`#ff5050`: errors (bold, underlined), matching parenthesis, LSP information diagnostics
+
+- `#ff3030`: all errors
 
 ### Amber
-`#ffbf00`: caution, todo (bold, italic), warnings, `diffOldFile`
+
+- `#ffbf00`: all warnings
 
 ### Green
-8 palette gradient from `#00f000` to `#003000`
-`#00f000`: variables, identifiers
-`#00d500`: values, strings, numbers, delimiters, default color for anything not specified
-`#00b900`: types
-`#009e00`: structs, constructors
-`#008200`: operators
-`#006700`: keywords (statements, storage classes, labels)
-`#004b00`: conditionals, hints, mode messages
-`#003000`: floating window background
+
+Primary palette
+
+- `#00f000`
+- `#00d500`
+- `#00b900`
+- `#009e00`
+- `#008200`
+- `#006700`
+- `#004b00`
+- `#003000`
 
 ### Turquoise
-3 palette gradient from `#00d0d0` to `#009090`, heading steps brightest at `#00d0d0`
-`#00d0d0`: functions (italic), headings, links, LSP warnings
-`#00b0b0`: special comments, headings H2, insert mode, title
-`#009090`: constants, tags, debug statements, LSP errors, `SpellBad`, headings H3
+
+Secondary palette
+
+- `#00d0d0`
+- `#00b0b0`: all info
+- `#009090`
+
+### Modifiers
+
+- `bold`
+- `italic`
+- `underline`: all diagnostics
+- `strikethrough`

@@ -7,11 +7,6 @@ theme.loadSyntax = function()
 	local syntax = {
 		-- Monochrome
 		SpecialChar = { fg = matrix.mono_1 }, -- special character in a constant
-		PreCondit = { fg = matrix.mono_2 }, -- preprocessor #if, #else, #endif, etc.
-		PreProc = { fg = matrix.mono_2 }, -- generic Preprocessor
-		Include = { fg = matrix.mono_2 }, -- preprocessor #include
-		Define = { fg = matrix.mono_2 }, -- preprocessor #define
-		Macro = { fg = matrix.mono_2 }, -- same as Define
 		Comment = { fg = matrix.mono_3, style = "italic" }, -- comments
 		Ignore = { fg = matrix.mono_4 }, -- left blank, hidden
 		Conceal = { fg = matrix.none, bg = matrix.mono_5 },
@@ -22,50 +17,64 @@ theme.loadSyntax = function()
 		-- Amber
 		Todo = { fg = matrix.amber, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-		-- Green (descending brightness)
-		Identifier = { fg = matrix.green_1 }, -- any variable name
-		String = { fg = matrix.green_2, style = "italic" }, -- any string
-		Character = { fg = matrix.green_2 }, -- any character constant: 'c', '\n'
-		Float = { fg = matrix.green_2 }, -- a floating point constant: 2.3e10
-		Number = { fg = matrix.green_2 }, -- a number constant: 5
-		Boolean = { fg = matrix.green_2 }, -- a boolean constant: TRUE, false
-		Delimiter = { fg = matrix.green_2 }, -- character that needs attention like , or .
-		Special = { fg = matrix.green_2 }, -- any special symbol
-		Type = { fg = matrix.green_3 }, -- int, long, char, etc.
-		Typedef = { fg = matrix.green_3 }, -- A typedef
-		Structure = { fg = matrix.green_4 }, -- struct, union, enum, etc.
-		Operator = { fg = matrix.green_5 }, -- sizeof, "+", "*", etc.
-		StorageClass = { fg = matrix.green_5 }, -- static, register, volatile, etc.
-		Statement = { fg = matrix.green_5 }, -- any statement
-		Label = { fg = matrix.green_5 }, -- case, default, etc.
-		Exception = { fg = matrix.green_5 }, -- try, catch, throw
-		Keyword = { fg = matrix.green_5, style = "italic" }, -- for, do, while, etc.
-		Repeat = { fg = matrix.green_5, style = "italic" }, -- any other keyword
-		Conditional = { fg = matrix.green_5, style = "italic" }, -- if, then, else, endif, switch, etc.
+		-- Turquoise
+		PreProc = { fg = matrix.turquoise_2 }, -- generic preprocessor
+		PreCondit = { fg = matrix.turquoise_2 }, -- preprocessor #if, #else, #endif, etc.
+		Include = { fg = matrix.turquoise_2 }, -- preprocessor #include
+		Define = { fg = matrix.turquoise_2 }, -- preprocessor #define
+		Macro = { fg = matrix.turquoise_2 }, -- same as Define
 
-		-- Turquoise (descending brightness)
-		Function = { fg = matrix.turquoise_1, style = "italic" }, -- function names
+		-- Green
+		Type = { fg = matrix.green_1, style = "bold" }, -- int, long, char, etc.
+		Typedef = { fg = matrix.green_1, style = "bold" }, -- a typedef
+		Structure = { fg = matrix.green_1, style = "bold" }, -- struct, union, enum, etc.
+		Function = { fg = matrix.green_1, style = "italic" }, -- any function name
+		Keyword = { fg = matrix.green_2, style = "bold" }, -- for, do, while, etc.
+		Statement = { fg = matrix.green_2, style = "bold" }, -- any statement
+		Conditional = { fg = matrix.green_2, style = "bold" }, -- if, then, else, endif, switch, etc.
+		Repeat = { fg = matrix.green_2, style = "bold" }, -- any other keyword
+		Label = { fg = matrix.green_2, style = "bold" }, -- case, default, etc.
+		Exception = { fg = matrix.green_2, style = "bold" }, -- try, catch, throw
+		StorageClass = { fg = matrix.green_2, style = "bold" }, -- static, register, volatile, etc.
+		Identifier = { fg = matrix.green_2 }, -- any variable name
+		String = { fg = matrix.green_2, style = "italic" }, -- any string
+		Character = { fg = matrix.green_2, style = "italic" }, -- any character constant: 'c', '\n'
+		Float = { fg = matrix.green_2, style = "italic" }, -- a floating point constant: 2.3e10
+		Number = { fg = matrix.green_2, style = "italic" }, -- a number constant: 5
+		Boolean = { fg = matrix.green_2, style = "italic" }, -- a boolean constant: TRUE, false
+		Constant = { fg = matrix.green_2, style = "italic" }, -- any constant
+		Delimiter = { fg = matrix.green_3, style = "bold" }, -- character that needs attention like , or .
+		Special = { fg = matrix.green_2 }, -- any special symbol
+		Operator = { fg = matrix.green_3 }, -- sizeof, "+", "*", etc.
+
+		-- Turquoise
 		Underlined = { fg = matrix.turquoise_1, style = "underline" }, -- text that stands out, HTML links
 		SpecialComment = { fg = matrix.turquoise_2 }, -- special things inside a comment
 		Debug = { fg = matrix.turquoise_3 }, -- debugging statements
-		Constant = { fg = matrix.turquoise_3 }, -- any constant
 		Tag = { fg = matrix.turquoise_3 }, -- you can use CTRL-] on this
 
 		htmlLink = { fg = matrix.turquoise_1, style = "underline" },
 
 		htmlH1 = { fg = matrix.turquoise_1, style = "bold" },
-		htmlH2 = { fg = matrix.turquoise_2, style = "bold" },
-		htmlH3 = { fg = matrix.turquoise_3, style = "bold" },
-		htmlH4 = { fg = matrix.amber, style = "bold" },
-		htmlH5 = { fg = matrix.red, style = "bold" },
+		htmlH2 = { fg = matrix.turquoise_1 },
+		htmlH3 = { fg = matrix.turquoise_1, style = "italic" },
+		htmlH4 = { fg = matrix.turquoise_3, style = "bold" },
+		htmlH5 = { fg = matrix.turquoise_3 },
+		htmlH6 = { fg = matrix.turquoise_3, style = "italic" },
 
 		markdownH1 = { fg = matrix.turquoise_1, style = "bold" },
-		markdownH2 = { fg = matrix.turquoise_2, style = "bold" },
-		markdownH3 = { fg = matrix.turquoise_3, style = "bold" },
+		markdownH2 = { fg = matrix.turquoise_1 },
+		markdownH3 = { fg = matrix.turquoise_1, style = "italic" },
+		markdownH4 = { fg = matrix.turquoise_3, style = "bold" },
+		markdownH5 = { fg = matrix.turquoise_3 },
+		markdownH6 = { fg = matrix.turquoise_3, style = "italic" },
 
 		markdownH1Delimiter = { fg = matrix.turquoise_1, style = "bold" },
-		markdownH2Delimiter = { fg = matrix.turquoise_2, style = "bold" },
-		markdownH3Delimiter = { fg = matrix.turquoise_3, style = "bold" },
+		markdownH2Delimiter = { fg = matrix.turquoise_1 },
+		markdownH3Delimiter = { fg = matrix.turquoise_1, style = "italic" },
+		markdownH4Delimiter = { fg = matrix.turquoise_3, style = "bold" },
+		markdownH5Delimiter = { fg = matrix.turquoise_3 },
+		markdownH6Delimiter = { fg = matrix.turquoise_3, style = "italic" },
 	}
 	return syntax
 end
@@ -124,7 +133,7 @@ theme.loadEditor = function()
 		ReplacelMode = { fg = matrix.turquoise_3, style = "reverse" },
 		VisualMode = { fg = matrix.green_7, style = "reverse" },
 		CommandMode = { fg = matrix.green_7, style = "reverse" },
-		Warnings = { fg = matrix.turquoise_1 },
+		Warnings = { fg = matrix.amber },
 
 		-- Turquoise (descending brightness)
 		Title = { fg = matrix.turquoise_2, style = "bold" },
@@ -189,74 +198,82 @@ end
 
 theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups using modern capture-based names
-	-- ("@keyword", "@string", ...). Colours follow the documented palette
-	-- roles in colors.lua, mirroring loadSyntax:
-	--   variables=green_1, values/delimiters=green_2, types=green_3,
-	--   structs=green_4, operators=green_5, keywords=green_6,
-	--   conditionals=green_7, functions=turquoise_1, constants/tags=turquoise_3,
-	--   comments=gray, pre-processor/macro=light_2, errors=red.
+	-- ("@keyword", "@string", ...). Colours follow the documented syntax
+	-- roles in README.md, mirroring loadSyntax:
+	--   pre-processors=turquoise_2,
+	--   headings: 1=turquoise_1 bold, 2=turquoise_1, 3=turquoise_1 italic,
+	--   4=turquoise_3 bold, 5=turquoise_3, 6=turquoise_3 italic,
+	--   types=green_1 bold, functions=green_1 italic, namespaces=green_1,
+	--   keywords=green_2 bold, values=green_2 italic (special chars=mono_1),
+	--   variables=green_2, fields=green_3 italic, delimiters=green_3 bold,
+	--   operators=green_3, comments=mono_3, errors=red.
 	local treesitter = {
 		-- Monochrome
 		["@comment"] = { fg = matrix.mono_3, style = "italic" }, -- comments
-		["@attribute"] = { fg = matrix.mono_2 }, -- attributes/annotations (pre-processor / macro)
 
 		-- Red
 		["@error"] = { fg = matrix.red }, -- For syntax/parser errors.
 
 		-- Amber
-		-- (none: amber is for caution/todo, not syntax)
+		-- (none: amber is for warnings/todo, not syntax)
 
-		-- Green (descending brightness)
-		["@variable"] = { fg = matrix.green_1 }, -- variables
-		["@variable.builtin"] = { fg = matrix.green_1, style = "bold" },
-		["@variable.parameter"] = { fg = matrix.green_1, style = "underline" },
-		["@variable.member"] = { fg = matrix.green_1, style = "italic" },
-		["@property"] = { fg = matrix.green_1, style = "italic" },
-		["@module"] = { fg = matrix.green_1, style = "italic" },
-		["@string.special.symbol"] = { fg = matrix.green_1 }, -- identifiers referring to symbols or atoms
-
-		["@string"] = { fg = matrix.green_2, style = "italic" }, -- values
-		["@character"] = { fg = matrix.green_2, style = "italic" },
-		["@string.escape"] = { fg = matrix.green_2, style = "italic" },
-		["@string.regexp"] = { fg = matrix.green_2, style = "italic" },
-		["@number"] = { fg = matrix.green_2 },
-		["@number.float"] = { fg = matrix.green_2 },
-		["@boolean"] = { fg = matrix.green_2, style = "bold" },
-		["@punctuation.delimiter"] = { fg = matrix.green_2 }, -- delimiters
-		["@punctuation.bracket"] = { fg = matrix.green_2 },
-		["@punctuation.special"] = { fg = matrix.green_2 },
-
-		["@type"] = { fg = matrix.green_3 }, -- types
-		["@type.builtin"] = { fg = matrix.green_3 },
-		["@constructor"] = { fg = matrix.green_4 }, -- structs
-
-		["@operator"] = { fg = matrix.green_5 }, -- operators
-		["@keyword.operator"] = { fg = matrix.green_5, style = "italic" },
-
-		["@keyword"] = { fg = matrix.green_5, style = "italic" }, -- keywords
-		["@keyword.function"] = { fg = matrix.green_5, style = "italic" },
-		["@keyword.return"] = { fg = matrix.green_5, style = "italic" },
-		["@keyword.import"] = { fg = matrix.green_5 },
-		["@keyword.repeat"] = { fg = matrix.green_5, style = "italic" },
-		["@keyword.exception"] = { fg = matrix.green_5 },
-		["@label"] = { fg = matrix.green_5 },
-
-		["@keyword.conditional"] = { fg = matrix.green_5, style = "italic" }, -- conditionals
-
-		-- Turquoise (descending brightness, heading steps)
-		["@function"] = { fg = matrix.turquoise_1, style = "italic" }, -- functions
-		["@function.builtin"] = { fg = matrix.turquoise_1, style = "italic" },
-		["@function.method"] = { fg = matrix.turquoise_1, style = "italic" },
-		["@function.macro"] = { fg = matrix.turquoise_1 },
-		["@markup.heading"] = { fg = matrix.turquoise_1, style = "bold" }, -- headings
+		-- Turquoise (pre-processors and headings)
+		["@preproc"] = { fg = matrix.turquoise_2 }, -- pre-processor directives
+		["@keyword.directive"] = { fg = matrix.turquoise_2 }, -- modern pre-processor capture
+		["@attribute"] = { fg = matrix.turquoise_2 }, -- attributes/annotations (pre-processor / macro)
+		["@constant.macro"] = { fg = matrix.turquoise_2 }, -- macro constants
+		["@function.macro"] = { fg = matrix.turquoise_2 }, -- function-like macros
+		["@markup.heading.1"] = { fg = matrix.turquoise_1, style = "bold" }, -- headings
+		["@markup.heading.2"] = { fg = matrix.turquoise_1 },
+		["@markup.heading.3"] = { fg = matrix.turquoise_1, style = "italic" },
+		["@markup.heading.4"] = { fg = matrix.turquoise_3, style = "bold" },
+		["@markup.heading.5"] = { fg = matrix.turquoise_3 },
+		["@markup.heading.6"] = { fg = matrix.turquoise_3, style = "italic" },
+		["@markup.heading"] = { fg = matrix.turquoise_1, style = "bold" }, -- unnumbered headings fallback
 		["@markup.link"] = { fg = matrix.turquoise_1 },
 		["@markup.underline"] = { fg = matrix.turquoise_1, style = "underline" },
 		["@markup.link.url"] = { fg = matrix.turquoise_2 }, -- highlighted links
-		["@constant"] = { fg = matrix.turquoise_3 }, -- constants
-		["@constant.builtin"] = { fg = matrix.turquoise_3, style = "bold" },
-		["@constant.macro"] = { fg = matrix.turquoise_3, style = "bold" },
 		["@tag"] = { fg = matrix.turquoise_3 }, -- tags
 		["@tag.delimiter"] = { fg = matrix.turquoise_3 },
+
+		-- Green
+		["@type"] = { fg = matrix.green_1, style = "bold" }, -- types
+		["@type.builtin"] = { fg = matrix.green_1, style = "bold" },
+		["@constructor"] = { fg = matrix.green_1, style = "bold" }, -- structs
+		["@function"] = { fg = matrix.green_1, style = "italic" }, -- functions
+		["@function.builtin"] = { fg = matrix.green_1, style = "italic" },
+		["@function.method"] = { fg = matrix.green_1, style = "italic" },
+		["@keyword"] = { fg = matrix.green_2, style = "bold" }, -- keywords
+		["@keyword.function"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.return"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.import"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.repeat"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.exception"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.conditional"] = { fg = matrix.green_2, style = "bold" }, -- conditionals
+		["@label"] = { fg = matrix.green_2, style = "bold" },
+		["@variable"] = { fg = matrix.green_2 }, -- variables
+		["@variable.builtin"] = { fg = matrix.green_2 }, -- self, this, etc.
+		["@variable.parameter"] = { fg = matrix.green_2 }, -- parameters
+		["@module"] = { fg = matrix.green_1 }, -- namespaces/modules
+		["@variable.member"] = { fg = matrix.green_3, style = "italic" }, -- fields
+		["@property"] = { fg = matrix.green_3, style = "italic" }, -- fields
+		["@string.special.symbol"] = { fg = matrix.green_2 }, -- identifiers referring to symbols or atoms
+		["@string"] = { fg = matrix.green_2, style = "italic" }, -- values
+		["@character"] = { fg = matrix.green_2, style = "italic" },
+		["@string.regexp"] = { fg = matrix.green_2, style = "italic" },
+		["@string.escape"] = { fg = matrix.mono_1 }, -- special chars in values
+		["@string.special"] = { fg = matrix.mono_1 }, -- special chars in values
+		["@character.special"] = { fg = matrix.mono_1 }, -- special chars in values
+		["@number"] = { fg = matrix.green_2, style = "italic" },
+		["@number.float"] = { fg = matrix.green_2, style = "italic" },
+		["@boolean"] = { fg = matrix.green_2, style = "italic" },
+		["@constant"] = { fg = matrix.green_2, style = "italic" }, -- constants
+		["@constant.builtin"] = { fg = matrix.green_2, style = "italic" },
+		["@punctuation.delimiter"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
+		["@punctuation.bracket"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
+		["@punctuation.special"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
+		["@operator"] = { fg = matrix.green_3 }, -- operators
+		["@keyword.operator"] = { fg = matrix.green_3 }, -- sizeof and friends
 
 		-- Default colour for anything not otherwise specified
 		["@markup"] = { fg = matrix.green_2 },
@@ -273,32 +290,33 @@ theme.loadLSP = function()
 
 		-- Red / Amber / Green / Turquoise grouped for clarity
 
-		-- Turquoise (errors/warnings mapped)
-		LspDiagnosticsDefaultError = { fg = matrix.turquoise_3 }, -- used for "Error" diagnostic virtual text
-		LspDiagnosticsSignError = { fg = matrix.turquoise_3 }, -- used for "Error" diagnostic signs in sign column
-		LspDiagnosticsFloatingError = { fg = matrix.turquoise_3 }, -- used for "Error" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextError = { fg = matrix.turquoise_3 }, -- Virtual text "Error"
-		LspDiagnosticsUnderlineError = { style = "undercurl", sp = matrix.turquoise_3 }, -- used to underline "Error" diagnostics.
+		-- Red (errors)
+		LspDiagnosticsDefaultError = { fg = matrix.red }, -- used for "Error" diagnostic virtual text
+		LspDiagnosticsSignError = { fg = matrix.red }, -- used for "Error" diagnostic signs in sign column
+		LspDiagnosticsFloatingError = { fg = matrix.red }, -- used for "Error" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextError = { fg = matrix.red }, -- Virtual text "Error"
+		LspDiagnosticsUnderlineError = { style = "underline", sp = matrix.red }, -- used to underline "Error" diagnostics.
 
-		LspDiagnosticsDefaultWarning = { fg = matrix.turquoise_1 }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsSignWarning = { fg = matrix.turquoise_1 }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsFloatingWarning = { fg = matrix.turquoise_1 }, -- used for "Warning" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextWarning = { fg = matrix.turquoise_1 }, -- Virtual text "Warning"
-		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = matrix.turquoise_1 }, -- used to underline "Warning" diagnostics.
+		-- Amber (warnings)
+		LspDiagnosticsDefaultWarning = { fg = matrix.amber }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsSignWarning = { fg = matrix.amber }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsFloatingWarning = { fg = matrix.amber }, -- used for "Warning" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextWarning = { fg = matrix.amber }, -- Virtual text "Warning"
+		LspDiagnosticsUnderlineWarning = { style = "underline", sp = matrix.amber }, -- used to underline "Warning" diagnostics.
 
-		-- Red (information)
-		LspDiagnosticsDefaultInformation = { fg = matrix.red }, -- used for "Information" diagnostic virtual text
-		LspDiagnosticsSignInformation = { fg = matrix.red }, -- used for "Information" diagnostic signs in sign column
-		LspDiagnosticsFloatingInformation = { fg = matrix.red }, -- used for "Information" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextInformation = { fg = matrix.red }, -- Virtual text "Information"
-		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = matrix.red }, -- used to underline "Information" diagnostics.
+		-- Turquoise (information)
+		LspDiagnosticsDefaultInformation = { fg = matrix.turquoise_2 }, -- used for "Information" diagnostic virtual text
+		LspDiagnosticsSignInformation = { fg = matrix.turquoise_2 }, -- used for "Information" diagnostic signs in sign column
+		LspDiagnosticsFloatingInformation = { fg = matrix.turquoise_2 }, -- used for "Information" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextInformation = { fg = matrix.turquoise_2 }, -- Virtual text "Information"
+		LspDiagnosticsUnderlineInformation = { style = "underline", sp = matrix.turquoise_2 }, -- used to underline "Information" diagnostics.
 
 		-- Green (hints / references)
 		LspDiagnosticsDefaultHint = { fg = matrix.green_7 }, -- used for "Hint" diagnostic virtual text
 		LspDiagnosticsSignHint = { fg = matrix.green_7 }, -- used for "Hint" diagnostic signs in sign column
 		LspDiagnosticsFloatingHint = { fg = matrix.green_7 }, -- used for "Hint" diagnostic messages in the diagnostics float
 		LspDiagnosticsVirtualTextHint = { fg = matrix.green_7 }, -- Virtual text "Hint"
-		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = matrix.red }, -- used to underline "Hint" diagnostics.
+		LspDiagnosticsUnderlineHint = { style = "underline", sp = matrix.green_7 }, -- used to underline "Hint" diagnostics.
 		LspReferenceText = { fg = matrix.green_7, bg = matrix.mono_4 }, -- used for highlighting "text" references
 		LspReferenceRead = { fg = matrix.green_7, bg = matrix.mono_4 }, -- used for highlighting "read" references
 		LspReferenceWrite = { fg = matrix.green_7, bg = matrix.mono_4 }, -- used for highlighting "write" references

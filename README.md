@@ -24,16 +24,19 @@
 - Headings:
   - 1: `turquoise_1, bold`
   - 2: `turquoise_1`
-  - 3: `turquoise_2, bold`
-  - 4: `turquoise_2`
-  - 5: `turquoise_3, bold`
-  - 6: `turquoise_3`
+  - 3: `turquoise_1, italic`
+  - 4: `turquoise_3, bold`
+  - 5: `turquoise_3`
+  - 6: `turquoise_3, italic`
 - Types: `green_1, bold`
 - Functions: `green_1, italic`
+- Namespaces: `green_1`
 - Keywords: `green_2, bold`
 - Values: `green_2, italic`
+  - Special Chars: `mono_1`
 - Variables: `green_2`
-  - field: `green_3, italic`
+  - Field: `green_3, italic`
+- Delimiters: `green_3, bold`
 - Operators: `green_3`
 
 ## Palette

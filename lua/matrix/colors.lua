@@ -3,10 +3,10 @@ local matrix = {
 	mono_1 = "#ffffff",
 	mono_2 = "#bfbfbf",
 	mono_3 = "#808080", -- Above used for foreground, below used for background, this used for either.
-	mono_4 = "#404040",
+	mono_4 = "#505050", -- Dim meaning
 	mono_5 = "#000000",
 	-- Red
-	red = "#ff5050", -- Negative meaning
+	red = "#ff3030", -- Error meaning
 	-- Amber
 	amber = "#ffbf00", -- Caution meaning
 	-- Green: 8 palette gradient from #00f000 to #003000
@@ -20,8 +20,8 @@ local matrix = {
 	green_8 = "#003000",
 	-- Turquoise: 3 palette gradient from #00d0d0 to #009090
 	turquoise_1 = "#00d0d0",
-	turquoise_2 = "#00b0b0",
-	turquoise_3 = "#009090", -- Info meaning
+	turquoise_2 = "#00b0b0", -- Info meaning
+	turquoise_3 = "#009090",
 	none = "NONE",
 }
 

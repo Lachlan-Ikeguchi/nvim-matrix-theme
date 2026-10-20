@@ -9,19 +9,19 @@ matrix.normal = {
 }
 
 matrix.insert = {
-	a = { fg = colors.green_1, bg = colors.turquoise_3, gui = "bold" },
+	a = { fg = colors.mono_5, bg = colors.turquoise_3, gui = "bold" },
 	b = { fg = colors.green_2, bg = colors.green_7 },
 	c = { fg = colors.green_3, bg = colors.green_8 },
 }
 
 matrix.visual = {
-	a = { fg = colors.green_1, bg = colors.mono_2, gui = "bold" },
+	a = { fg = colors.mono_5, bg = colors.mono_2, gui = "bold" },
 	b = { fg = colors.green_2, bg = colors.green_7 },
 	c = { fg = colors.green_3, bg = colors.green_8 },
 }
 
 matrix.replace = {
-	a = { fg = colors.green_1, bg = colors.amber, gui = "bold" },
+	a = { fg = colors.mono_5, bg = colors.amber, gui = "bold" },
 	b = { fg = colors.green_2, bg = colors.green_7 },
 	c = { fg = colors.green_3, bg = colors.green_8 },
 }

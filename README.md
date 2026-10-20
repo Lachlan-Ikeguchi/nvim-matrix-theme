@@ -32,11 +32,11 @@
 - Functions: `green_1, italic`
 - Namespaces: `green_1`
 - Keywords: `green_2, bold`
-- Values: `green_2, italic`
-  - Special Chars: `mono_1`
-- Variables: `green_2`
-  - Field: `green_3, italic`
+- Variables: `green_2, italic`
+  - Field: `green_2`
 - Delimiters: `green_3, bold`
+- Values: `green_3, italic`
+  - Special Chars: `mono_1`
 - Operators: `green_3`
 
 ## Palette
@@ -64,7 +64,7 @@ Complementary palette
 Primary palette
 
 - `#00f000`
-- `#00d500`
+- `#00d500`: normal text
 - `#00b900`
 - `#009e00`
 - `#008200`

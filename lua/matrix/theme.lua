@@ -83,28 +83,58 @@ theme.loadEditor = function()
 	-- Editor highlight groups
 
 	local editor = {
-		-- Monochrome
-		EndOfBuffer = { fg = matrix.mono_3 },
-		Folded = { fg = matrix.mono_3, style = "italic" },
-		LineNr = { fg = matrix.mono_3 },
-		NonText = { fg = matrix.mono_4 },
+		-- Folding
+		Folded = { fg = matrix.mono_4, style = "italic" },
+		FoldColumn = { fg = matrix.mono_4 },
 
-		-- Red
-		MatchParen = { fg = matrix.red, style = "bold" },
-		IncSearch = { fg = matrix.red, bg = matrix.red },
+		-- Floating
+		NormalFloat = { fg = matrix.green_2, bg = matrix.green_8 },
+		FloatBorder = { fg = matrix.green_2, bg = matrix.green_8 },
+
+		-- Errors
 		ErrorMsg = { fg = matrix.red },
 
-		-- Amber
+		-- Warnings
+		Warnings = { fg = matrix.amber },
 		WarningMsg = { fg = matrix.amber },
 
-		-- Green (descending brightness)
-		FoldColumn = { fg = matrix.green_4 },
-		NormalFloat = { fg = matrix.green_2, bg = matrix.green_8 }, -- normal text and background color
-		FloatBorder = { fg = matrix.green_2, bg = matrix.green_8 }, -- normal text and background color
+		-- Health
+		healthError = { fg = matrix.red },
+		healthWarning = { fg = matrix.amber },
+		healthSuccess = { fg = matrix.green_1 },
+
+		-- Dashboard
+		DashboardShortCut = { fg = matrix.green_4 },
+		DashboardHeader = { fg = matrix.green_7 },
+		DashboardCenter = { fg = matrix.green_3 },
+		DashboardFooter = { fg = matrix.turquoise_2, style = "italic" },
+
+        -- Cursor
 		Cursor = { fg = matrix.green_1, style = "reverse" }, -- the character under the cursor
-		CursorIM = { fg = matrix.green_6, style = "reverse" }, -- like Cursor, but used when in IME mode
+		CursorIM = { fg = matrix.green_1, style = "reverse" }, -- like Cursor, but used when in IME mode
+		CursorLineNr = { fg = matrix.none, bg = matrix.none },
+		CursorColumn = { fg = matrix.none, bg = matrix.none },
+		CursorLine = { fg = matrix.none, bg = matrix.none },
+
+		-- BufferLine
+		BufferLineIndicatorSelected = { fg = matrix.mono_5 },
+		BufferLineFill = { bg = matrix.mono_5 },
+
+        -- Tabs
+		TabLineFill = { fg = matrix.green_2, bg = matrix.none },
+		TablineSel = { fg = matrix.green_1, bg = matrix.green_7 },
+		Tabline = { fg = matrix.green_2, bg = matrix.green_8 },
+
+        -- Search
+		MatchParen = { fg = matrix.amber, style = "bold" },
+		IncSearch = { fg = matrix.mono_5, bg = matrix.red },
+		Search = { fg = matrix.mono_5, bg = matrix.amber,},
+
+        -- Visual Mode
+		Visual = { fg = matrix.none, bg = matrix.mono_4 },
+		VisualNOS = { fg = matrix.none, bg = matrix.mono_4 },
+
 		Directory = { fg = matrix.green_4, bg = matrix.none }, -- directory names (and other special names in listings)
-		CursorLineNr = { fg = matrix.green_7 },
 		ModeMsg = { fg = matrix.green_7 },
 		MoreMsg = { fg = matrix.green_7 },
 		Pmenu = { fg = matrix.green_7, bg = matrix.green_2 },
@@ -113,29 +143,18 @@ theme.loadEditor = function()
 		PmenuThumb = { fg = matrix.green_7, bg = matrix.green_7 },
 		QuickFixLine = { fg = matrix.green_7, style = "reverse" },
 		qfLineNr = { fg = matrix.green_7, style = "reverse" },
-		Search = { fg = matrix.red, bg = matrix.green_5, style = "reverse" },
 		SpecialKey = { fg = matrix.green_7 },
 		StatusLine = { fg = matrix.green_7, bg = matrix.green_2 },
 		StatusLineNC = { fg = matrix.green_7, bg = matrix.mono_4 },
 		StatusLineTerm = { fg = matrix.green_7, bg = matrix.green_2 },
 		StatusLineTermNC = { fg = matrix.green_7, bg = matrix.mono_4 },
-		TabLineFill = { fg = matrix.green_7, bg = matrix.none },
-		TablineSel = { fg = matrix.mono_4, bg = matrix.green_7 },
-		Tabline = { fg = matrix.green_7, bg = matrix.mono_4 },
-		Visual = { fg = matrix.none, bg = matrix.green_2 },
-		VisualNOS = { fg = matrix.none, bg = matrix.green_2 },
-		CursorColumn = { fg = matrix.none, bg = matrix.mono_4 },
-		CursorLine = { fg = matrix.none, bg = matrix.mono_4 },
 		ToolbarLine = { fg = matrix.green_7, bg = matrix.mono_4 },
 		ToolbarButton = { fg = matrix.green_7, style = "bold" },
 		NormalMode = { fg = matrix.green_7, style = "reverse" },
 		InsertMode = { fg = matrix.turquoise_2, style = "reverse" },
-		ReplacelMode = { fg = matrix.turquoise_3, style = "reverse" },
+		ReplaceMode = { fg = matrix.turquoise_3, style = "reverse" },
 		VisualMode = { fg = matrix.green_7, style = "reverse" },
 		CommandMode = { fg = matrix.green_7, style = "reverse" },
-		Warnings = { fg = matrix.amber },
-
-		-- Turquoise (descending brightness)
 		Title = { fg = matrix.turquoise_2, style = "bold" },
 		Question = { fg = matrix.turquoise_2 },
 		SpellBad = { fg = matrix.turquoise_3, style = "italic,undercurl" },
@@ -143,21 +162,9 @@ theme.loadEditor = function()
 		SpellLocal = { fg = matrix.green_3, style = "italic,undercurl" },
 		SpellRare = { fg = matrix.green_7, style = "italic,undercurl" },
 		WildMenu = { fg = matrix.mono_2, style = "bold" },
-
-		-- health
-		healthError = { fg = matrix.red },
-		healthWarning = { fg = matrix.amber },
-		healthSuccess = { fg = matrix.green_1 },
-
-		-- dashboard
-		DashboardShortCut = { fg = matrix.green_4 },
-		DashboardHeader = { fg = matrix.green_7 },
-		DashboardCenter = { fg = matrix.green_3 },
-		DashboardFooter = { fg = matrix.turquoise_2, style = "italic" },
-
-		-- BufferLine
-		BufferLineIndicatorSelected = { fg = matrix.mono_5 },
-		BufferLineFill = { bg = matrix.mono_5 },
+		EndOfBuffer = { fg = matrix.mono_4 },
+		LineNr = { fg = matrix.mono_4 },
+		NonText = { fg = matrix.mono_4 },
 	}
 
 	editor.Normal = { fg = matrix.green_2, bg = matrix.none }
@@ -168,32 +175,22 @@ theme.loadEditor = function()
 end
 
 theme.loadTerminal = function()
-	-- Terminal colors grouped by categories where relevant.
-	-- (Original assigned many to same green; preserve grouping for clarity.)
-
-	-- Monochrome / base
-	vim.g.terminal_color_0 = matrix.green_2
-	vim.g.terminal_color_7 = matrix.green_2
-	vim.g.terminal_color_8 = matrix.green_2
-	vim.g.terminal_color_15 = matrix.green_2
-
-	-- Red
-	vim.g.terminal_color_1 = matrix.green_2
-	vim.g.terminal_color_9 = matrix.green_2
-
-	-- Amber
-	vim.g.terminal_color_3 = matrix.green_2
-	vim.g.terminal_color_11 = matrix.green_2
-
-	-- Green (descending brightness)
-	vim.g.terminal_color_2 = matrix.green_2
-	vim.g.terminal_color_10 = matrix.green_2
+	vim.g.terminal_color_0 = matrix.green_4
+	vim.g.terminal_color_1 = matrix.green_4
+	vim.g.terminal_color_2 = matrix.green_3
+	vim.g.terminal_color_3 = matrix.green_3
 	vim.g.terminal_color_4 = matrix.green_2
-	vim.g.terminal_color_12 = matrix.green_2
 	vim.g.terminal_color_5 = matrix.green_2
+	vim.g.terminal_color_6 = matrix.green_1
+	vim.g.terminal_color_7 = matrix.green_1
+	vim.g.terminal_color_8 = matrix.green_4
+	vim.g.terminal_color_9 = matrix.green_4
+	vim.g.terminal_color_10 = matrix.green_3
+	vim.g.terminal_color_11 = matrix.green_3
+	vim.g.terminal_color_12 = matrix.green_2
 	vim.g.terminal_color_13 = matrix.green_2
-	vim.g.terminal_color_6 = matrix.green_2
-	vim.g.terminal_color_14 = matrix.green_2
+	vim.g.terminal_color_14 = matrix.green_1
+	vim.g.terminal_color_15 = matrix.green_1
 end
 
 theme.loadTreeSitter = function()

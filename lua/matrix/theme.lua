@@ -12,7 +12,7 @@ theme.loadSyntax = function()
 		Conceal = { fg = matrix.none, bg = matrix.mono_5 },
 
 		-- Red
-		Error = { fg = matrix.red, style = "bold,underline" }, -- any erroneous construct
+		Error = { fg = matrix.red, style = "bold,italic" }, -- any erroneous construct
 
 		-- Amber
 		Todo = { fg = matrix.amber, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -29,23 +29,23 @@ theme.loadSyntax = function()
 		Typedef = { fg = matrix.green_1, style = "bold" }, -- a typedef
 		Structure = { fg = matrix.green_1, style = "bold" }, -- struct, union, enum, etc.
 		Function = { fg = matrix.green_1, style = "italic" }, -- any function name
-		Keyword = { fg = matrix.green_1, style = "bold" }, -- for, do, while, etc.
-		Statement = { fg = matrix.green_1, style = "bold" }, -- any statement
-		Conditional = { fg = matrix.green_1, style = "bold" }, -- if, then, else, endif, switch, etc.
-		Repeat = { fg = matrix.green_1, style = "bold" }, -- any other keyword
-		Label = { fg = matrix.green_1, style = "bold" }, -- case, default, etc.
-		Exception = { fg = matrix.green_1, style = "bold" }, -- try, catch, throw
-		StorageClass = { fg = matrix.green_1, style = "bold" }, -- static, register, volatile, etc.
-		Identifier = { fg = matrix.green_1 }, -- any variable name
-		String = { fg = matrix.green_1, style = "italic" }, -- any string
-		Character = { fg = matrix.green_1, style = "italic" }, -- any character constant: 'c', '\n'
-		Float = { fg = matrix.green_1, style = "italic" }, -- a floating point constant: 2.3e10
-		Number = { fg = matrix.green_1, style = "italic" }, -- a number constant: 5
-		Boolean = { fg = matrix.green_1, style = "italic" }, -- a boolean constant: TRUE, false
-		Constant = { fg = matrix.green_1, style = "italic" }, -- any constant
-		Delimiter = { fg = matrix.green_2, style = "bold" }, -- character that needs attention like , or .
-		Special = { fg = matrix.green_1 }, -- any special symbol
-		Operator = { fg = matrix.green_2 }, -- sizeof, "+", "*", etc.
+		Keyword = { fg = matrix.green_2, style = "bold" }, -- for, do, while, etc.
+		Statement = { fg = matrix.green_2, style = "bold" }, -- any statement
+		Conditional = { fg = matrix.green_2, style = "bold" }, -- if, then, else, endif, switch, etc.
+		Repeat = { fg = matrix.green_2, style = "bold" }, -- any other keyword
+		Label = { fg = matrix.green_2, style = "bold" }, -- case, default, etc.
+		Exception = { fg = matrix.green_2, style = "bold" }, -- try, catch, throw
+		StorageClass = { fg = matrix.green_2, style = "bold" }, -- static, register, volatile, etc.
+		Identifier = { fg = matrix.green_2, style = "italic" }, -- any variable name
+		String = { fg = matrix.green_3, style = "italic" }, -- any string
+		Character = { fg = matrix.green_3, style = "italic" }, -- any character constant: 'c', '\n'
+		Float = { fg = matrix.green_3, style = "italic" }, -- a floating point constant: 2.3e10
+		Number = { fg = matrix.green_3, style = "italic" }, -- a number constant: 5
+		Boolean = { fg = matrix.green_3, style = "italic" }, -- a boolean constant: TRUE, false
+		Constant = { fg = matrix.green_3, style = "italic" }, -- any constant
+		Delimiter = { fg = matrix.green_3, style = "bold" }, -- character that needs attention like , or .
+		Special = { fg = matrix.green_2 }, -- any special symbol
+		Operator = { fg = matrix.green_3 }, -- sizeof, "+", "*", etc.
 
 		-- Turquoise
 		Underlined = { fg = matrix.turquoise_1, style = "underline" }, -- text that stands out, HTML links
@@ -92,15 +92,15 @@ theme.loadEditor = function()
 		FloatBorder = { fg = matrix.green_1, bg = matrix.green_6 },
 
 		-- Errors
-		ErrorMsg = { fg = matrix.red },
+		ErrorMsg = { fg = matrix.red, style = "bold,italic" },
 
 		-- Warnings
-		Warnings = { fg = matrix.amber },
-		WarningMsg = { fg = matrix.amber },
+		Warnings = { fg = matrix.amber, style = "bold,italic" },
+		WarningMsg = { fg = matrix.amber, style = "bold,italic" },
 
 		-- Health
-		healthError = { fg = matrix.red },
-		healthWarning = { fg = matrix.amber },
+		healthError = { fg = matrix.red, style = "bold,italic" },
+		healthWarning = { fg = matrix.amber, style = "bold,italic" },
 		healthSuccess = { fg = matrix.green_1 },
 
 		-- Dashboard
@@ -167,10 +167,10 @@ theme.loadEditor = function()
 		NonText = { fg = matrix.mono_4 },
 	}
 
-	editor.Normal = { fg = matrix.green_1, bg = matrix.none }
-	editor.SignColumn = { fg = matrix.green_1, bg = matrix.none }
+	editor.Normal = { fg = matrix.green_2, bg = matrix.none }
+	editor.SignColumn = { fg = matrix.green_2, bg = matrix.none }
 
-	editor.VertSplit = { fg = matrix.green_1 }
+	editor.VertSplit = { fg = matrix.green_2 }
 	return editor
 end
 
@@ -201,15 +201,15 @@ theme.loadTreeSitter = function()
 	--   headings: 1=turquoise_1 bold, 2=turquoise_1, 3=turquoise_1 italic,
 	--   4=turquoise_3 bold, 5=turquoise_3, 6=turquoise_3 italic,
 	--   types=green_1 bold, functions=green_1 italic, namespaces=green_1,
-	--   keywords=green_2 bold, values=green_2 italic (special chars=mono_1),
-	--   variables=green_2, fields=green_3 italic, delimiters=green_3 bold,
-	--   operators=green_3, comments=mono_3, errors=red.
+	--   keywords=green_2 bold, variables=green_2 italic, fields=green_2,
+	--   values=green_3 italic (special chars=mono_1), delimiters=green_3 bold,
+	--   operators=green_3, comments=mono_3 italic, errors=red bold,italic.
 	local treesitter = {
 		-- Monochrome
 		["@comment"] = { fg = matrix.mono_3, style = "italic" }, -- comments
 
 		-- Red
-		["@error"] = { fg = matrix.red }, -- For syntax/parser errors.
+		["@error"] = { fg = matrix.red, style = "bold,italic" }, -- For syntax/parser errors.
 
 		-- Amber
 		-- (none: amber is for warnings/todo, not syntax)
@@ -240,41 +240,41 @@ theme.loadTreeSitter = function()
 		["@function"] = { fg = matrix.green_1, style = "italic" }, -- functions
 		["@function.builtin"] = { fg = matrix.green_1, style = "italic" },
 		["@function.method"] = { fg = matrix.green_1, style = "italic" },
-		["@keyword"] = { fg = matrix.green_1, style = "bold" }, -- keywords
-		["@keyword.function"] = { fg = matrix.green_1, style = "bold" },
-		["@keyword.return"] = { fg = matrix.green_1, style = "bold" },
-		["@keyword.import"] = { fg = matrix.green_1, style = "bold" },
-		["@keyword.repeat"] = { fg = matrix.green_1, style = "bold" },
-		["@keyword.exception"] = { fg = matrix.green_1, style = "bold" },
-		["@keyword.conditional"] = { fg = matrix.green_1, style = "bold" }, -- conditionals
-		["@label"] = { fg = matrix.green_1, style = "bold" },
-		["@variable"] = { fg = matrix.green_1 }, -- variables
-		["@variable.builtin"] = { fg = matrix.green_1 }, -- self, this, etc.
-		["@variable.parameter"] = { fg = matrix.green_1 }, -- parameters
+		["@keyword"] = { fg = matrix.green_2, style = "bold" }, -- keywords
+		["@keyword.function"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.return"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.import"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.repeat"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.exception"] = { fg = matrix.green_2, style = "bold" },
+		["@keyword.conditional"] = { fg = matrix.green_2, style = "bold" }, -- conditionals
+		["@label"] = { fg = matrix.green_2, style = "bold" },
+		["@variable"] = { fg = matrix.green_2, style = "italic" }, -- variables
+		["@variable.builtin"] = { fg = matrix.green_2, style = "italic" }, -- self, this, etc.
+		["@variable.parameter"] = { fg = matrix.green_2, style = "italic" }, -- parameters
 		["@module"] = { fg = matrix.green_1 }, -- namespaces/modules
-		["@variable.member"] = { fg = matrix.green_2, style = "italic" }, -- fields
-		["@property"] = { fg = matrix.green_2, style = "italic" }, -- fields
-		["@string.special.symbol"] = { fg = matrix.green_1 }, -- identifiers referring to symbols or atoms
-		["@string"] = { fg = matrix.green_1, style = "italic" }, -- values
-		["@character"] = { fg = matrix.green_1, style = "italic" },
-		["@string.regexp"] = { fg = matrix.green_1, style = "italic" },
+		["@variable.member"] = { fg = matrix.green_2 }, -- fields
+		["@property"] = { fg = matrix.green_2 }, -- fields
+		["@string.special.symbol"] = { fg = matrix.green_2 }, -- identifiers referring to symbols or atoms
+		["@string"] = { fg = matrix.green_3, style = "italic" }, -- values
+		["@character"] = { fg = matrix.green_3, style = "italic" },
+		["@string.regexp"] = { fg = matrix.green_3, style = "italic" },
 		["@string.escape"] = { fg = matrix.mono_1 }, -- special chars in values
 		["@string.special"] = { fg = matrix.mono_1 }, -- special chars in values
 		["@character.special"] = { fg = matrix.mono_1 }, -- special chars in values
-		["@number"] = { fg = matrix.green_1, style = "italic" },
-		["@number.float"] = { fg = matrix.green_1, style = "italic" },
-		["@boolean"] = { fg = matrix.green_1, style = "italic" },
-		["@constant"] = { fg = matrix.green_1, style = "italic" }, -- constants
-		["@constant.builtin"] = { fg = matrix.green_1, style = "italic" },
-		["@punctuation.delimiter"] = { fg = matrix.green_2, style = "bold" }, -- delimiters
-		["@punctuation.bracket"] = { fg = matrix.green_2, style = "bold" }, -- delimiters
-		["@punctuation.special"] = { fg = matrix.green_2, style = "bold" }, -- delimiters
-		["@operator"] = { fg = matrix.green_2 }, -- operators
-		["@keyword.operator"] = { fg = matrix.green_2 }, -- sizeof and friends
+		["@number"] = { fg = matrix.green_3, style = "italic" },
+		["@number.float"] = { fg = matrix.green_3, style = "italic" },
+		["@boolean"] = { fg = matrix.green_3, style = "italic" },
+		["@constant"] = { fg = matrix.green_3, style = "italic" }, -- constants
+		["@constant.builtin"] = { fg = matrix.green_3, style = "italic" },
+		["@punctuation.delimiter"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
+		["@punctuation.bracket"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
+		["@punctuation.special"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
+		["@operator"] = { fg = matrix.green_3 }, -- operators
+		["@keyword.operator"] = { fg = matrix.green_3 }, -- sizeof and friends
 
-		-- Default colour for anything not otherwise specified
-		["@markup"] = { fg = matrix.green_1 },
-		["@markup.raw"] = { fg = matrix.green_1 },
+		-- Default colour (normal text) for anything not otherwise specified
+		["@markup"] = { fg = matrix.green_2 },
+		["@markup.raw"] = { fg = matrix.green_2 },
 	}
 
 	return treesitter
@@ -380,7 +380,7 @@ theme.loadPlugins = function()
 		CmpItemMenu = { fg = matrix.turquoise_2 },
 
 		-- Indent Blankline
-		IblIndent = { fg = matrix.green_2 },
+		IblIndent = { fg = matrix.green_5 },
 		IblScope = { fg = matrix.green_1 },
 	}
 

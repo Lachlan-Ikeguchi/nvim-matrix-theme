@@ -47,17 +47,17 @@ Complementary palette
 
 - `#ffffff`
 - `#bfbfbf`
-- `#808080`: all comments
+- `#808080`: all comments, italic
 - `#505050`: all dim
 - `#000000`
 
 ### Red
 
-- `#ff3030`: all errors
+- `#ff3030`: all errors, bold, italic
 
 ### Amber
 
-- `#ffbf00`: all warnings
+- `#ffbf00`: all warnings, bold, italic
 
 ### Green
 

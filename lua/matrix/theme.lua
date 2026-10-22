@@ -110,6 +110,8 @@ theme.loadEditor = function()
 		-- Floating
 		NormalFloat = { fg = matrix.green_1, bg = matrix.green_6 },
 		FloatBorder = { fg = matrix.green_1, bg = matrix.green_6 },
+		FloatShadow = { fg = matrix.green_1, bg = matrix.green_5 },
+		FloatShadowThrough = { fg = matrix.green_1, bg = matrix.none },
 
 		-- Errors
 		ErrorMsg = { fg = matrix.red, style = "bold,italic" },
@@ -142,8 +144,8 @@ theme.loadEditor = function()
 
 		-- Tabs
 		TabLineFill = { fg = matrix.green_1, bg = matrix.none },
-		TablineSel = { fg = matrix.green_1, bg = matrix.green_6 },
-		Tabline = { fg = matrix.green_1, bg = matrix.green_6 },
+		TablineSel = { fg = matrix.green_1, bg = matrix.green_5 },
+		Tabline = { fg = matrix.green_2, bg = matrix.green_6 },
 
 		-- Search
 		MatchParen = { fg = matrix.amber, style = "bold" },
@@ -155,10 +157,12 @@ theme.loadEditor = function()
 		VisualNOS = { fg = matrix.none, bg = matrix.mono_4 },
 
 		-- Popup Menu
-		Pmenu = { fg = matrix.green_3, bg = matrix.green_1 },
-		PmenuSel = { fg = matrix.green_1, bg = matrix.red },
-		PmenuSbar = { fg = matrix.green_2, bg = matrix.amber },
+		PmenuSel = { fg = matrix.green_1, bg = matrix.green_5 },
+		Pmenu = { fg = matrix.green_3, bg = matrix.green_6 },
+		PmenuSbar = { fg = matrix.green_1, bg = matrix.green_3 },
 		PmenuThumb = { fg = matrix.green_2, bg = matrix.green_6 },
+		PmenuBorder = { fg = matrix.green_1, bg = matrix.green_6 },
+		PmenuShadow = { fg = matrix.green_1, bg = matrix.green_5 },
 
 		-- Status Line
 		StatusLine = { fg = matrix.green_6, bg = matrix.green_1 },
@@ -176,6 +180,20 @@ theme.loadEditor = function()
 		-- QuickFix
 		QuickFixLine = { fg = matrix.green_6, style = "reverse" },
 		qfLineNr = { fg = matrix.green_6, style = "reverse" },
+
+		-- Diff
+        diffFile = { fg = matrix.mono_1 },
+		diffIndexLine = { fg = matrix.mono_2 },
+		diffOldFile = { fg = matrix.red },
+		diffNewFile = { fg = matrix.amber },
+		diffLine = { fg = matrix.mono_3 },
+		diffAdded = { fg = matrix.green_1, style = "bold" },
+		diffRemoved = { fg = matrix.red, style = "bold" },
+		diffChanged = { fg = matrix.amber, style = "bold" },
+		DiffAdd = { bg = matrix.green_1, style = "bold" },
+		DiffDelete = { bg = matrix.red, style = "bold" },
+		DiffChange = { bg = matrix.amber, style = "bold" },
+		DiffText = { fg = matrix.mono_3 },
 
 		-- Special Keys
 		SpecialKey = { fg = matrix.green_6 },
@@ -401,13 +419,6 @@ end
 theme.loadPlugins = function()
 	-- Plugins highlight groups
 	local plugins = {
-		-- Diff
-		diffOldFile = { fg = matrix.amber },
-		diffIndexLine = { fg = matrix.green_6 },
-		diffFile = { fg = matrix.green_2 },
-		diffLine = { fg = matrix.green_6 },
-		diffNewFile = { fg = matrix.mono_2 },
-
 		-- GitSigns
 		GitSignsAdd = { fg = matrix.green_1 },
 		GitSignsAddNr = { fg = matrix.green_1 },
@@ -426,6 +437,13 @@ theme.loadPlugins = function()
 		TelescopeSelectionCaret = { fg = matrix.green_6 },
 		TelescopeSelection = { fg = matrix.green_6 },
 		TelescopeMatching = { fg = matrix.green_2 },
+
+		-- Cmp
+		CmpItemKind = { fg = matrix.turquoise_1 },
+		CmpItemAbbrMatch = { fg = matrix.green_1, style = "bold" },
+		CmpItemAbbrMatchFuzzy = { fg = matrix.green_1, style = "bold" },
+		CmpItemAbbr = { fg = matrix.green_3 },
+		CmpItemMenu = { fg = matrix.amber },
 
 		-- Indent Blankline
 		IblIndent = { fg = matrix.green_5 },

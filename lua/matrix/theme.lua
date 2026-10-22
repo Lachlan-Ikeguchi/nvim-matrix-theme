@@ -127,7 +127,7 @@ theme.loadEditor = function()
 
 		-- Dashboard
 		DashboardShortCut = { fg = matrix.green_2 },
-		DashboardHeader = { fg = matrix.green_6 },
+		DashboardHeader = { fg = matrix.green_2 },
 		DashboardCenter = { fg = matrix.green_2 },
 		DashboardFooter = { fg = matrix.turquoise_2, style = "italic" },
 
@@ -166,14 +166,14 @@ theme.loadEditor = function()
 
 		-- Status Line
 		StatusLine = { fg = matrix.green_6, bg = matrix.green_1 },
-		StatusLineNC = { fg = matrix.green_6, bg = matrix.mono_4 },
+		StatusLineNC = { fg = matrix.green_2, bg = matrix.mono_4 },
 		StatusLineTerm = { fg = matrix.green_6, bg = matrix.green_1 },
-		StatusLineTermNC = { fg = matrix.green_6, bg = matrix.mono_4 },
+		StatusLineTermNC = { fg = matrix.green_2, bg = matrix.mono_4 },
 
 		-- Messages
 		Directory = { fg = matrix.green_2, bg = matrix.none }, -- directory names (and other special names in listings)
-		ModeMsg = { fg = matrix.green_6 },
-		MoreMsg = { fg = matrix.green_6 },
+		ModeMsg = { fg = matrix.green_2 },
+		MoreMsg = { fg = matrix.green_2 },
 		Title = { fg = matrix.turquoise_2, style = "bold" },
 		Question = { fg = matrix.turquoise_2 },
 
@@ -196,11 +196,11 @@ theme.loadEditor = function()
 		DiffText = { fg = matrix.mono_3 },
 
 		-- Special Keys
-		SpecialKey = { fg = matrix.green_6 },
+		SpecialKey = { fg = matrix.green_2 },
 
 		-- Toolbar
-		ToolbarLine = { fg = matrix.green_6, bg = matrix.mono_4 },
-		ToolbarButton = { fg = matrix.green_6, style = "bold" },
+		ToolbarLine = { fg = matrix.green_2, bg = matrix.mono_4 },
+		ToolbarButton = { fg = matrix.green_2, style = "bold" },
 
 		-- Modes
 		NormalMode = { fg = matrix.green_6, style = "reverse" },
@@ -213,7 +213,7 @@ theme.loadEditor = function()
 		SpellBad = { fg = matrix.turquoise_3, style = "italic,undercurl" },
 		SpellCap = { fg = matrix.green_2, style = "italic,undercurl" },
 		SpellLocal = { fg = matrix.green_2, style = "italic,undercurl" },
-		SpellRare = { fg = matrix.green_6, style = "italic,undercurl" },
+		SpellRare = { fg = matrix.green_2, style = "italic,undercurl" },
 
 		-- Completion
 		WildMenu = { fg = matrix.mono_2, style = "bold" },
@@ -396,11 +396,11 @@ theme.loadLSP = function()
 		DiagnosticSignInfo = { link = "LspDiagnosticsSignInformation" },
 
 		-- Hints
-		LspDiagnosticsDefaultHint = { fg = matrix.green_6 }, -- used for "Hint" diagnostic virtual text
-		LspDiagnosticsSignHint = { fg = matrix.green_6 }, -- used for "Hint" diagnostic signs in sign column
-		LspDiagnosticsFloatingHint = { fg = matrix.green_6 }, -- used for "Hint" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextHint = { fg = matrix.green_6 }, -- Virtual text "Hint"
-		LspDiagnosticsUnderlineHint = { style = "underline", sp = matrix.green_6 }, -- used to underline "Hint" diagnostics.
+		LspDiagnosticsDefaultHint = { fg = matrix.green_2 }, -- used for "Hint" diagnostic virtual text
+		LspDiagnosticsSignHint = { fg = matrix.green_2 }, -- used for "Hint" diagnostic signs in sign column
+		LspDiagnosticsFloatingHint = { fg = matrix.green_2 }, -- used for "Hint" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextHint = { fg = matrix.green_2 }, -- Virtual text "Hint"
+		LspDiagnosticsUnderlineHint = { style = "underline", sp = matrix.green_2 }, -- used to underline "Hint" diagnostics.
 		DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
 		DiagnosticVirtualTextHint = { link = "LspDiagnosticsVirtualTextHint" },
 		DiagnosticUnderlineHint = { link = "LspDiagnosticsUnderlineHint" },
@@ -408,9 +408,9 @@ theme.loadLSP = function()
 		DiagnosticSignHint = { link = "LspDiagnosticsSignHint" },
 
 		-- References
-		LspReferenceText = { fg = matrix.green_6, bg = matrix.mono_4 }, -- used for highlighting "text" references
-		LspReferenceRead = { fg = matrix.green_6, bg = matrix.mono_4 }, -- used for highlighting "read" references
-		LspReferenceWrite = { fg = matrix.green_6, bg = matrix.mono_4 }, -- used for highlighting "write" references
+		LspReferenceText = { fg = matrix.green_2, bg = matrix.mono_4 }, -- used for highlighting "text" references
+		LspReferenceRead = { fg = matrix.green_2, bg = matrix.mono_4 }, -- used for highlighting "read" references
+		LspReferenceWrite = { fg = matrix.green_2, bg = matrix.mono_4 }, -- used for highlighting "write" references
 	}
 
 	return lsp

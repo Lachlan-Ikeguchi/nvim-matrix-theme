@@ -380,8 +380,8 @@ theme.loadPlugins = function()
 		CmpItemMenu = { fg = matrix.turquoise_2 },
 
 		-- Indent Blankline
-		IndentBlanklineChar = { fg = matrix.green_7 },
-		IndentBlanklineContextChar = { fg = matrix.red },
+		IblIndent = { fg = matrix.green_4 },
+		IblScope = { fg = matrix.green_1 },
 	}
 
 	return plugins

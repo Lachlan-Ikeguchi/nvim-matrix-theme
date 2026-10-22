@@ -431,12 +431,12 @@ theme.loadPlugins = function()
 		GitSignsDeleteLn = { fg = matrix.red },
 
 		-- Telescope
-		TelescopePromptBorder = { fg = matrix.green_2 },
-		TelescopeResultsBorder = { fg = matrix.green_6 },
-		TelescopePreviewBorder = { fg = matrix.turquoise_2 },
-		TelescopeSelectionCaret = { fg = matrix.green_6 },
-		TelescopeSelection = { fg = matrix.green_6 },
-		TelescopeMatching = { fg = matrix.green_2 },
+		TelescopeResultsBorder = { fg = matrix.green_1 },
+		TelescopePreviewBorder = { fg = matrix.turquoise_1 },
+		TelescopePromptBorder = { fg = matrix.amber },
+		TelescopeSelectionCaret = { fg = matrix.green_1, bg = matrix.green_5, style = "bold" },
+		TelescopeSelection = { fg = matrix.green_1, bg = matrix.green_5, style = "italic" },
+		TelescopeMatching = { fg = matrix.green_1, style = "bold" },
 
 		-- Cmp
 		CmpItemKind = { fg = matrix.turquoise_1 },

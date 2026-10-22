@@ -29,23 +29,23 @@ theme.loadSyntax = function()
 		Typedef = { fg = matrix.green_1, style = "bold" }, -- a typedef
 		Structure = { fg = matrix.green_1, style = "bold" }, -- struct, union, enum, etc.
 		Function = { fg = matrix.green_1, style = "italic" }, -- any function name
-		Keyword = { fg = matrix.green_2, style = "bold" }, -- for, do, while, etc.
-		Statement = { fg = matrix.green_2, style = "bold" }, -- any statement
-		Conditional = { fg = matrix.green_2, style = "bold" }, -- if, then, else, endif, switch, etc.
-		Repeat = { fg = matrix.green_2, style = "bold" }, -- any other keyword
-		Label = { fg = matrix.green_2, style = "bold" }, -- case, default, etc.
-		Exception = { fg = matrix.green_2, style = "bold" }, -- try, catch, throw
-		StorageClass = { fg = matrix.green_2, style = "bold" }, -- static, register, volatile, etc.
-		Identifier = { fg = matrix.green_2 }, -- any variable name
-		String = { fg = matrix.green_2, style = "italic" }, -- any string
-		Character = { fg = matrix.green_2, style = "italic" }, -- any character constant: 'c', '\n'
-		Float = { fg = matrix.green_2, style = "italic" }, -- a floating point constant: 2.3e10
-		Number = { fg = matrix.green_2, style = "italic" }, -- a number constant: 5
-		Boolean = { fg = matrix.green_2, style = "italic" }, -- a boolean constant: TRUE, false
-		Constant = { fg = matrix.green_2, style = "italic" }, -- any constant
-		Delimiter = { fg = matrix.green_3, style = "bold" }, -- character that needs attention like , or .
-		Special = { fg = matrix.green_2 }, -- any special symbol
-		Operator = { fg = matrix.green_3 }, -- sizeof, "+", "*", etc.
+		Keyword = { fg = matrix.green_1, style = "bold" }, -- for, do, while, etc.
+		Statement = { fg = matrix.green_1, style = "bold" }, -- any statement
+		Conditional = { fg = matrix.green_1, style = "bold" }, -- if, then, else, endif, switch, etc.
+		Repeat = { fg = matrix.green_1, style = "bold" }, -- any other keyword
+		Label = { fg = matrix.green_1, style = "bold" }, -- case, default, etc.
+		Exception = { fg = matrix.green_1, style = "bold" }, -- try, catch, throw
+		StorageClass = { fg = matrix.green_1, style = "bold" }, -- static, register, volatile, etc.
+		Identifier = { fg = matrix.green_1 }, -- any variable name
+		String = { fg = matrix.green_1, style = "italic" }, -- any string
+		Character = { fg = matrix.green_1, style = "italic" }, -- any character constant: 'c', '\n'
+		Float = { fg = matrix.green_1, style = "italic" }, -- a floating point constant: 2.3e10
+		Number = { fg = matrix.green_1, style = "italic" }, -- a number constant: 5
+		Boolean = { fg = matrix.green_1, style = "italic" }, -- a boolean constant: TRUE, false
+		Constant = { fg = matrix.green_1, style = "italic" }, -- any constant
+		Delimiter = { fg = matrix.green_2, style = "bold" }, -- character that needs attention like , or .
+		Special = { fg = matrix.green_1 }, -- any special symbol
+		Operator = { fg = matrix.green_2 }, -- sizeof, "+", "*", etc.
 
 		-- Turquoise
 		Underlined = { fg = matrix.turquoise_1, style = "underline" }, -- text that stands out, HTML links
@@ -88,8 +88,8 @@ theme.loadEditor = function()
 		FoldColumn = { fg = matrix.mono_4 },
 
 		-- Floating
-		NormalFloat = { fg = matrix.green_2, bg = matrix.green_8 },
-		FloatBorder = { fg = matrix.green_2, bg = matrix.green_8 },
+		NormalFloat = { fg = matrix.green_1, bg = matrix.green_6 },
+		FloatBorder = { fg = matrix.green_1, bg = matrix.green_6 },
 
 		-- Errors
 		ErrorMsg = { fg = matrix.red },
@@ -104,9 +104,9 @@ theme.loadEditor = function()
 		healthSuccess = { fg = matrix.green_1 },
 
 		-- Dashboard
-		DashboardShortCut = { fg = matrix.green_4 },
-		DashboardHeader = { fg = matrix.green_7 },
-		DashboardCenter = { fg = matrix.green_3 },
+		DashboardShortCut = { fg = matrix.green_2 },
+		DashboardHeader = { fg = matrix.green_6 },
+		DashboardCenter = { fg = matrix.green_2 },
 		DashboardFooter = { fg = matrix.turquoise_2, style = "italic" },
 
         -- Cursor
@@ -121,9 +121,9 @@ theme.loadEditor = function()
 		BufferLineFill = { bg = matrix.mono_5 },
 
         -- Tabs
-		TabLineFill = { fg = matrix.green_2, bg = matrix.none },
-		TablineSel = { fg = matrix.green_1, bg = matrix.green_7 },
-		Tabline = { fg = matrix.green_2, bg = matrix.green_8 },
+		TabLineFill = { fg = matrix.green_1, bg = matrix.none },
+		TablineSel = { fg = matrix.green_1, bg = matrix.green_6 },
+		Tabline = { fg = matrix.green_1, bg = matrix.green_6 },
 
         -- Search
 		MatchParen = { fg = matrix.amber, style = "bold" },
@@ -134,61 +134,61 @@ theme.loadEditor = function()
 		Visual = { fg = matrix.none, bg = matrix.mono_4 },
 		VisualNOS = { fg = matrix.none, bg = matrix.mono_4 },
 
-		Directory = { fg = matrix.green_4, bg = matrix.none }, -- directory names (and other special names in listings)
-		ModeMsg = { fg = matrix.green_7 },
-		MoreMsg = { fg = matrix.green_7 },
-		Pmenu = { fg = matrix.green_7, bg = matrix.green_2 },
-		PmenuSel = { fg = matrix.green_7, bg = matrix.red },
-		PmenuSbar = { fg = matrix.green_7, bg = matrix.green_2 },
-		PmenuThumb = { fg = matrix.green_7, bg = matrix.green_7 },
-		QuickFixLine = { fg = matrix.green_7, style = "reverse" },
-		qfLineNr = { fg = matrix.green_7, style = "reverse" },
-		SpecialKey = { fg = matrix.green_7 },
-		StatusLine = { fg = matrix.green_7, bg = matrix.green_2 },
-		StatusLineNC = { fg = matrix.green_7, bg = matrix.mono_4 },
-		StatusLineTerm = { fg = matrix.green_7, bg = matrix.green_2 },
-		StatusLineTermNC = { fg = matrix.green_7, bg = matrix.mono_4 },
-		ToolbarLine = { fg = matrix.green_7, bg = matrix.mono_4 },
-		ToolbarButton = { fg = matrix.green_7, style = "bold" },
-		NormalMode = { fg = matrix.green_7, style = "reverse" },
+		Directory = { fg = matrix.green_2, bg = matrix.none }, -- directory names (and other special names in listings)
+		ModeMsg = { fg = matrix.green_6 },
+		MoreMsg = { fg = matrix.green_6 },
+		Pmenu = { fg = matrix.green_6, bg = matrix.green_1 },
+		PmenuSel = { fg = matrix.green_6, bg = matrix.red },
+		PmenuSbar = { fg = matrix.green_6, bg = matrix.green_1 },
+		PmenuThumb = { fg = matrix.green_6, bg = matrix.green_6 },
+		QuickFixLine = { fg = matrix.green_6, style = "reverse" },
+		qfLineNr = { fg = matrix.green_6, style = "reverse" },
+		SpecialKey = { fg = matrix.green_6 },
+		StatusLine = { fg = matrix.green_6, bg = matrix.green_1 },
+		StatusLineNC = { fg = matrix.green_6, bg = matrix.mono_4 },
+		StatusLineTerm = { fg = matrix.green_6, bg = matrix.green_1 },
+		StatusLineTermNC = { fg = matrix.green_6, bg = matrix.mono_4 },
+		ToolbarLine = { fg = matrix.green_6, bg = matrix.mono_4 },
+		ToolbarButton = { fg = matrix.green_6, style = "bold" },
+		NormalMode = { fg = matrix.green_6, style = "reverse" },
 		InsertMode = { fg = matrix.turquoise_2, style = "reverse" },
 		ReplaceMode = { fg = matrix.turquoise_3, style = "reverse" },
-		VisualMode = { fg = matrix.green_7, style = "reverse" },
-		CommandMode = { fg = matrix.green_7, style = "reverse" },
+		VisualMode = { fg = matrix.green_6, style = "reverse" },
+		CommandMode = { fg = matrix.green_6, style = "reverse" },
 		Title = { fg = matrix.turquoise_2, style = "bold" },
 		Question = { fg = matrix.turquoise_2 },
 		SpellBad = { fg = matrix.turquoise_3, style = "italic,undercurl" },
-		SpellCap = { fg = matrix.green_4, style = "italic,undercurl" },
-		SpellLocal = { fg = matrix.green_3, style = "italic,undercurl" },
-		SpellRare = { fg = matrix.green_7, style = "italic,undercurl" },
+		SpellCap = { fg = matrix.green_2, style = "italic,undercurl" },
+		SpellLocal = { fg = matrix.green_2, style = "italic,undercurl" },
+		SpellRare = { fg = matrix.green_6, style = "italic,undercurl" },
 		WildMenu = { fg = matrix.mono_2, style = "bold" },
 		EndOfBuffer = { fg = matrix.mono_4 },
 		LineNr = { fg = matrix.mono_4 },
 		NonText = { fg = matrix.mono_4 },
 	}
 
-	editor.Normal = { fg = matrix.green_2, bg = matrix.none }
-	editor.SignColumn = { fg = matrix.green_2, bg = matrix.none }
+	editor.Normal = { fg = matrix.green_1, bg = matrix.none }
+	editor.SignColumn = { fg = matrix.green_1, bg = matrix.none }
 
-	editor.VertSplit = { fg = matrix.green_2 }
+	editor.VertSplit = { fg = matrix.green_1 }
 	return editor
 end
 
 theme.loadTerminal = function()
-	vim.g.terminal_color_0 = matrix.green_4
-	vim.g.terminal_color_1 = matrix.green_4
-	vim.g.terminal_color_2 = matrix.green_3
-	vim.g.terminal_color_3 = matrix.green_3
-	vim.g.terminal_color_4 = matrix.green_2
-	vim.g.terminal_color_5 = matrix.green_2
+	vim.g.terminal_color_0 = matrix.green_2
+	vim.g.terminal_color_1 = matrix.green_2
+	vim.g.terminal_color_2 = matrix.green_2
+	vim.g.terminal_color_3 = matrix.green_2
+	vim.g.terminal_color_4 = matrix.green_1
+	vim.g.terminal_color_5 = matrix.green_1
 	vim.g.terminal_color_6 = matrix.green_1
 	vim.g.terminal_color_7 = matrix.green_1
-	vim.g.terminal_color_8 = matrix.green_4
-	vim.g.terminal_color_9 = matrix.green_4
-	vim.g.terminal_color_10 = matrix.green_3
-	vim.g.terminal_color_11 = matrix.green_3
-	vim.g.terminal_color_12 = matrix.green_2
-	vim.g.terminal_color_13 = matrix.green_2
+	vim.g.terminal_color_8 = matrix.green_2
+	vim.g.terminal_color_9 = matrix.green_2
+	vim.g.terminal_color_10 = matrix.green_2
+	vim.g.terminal_color_11 = matrix.green_2
+	vim.g.terminal_color_12 = matrix.green_1
+	vim.g.terminal_color_13 = matrix.green_1
 	vim.g.terminal_color_14 = matrix.green_1
 	vim.g.terminal_color_15 = matrix.green_1
 end
@@ -240,41 +240,41 @@ theme.loadTreeSitter = function()
 		["@function"] = { fg = matrix.green_1, style = "italic" }, -- functions
 		["@function.builtin"] = { fg = matrix.green_1, style = "italic" },
 		["@function.method"] = { fg = matrix.green_1, style = "italic" },
-		["@keyword"] = { fg = matrix.green_2, style = "bold" }, -- keywords
-		["@keyword.function"] = { fg = matrix.green_2, style = "bold" },
-		["@keyword.return"] = { fg = matrix.green_2, style = "bold" },
-		["@keyword.import"] = { fg = matrix.green_2, style = "bold" },
-		["@keyword.repeat"] = { fg = matrix.green_2, style = "bold" },
-		["@keyword.exception"] = { fg = matrix.green_2, style = "bold" },
-		["@keyword.conditional"] = { fg = matrix.green_2, style = "bold" }, -- conditionals
-		["@label"] = { fg = matrix.green_2, style = "bold" },
-		["@variable"] = { fg = matrix.green_2 }, -- variables
-		["@variable.builtin"] = { fg = matrix.green_2 }, -- self, this, etc.
-		["@variable.parameter"] = { fg = matrix.green_2 }, -- parameters
+		["@keyword"] = { fg = matrix.green_1, style = "bold" }, -- keywords
+		["@keyword.function"] = { fg = matrix.green_1, style = "bold" },
+		["@keyword.return"] = { fg = matrix.green_1, style = "bold" },
+		["@keyword.import"] = { fg = matrix.green_1, style = "bold" },
+		["@keyword.repeat"] = { fg = matrix.green_1, style = "bold" },
+		["@keyword.exception"] = { fg = matrix.green_1, style = "bold" },
+		["@keyword.conditional"] = { fg = matrix.green_1, style = "bold" }, -- conditionals
+		["@label"] = { fg = matrix.green_1, style = "bold" },
+		["@variable"] = { fg = matrix.green_1 }, -- variables
+		["@variable.builtin"] = { fg = matrix.green_1 }, -- self, this, etc.
+		["@variable.parameter"] = { fg = matrix.green_1 }, -- parameters
 		["@module"] = { fg = matrix.green_1 }, -- namespaces/modules
-		["@variable.member"] = { fg = matrix.green_3, style = "italic" }, -- fields
-		["@property"] = { fg = matrix.green_3, style = "italic" }, -- fields
-		["@string.special.symbol"] = { fg = matrix.green_2 }, -- identifiers referring to symbols or atoms
-		["@string"] = { fg = matrix.green_2, style = "italic" }, -- values
-		["@character"] = { fg = matrix.green_2, style = "italic" },
-		["@string.regexp"] = { fg = matrix.green_2, style = "italic" },
+		["@variable.member"] = { fg = matrix.green_2, style = "italic" }, -- fields
+		["@property"] = { fg = matrix.green_2, style = "italic" }, -- fields
+		["@string.special.symbol"] = { fg = matrix.green_1 }, -- identifiers referring to symbols or atoms
+		["@string"] = { fg = matrix.green_1, style = "italic" }, -- values
+		["@character"] = { fg = matrix.green_1, style = "italic" },
+		["@string.regexp"] = { fg = matrix.green_1, style = "italic" },
 		["@string.escape"] = { fg = matrix.mono_1 }, -- special chars in values
 		["@string.special"] = { fg = matrix.mono_1 }, -- special chars in values
 		["@character.special"] = { fg = matrix.mono_1 }, -- special chars in values
-		["@number"] = { fg = matrix.green_2, style = "italic" },
-		["@number.float"] = { fg = matrix.green_2, style = "italic" },
-		["@boolean"] = { fg = matrix.green_2, style = "italic" },
-		["@constant"] = { fg = matrix.green_2, style = "italic" }, -- constants
-		["@constant.builtin"] = { fg = matrix.green_2, style = "italic" },
-		["@punctuation.delimiter"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
-		["@punctuation.bracket"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
-		["@punctuation.special"] = { fg = matrix.green_3, style = "bold" }, -- delimiters
-		["@operator"] = { fg = matrix.green_3 }, -- operators
-		["@keyword.operator"] = { fg = matrix.green_3 }, -- sizeof and friends
+		["@number"] = { fg = matrix.green_1, style = "italic" },
+		["@number.float"] = { fg = matrix.green_1, style = "italic" },
+		["@boolean"] = { fg = matrix.green_1, style = "italic" },
+		["@constant"] = { fg = matrix.green_1, style = "italic" }, -- constants
+		["@constant.builtin"] = { fg = matrix.green_1, style = "italic" },
+		["@punctuation.delimiter"] = { fg = matrix.green_2, style = "bold" }, -- delimiters
+		["@punctuation.bracket"] = { fg = matrix.green_2, style = "bold" }, -- delimiters
+		["@punctuation.special"] = { fg = matrix.green_2, style = "bold" }, -- delimiters
+		["@operator"] = { fg = matrix.green_2 }, -- operators
+		["@keyword.operator"] = { fg = matrix.green_2 }, -- sizeof and friends
 
 		-- Default colour for anything not otherwise specified
-		["@markup"] = { fg = matrix.green_2 },
-		["@markup.raw"] = { fg = matrix.green_2 },
+		["@markup"] = { fg = matrix.green_1 },
+		["@markup.raw"] = { fg = matrix.green_1 },
 	}
 
 	return treesitter
@@ -309,14 +309,14 @@ theme.loadLSP = function()
 		LspDiagnosticsUnderlineInformation = { style = "underline", sp = matrix.turquoise_2 }, -- used to underline "Information" diagnostics.
 
 		-- Green (hints / references)
-		LspDiagnosticsDefaultHint = { fg = matrix.green_7 }, -- used for "Hint" diagnostic virtual text
-		LspDiagnosticsSignHint = { fg = matrix.green_7 }, -- used for "Hint" diagnostic signs in sign column
-		LspDiagnosticsFloatingHint = { fg = matrix.green_7 }, -- used for "Hint" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextHint = { fg = matrix.green_7 }, -- Virtual text "Hint"
-		LspDiagnosticsUnderlineHint = { style = "underline", sp = matrix.green_7 }, -- used to underline "Hint" diagnostics.
-		LspReferenceText = { fg = matrix.green_7, bg = matrix.mono_4 }, -- used for highlighting "text" references
-		LspReferenceRead = { fg = matrix.green_7, bg = matrix.mono_4 }, -- used for highlighting "read" references
-		LspReferenceWrite = { fg = matrix.green_7, bg = matrix.mono_4 }, -- used for highlighting "write" references
+		LspDiagnosticsDefaultHint = { fg = matrix.green_6 }, -- used for "Hint" diagnostic virtual text
+		LspDiagnosticsSignHint = { fg = matrix.green_6 }, -- used for "Hint" diagnostic signs in sign column
+		LspDiagnosticsFloatingHint = { fg = matrix.green_6 }, -- used for "Hint" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextHint = { fg = matrix.green_6 }, -- Virtual text "Hint"
+		LspDiagnosticsUnderlineHint = { style = "underline", sp = matrix.green_6 }, -- used to underline "Hint" diagnostics.
+		LspReferenceText = { fg = matrix.green_6, bg = matrix.mono_4 }, -- used for highlighting "text" references
+		LspReferenceRead = { fg = matrix.green_6, bg = matrix.mono_4 }, -- used for highlighting "read" references
+		LspReferenceWrite = { fg = matrix.green_6, bg = matrix.mono_4 }, -- used for highlighting "write" references
 
 		-- Diagnostic links (Neovim diagnostics)
 		DiagnosticError = { link = "LspDiagnosticsDefaultError" },
@@ -348,9 +348,9 @@ theme.loadPlugins = function()
 	-- Plugins highlight groups
 	local plugins = {
 		diffOldFile = { fg = matrix.amber },
-		diffIndexLine = { fg = matrix.green_7 },
-		diffFile = { fg = matrix.green_4 },
-		diffLine = { fg = matrix.green_7 },
+		diffIndexLine = { fg = matrix.green_6 },
+		diffFile = { fg = matrix.green_2 },
+		diffLine = { fg = matrix.green_6 },
 		diffNewFile = { fg = matrix.mono_2 },
 
 		-- GitSigns
@@ -365,22 +365,22 @@ theme.loadPlugins = function()
 		GitSignsDeleteLn = { fg = matrix.turquoise_3 },
 
 		-- Telescope
-		TelescopePromptBorder = { fg = matrix.green_3 },
-		TelescopeResultsBorder = { fg = matrix.green_7 },
+		TelescopePromptBorder = { fg = matrix.green_2 },
+		TelescopeResultsBorder = { fg = matrix.green_6 },
 		TelescopePreviewBorder = { fg = matrix.turquoise_2 },
-		TelescopeSelectionCaret = { fg = matrix.green_7 },
-		TelescopeSelection = { fg = matrix.green_7 },
-		TelescopeMatching = { fg = matrix.green_3 },
+		TelescopeSelectionCaret = { fg = matrix.green_6 },
+		TelescopeSelection = { fg = matrix.green_6 },
+		TelescopeMatching = { fg = matrix.green_2 },
 
 		-- Cmp
 		CmpItemKind = { fg = matrix.turquoise_1 },
-		CmpItemAbbrMatch = { fg = matrix.green_6, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = matrix.green_6, style = "bold" },
-		CmpItemAbbr = { fg = matrix.green_7 },
+		CmpItemAbbrMatch = { fg = matrix.green_4, style = "bold" },
+		CmpItemAbbrMatchFuzzy = { fg = matrix.green_4, style = "bold" },
+		CmpItemAbbr = { fg = matrix.green_6 },
 		CmpItemMenu = { fg = matrix.turquoise_2 },
 
 		-- Indent Blankline
-		IblIndent = { fg = matrix.green_4 },
+		IblIndent = { fg = matrix.green_2 },
 		IblScope = { fg = matrix.green_1 },
 	}
 

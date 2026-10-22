@@ -64,12 +64,10 @@ Complementary palette
 Primary palette
 
 - `#00f000`
-- `#00d500`: normal text
-- `#00b900`
-- `#009e00`
-- `#008200`
-- `#006700`
-- `#004b00`
+- `#00ca00`: normal text
+- `#00a300`
+- `#007d00`
+- `#005600`
 - `#003000`
 
 ### Turquoise

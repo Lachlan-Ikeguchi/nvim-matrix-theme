@@ -190,9 +190,9 @@ theme.loadEditor = function()
 		diffAdded = { fg = matrix.green_1, style = "bold" },
 		diffRemoved = { fg = matrix.red, style = "bold" },
 		diffChanged = { fg = matrix.amber, style = "bold" },
-		DiffAdd = { bg = matrix.green_1, style = "bold" },
-		DiffDelete = { bg = matrix.red, style = "bold" },
-		DiffChange = { bg = matrix.amber, style = "bold" },
+		DiffAdd = { fg = matrix.green_1, style = "bold" },
+		DiffDelete = { fg = matrix.red, style = "bold" },
+		DiffChange = { fg = matrix.amber, style = "bold" },
 		DiffText = { fg = matrix.mono_3 },
 
 		-- Special Keys
